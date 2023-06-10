@@ -1,0 +1,153 @@
+[gd_scene load_steps=13 format=3 uid="uid://buxrckkkib3nf"]
+
+[ext_resource type="Texture2D" uid="uid://scqvd0te38od" path="res://Assets/Main_Character/Player_Concept_Idle.png" id="1_dsgcp"]
+[ext_resource type="Texture2D" uid="uid://c8ff7rvf7job6" path="res://Assets/Main_Character/Character_Test_Run.png" id="2_jhx3h"]
+
+[sub_resource type="GDScript" id="GDScript_ijgpw"]
+script/source = "extends CharacterBody2D
+
+#vars
+@export var speed = 0
+var og_speed = speed
+
+# ready func
+func _ready():
+	$AnimatedSprite2D.play(\"idle-ish\")
+	hbox_idleish()
+
+
+# physics prosses
+func _physics_process(delta):
+	player_movement(delta)
+	
+
+# player movement func
+func player_movement(delta):
+	
+	velocity.x = Input.get_action_strength(\"left\") - Input.get_action_strength(\"right\")
+	
+	# logic
+	if velocity.x > 0:
+		$AnimatedSprite2D.flip_h = false
+		$AnimatedSprite2D.play(\"run\")
+		running_right()
+	elif velocity.x < 0:
+		$AnimatedSprite2D.flip_h = true
+		$AnimatedSprite2D.play(\"run\")
+		running_left()
+	else:
+		$AnimatedSprite2D.play(\"idle-ish\")
+		hbox_idleish()
+	
+	move_and_collide(velocity * speed * speed * delta)
+
+# which hitboxes are being used
+func running_right():
+	$running_right.visible = true
+	$running_left.visible = false
+	$idle_hbox.visible = false
+func running_left():
+	$running_right.visible = false
+	$running_left.visible = true
+	$idle_hbox.visible = false
+func hbox_idleish():
+	$running_right.visible = false
+	$running_left.visible = false
+	$idle_hbox.visible = true
+"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5u4do"]
+atlas = ExtResource("1_dsgcp")
+region = Rect2(162, 0, 160, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r3sho"]
+atlas = ExtResource("2_jhx3h")
+region = Rect2(1000, 0, 500, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yw5hu"]
+atlas = ExtResource("2_jhx3h")
+region = Rect2(1500, 0, 500, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rfdn1"]
+atlas = ExtResource("2_jhx3h")
+region = Rect2(2000, 0, 500, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p62qg"]
+atlas = ExtResource("2_jhx3h")
+region = Rect2(2500, 0, 500, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_owi8r"]
+atlas = ExtResource("2_jhx3h")
+region = Rect2(0, 0, 500, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1g0gp"]
+atlas = ExtResource("2_jhx3h")
+region = Rect2(500, 0, 500, 512)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_k8msp"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5u4do")
+}],
+"loop": true,
+"name": &"idle-ish",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r3sho")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yw5hu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rfdn1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p62qg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_owi8r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1g0gp")
+}],
+"loop": true,
+"name": &"run",
+"speed": 12.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_k31qq"]
+radius = 27.0
+height = 150.0
+
+[node name="player" type="CharacterBody2D"]
+script = SubResource("GDScript_ijgpw")
+speed = 20
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.3, 0.3)
+sprite_frames = SubResource("SpriteFrames_k8msp")
+animation = &"run"
+frame = 3
+frame_progress = 0.334127
+metadata/_edit_lock_ = true
+metadata/_edit_group_ = true
+
+[node name="running_right" type="CollisionShape2D" parent="."]
+position = Vector2(19, 5)
+rotation = 0.359538
+shape = SubResource("CapsuleShape2D_k31qq")
+metadata/_edit_group_ = true
+
+[node name="running_left" type="CollisionShape2D" parent="."]
+position = Vector2(-19, 5)
+rotation = -0.359538
+shape = SubResource("CapsuleShape2D_k31qq")
+metadata/_edit_group_ = true
+
+[node name="idle_hbox" type="CollisionShape2D" parent="."]
+position = Vector2(1, 3)
+shape = SubResource("CapsuleShape2D_k31qq")
+metadata/_edit_group_ = true
