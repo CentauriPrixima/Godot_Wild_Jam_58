@@ -1,3 +1,2 @@
-res://Scenes/Entities/Player_Character.tscn
 res://level_1.tscn
-res://Sprite2D.gd
+res://Scenes/Entities/Player_Character.tscn
