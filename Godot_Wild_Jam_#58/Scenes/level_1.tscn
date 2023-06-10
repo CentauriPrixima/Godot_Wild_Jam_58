@@ -1,0 +1,32 @@
+[gd_scene load_steps=3 format=3 uid="uid://ca6w6vbcu0fa8"]
+
+[ext_resource type="PackedScene" uid="uid://buxrckkkib3nf" path="res://Scenes/Entities/player.tscn" id="1_84f63"]
+[ext_resource type="PackedScene" uid="uid://c7powupijqw71" path="res://Scenes/floting_rock.tscn" id="2_tbof2"]
+
+[node name="Level1" type="Node2D"]
+
+[node name="player" parent="." instance=ExtResource("1_84f63")]
+position = Vector2(391, 279)
+gravity = 25
+
+[node name="floting_rock" parent="." instance=ExtResource("2_tbof2")]
+position = Vector2(-494, 586)
+scale = Vector2(5.06756, 1)
+
+[node name="floting_rock3" parent="." instance=ExtResource("2_tbof2")]
+position = Vector2(714, 628)
+
+[node name="floting_rock4" parent="." instance=ExtResource("2_tbof2")]
+position = Vector2(1165, 612)
+
+[node name="floting_rock5" parent="." instance=ExtResource("2_tbof2")]
+position = Vector2(1612, 551)
+
+[node name="floting_rock6" parent="." instance=ExtResource("2_tbof2")]
+position = Vector2(2099, 542)
+
+[node name="floting_rock7" parent="." instance=ExtResource("2_tbof2")]
+position = Vector2(2497, 633)
+
+[node name="floting_rock8" parent="." instance=ExtResource("2_tbof2")]
+position = Vector2(2997, 619)
