@@ -1,4 +1,2 @@
-res://level_1.tscn
-res://Scenes/Entities/player.tscn
 res://Scenes/level_1.tscn
-res://Scenes/floting_rock.tscn
+res://Scenes/Entities/player.tscn
