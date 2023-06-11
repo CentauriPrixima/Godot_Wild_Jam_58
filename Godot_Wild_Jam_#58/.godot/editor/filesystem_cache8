@@ -1,12 +1,28 @@
 2a60927148abd1d33b818b535e306557
-::res://::1686480464
+::res://::1686481016
 icon.svg::CompressedTexture2D::4170249435231076777::1686358270::1686358330::1::::<><>::
-::res://Assets/::1686390869
+::res://Assets/::1686480704
+::res://Assets/Background/::1686480704
+COncept.png::CompressedTexture2D::9030077523077476759::1686480704::1686480704::1::::<><>::
+Forest_L_B.png::CompressedTexture2D::530971921330703919::1686480704::1686480704::1::::<><>::
+Forest_R_B.png::CompressedTexture2D::5472565147989246824::1686480704::1686480704::1::::<><>::
+Mountain Layer.png::CompressedTexture2D::7937085934244670887::1686480704::1686480704::1::::<><>::
+Mountains far.png::CompressedTexture2D::8805591589644948808::1686480704::1686480704::1::::<><>::
+Sky Gradient.png::CompressedTexture2D::4084101807252337692::1686480704::1686480704::1::::<><>::
+Tower_CenterPiece.png::CompressedTexture2D::4287440451911873778::1686480704::1686480704::1::::<><>::
 ::res://Assets/Main_Character/::1686390869
 Character_Test_Run.png::CompressedTexture2D::7099756752188513697::1686390869::1686390869::1::::<><>::
 Player_Concept_Idle.png::CompressedTexture2D::1268537111608887075::1686390869::1686390869::1::::<><>::
-::res://Scenes/::1686404322
+::res://Assets/Objects/::1686480704
+Bush.png::CompressedTexture2D::6393314952363183326::1686480704::1686480704::1::::<><>::
+Bush_B.png::CompressedTexture2D::1204591776775717204::1686480704::1686480704::1::::<><>::
+Grass_Plane.png::CompressedTexture2D::6721075949887918707::1686480704::1686480704::1::::<><>::
+Rock.png::CompressedTexture2D::1597373355845892289::1686480704::1686480704::1::::<><>::
+Sakura_Tree.png::CompressedTexture2D::7747036435598964190::1686480704::1686480704::1::::<><>::
+Sakura_Tree_B.png::CompressedTexture2D::5711077800990662586::1686480704::1686480704::1::::<><>::
+Tree_Para.png::CompressedTexture2D::6385571702735308521::1686480704::1686480704::1::::<><>::
+::res://Scenes/::1686480992
 floting_rock.tscn::PackedScene::7050740429494008194::1686402383::0::1::::<><>::
-level_1.tscn::PackedScene::4838229315867712573::1686404322::0::1::::<><>::uid://buxrckkkib3nf<>uid://c7powupijqw71
-::res://Scenes/Entities/::1686418538
-player.tscn::PackedScene::3838714546408625911::1686418538::0::1::::<><>::uid://scqvd0te38od<>uid://c8ff7rvf7job6
+level_1.tscn::PackedScene::4838229315867712573::1686480992::0::1::::<><>::uid://buxrckkkib3nf<>uid://d1wib7p0vtl2n
+::res://Scenes/Entities/::1686480787
+player.tscn::PackedScene::3838714546408625911::1686480787::0::1::::<><>::uid://scqvd0te38od<>uid://c8ff7rvf7job6

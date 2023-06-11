@@ -1,502 +1,100 @@
-[gd_scene load_steps=18 format=3 uid="uid://ca6w6vbcu0fa8"]
+[gd_scene load_steps=6 format=3 uid="uid://ca6w6vbcu0fa8"]
 
 [ext_resource type="PackedScene" uid="uid://buxrckkkib3nf" path="res://Scenes/Entities/player.tscn" id="1_84f63"]
 [ext_resource type="Texture2D" uid="uid://d1wib7p0vtl2n" path="res://Assets/Background/COncept.png" id="1_x22a5"]
-[ext_resource type="Texture2D" uid="uid://cw8hoysv7phjd" path="res://Assets/Objects/Tree_Para.png" id="2_3fqtw"]
-[ext_resource type="Texture2D" uid="uid://bygmtbpav6kwa" path="res://Assets/Background/Sky Gradient.png" id="2_a6sik"]
-[ext_resource type="Texture2D" uid="uid://dimys8k8x8au5" path="res://Assets/Objects/Sakura_Tree.png" id="2_fgbcm"]
-[ext_resource type="PackedScene" uid="uid://c7powupijqw71" path="res://Scenes/floting_rock.tscn" id="2_tbof2"]
-[ext_resource type="Texture2D" uid="uid://hthbav41ury2" path="res://Assets/Background/Forest_L_B.png" id="3_0rtt0"]
-[ext_resource type="Texture2D" uid="uid://b2c4ruvgmp4yw" path="res://Assets/Background/Tower_CenterPiece.png" id="3_ifvst"]
-[ext_resource type="Texture2D" uid="uid://dxpq2o4c7lk3q" path="res://Assets/Background/Mountains far.png" id="3_p2tcf"]
-[ext_resource type="Texture2D" uid="uid://cxc770pia83t7" path="res://Assets/Objects/Bush.png" id="3_wd61b"]
-[ext_resource type="Texture2D" uid="uid://w01rgxvsoull" path="res://Assets/Objects/Rock.png" id="4_amxbs"]
-[ext_resource type="Texture2D" uid="uid://dlc1v7pfgmujf" path="res://Assets/Background/Mountain Layer.png" id="4_h56ja"]
-[ext_resource type="Texture2D" uid="uid://cj77l316burto" path="res://Assets/Background/Forest_R_B.png" id="4_y3eau"]
-[ext_resource type="Texture2D" uid="uid://c200eyuvnohhj" path="res://Assets/Objects/Grass_Plane.png" id="8_bb5io"]
-[ext_resource type="Texture2D" uid="uid://cnmqu8h6exx7g" path="res://Assets/Objects/Sakura_Tree_B.png" id="8_obq8n"]
-[ext_resource type="Texture2D" uid="uid://rfrpk4hq0t6c" path="res://Assets/Objects/Bush_B.png" id="9_flmba"]
-
-[sub_resource type="Environment" id="Environment_mvuu1"]
-background_mode = 3
-background_energy_multiplier = 5.2
-fog_enabled = true
-fog_light_color = Color(0.137255, 0.623529, 0.623529, 1)
-fog_light_energy = 1.48
-fog_density = 0.2221
-fog_height = -62.06
+[ext_resource type="Texture2D" uid="uid://c200eyuvnohhj" path="res://Assets/Objects/Grass_Plane.png" id="2_0ol81"]
+[ext_resource type="Texture2D" uid="uid://dimys8k8x8au5" path="res://Assets/Objects/Sakura_Tree.png" id="4_1xdw1"]
+[ext_resource type="PackedScene" uid="uid://c7powupijqw71" path="res://Scenes/floting_rock.tscn" id="4_oce4b"]
 
 [node name="Level1" type="Node2D"]
 position = Vector2(534, -191)
 scale = Vector2(0.452, 0.452)
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_mvuu1")
-
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-layer = -10
-follow_viewport_scale = 83.319
-
-[node name="COncept" type="Sprite2D" parent="CanvasLayer"]
-visible = false
-z_index = -19
-position = Vector2(-160, -2140)
-scale = Vector2(0.658564, 0.658564)
-texture = ExtResource("1_x22a5")
-centered = false
-
-[node name="SkyGradient" type="Sprite2D" parent="CanvasLayer"]
-position = Vector2(1204, -448)
-scale = Vector2(3.203, 3.203)
-texture = ExtResource("2_a6sik")
-
-[node name="Background elements" type="Node2D" parent="."]
-position = Vector2(-46.4602, 230.089)
-
-[node name="Background_Pieces" type="ParallaxBackground" parent="Background elements"]
-layer = -1
-
-[node name="Far" type="ParallaxLayer" parent="Background elements/Background_Pieces"]
-motion_scale = Vector2(0.1, 0.1)
-motion_offset = Vector2(0, 500)
-
-[node name="MountainsFar" type="Sprite2D" parent="Background elements/Background_Pieces/Far"]
-position = Vector2(560, -349)
-texture = ExtResource("3_p2tcf")
-
-[node name="Mid" type="ParallaxLayer" parent="Background elements/Background_Pieces"]
-position = Vector2(0, 410)
-scale = Vector2(0.93, 0.93)
-motion_scale = Vector2(0.2, 0.2)
-motion_offset = Vector2(0, 400)
-
-[node name="MountainLayer" type="Sprite2D" parent="Background elements/Background_Pieces/Mid"]
-position = Vector2(594.624, -732.258)
-texture = ExtResource("4_h56ja")
-
-[node name="Close" type="ParallaxLayer" parent="Background elements/Background_Pieces"]
-motion_scale = Vector2(0.3, 0.3)
-motion_offset = Vector2(0, 450)
-
-[node name="ForestLB" type="Sprite2D" parent="Background elements/Background_Pieces/Close"]
-position = Vector2(-324, -576)
-texture = ExtResource("3_0rtt0")
-centered = false
-
-[node name="ForestRB" type="Sprite2D" parent="Background elements/Background_Pieces/Close"]
-position = Vector2(1042, -680)
-texture = ExtResource("4_y3eau")
-centered = false
-
-[node name="TowerCenterPiece" type="Sprite2D" parent="Background elements/Background_Pieces/Close"]
-position = Vector2(229, -876)
-scale = Vector2(1.641, 1.641)
-texture = ExtResource("3_ifvst")
-centered = false
-
-[node name="Trees" type="Node2D" parent="Background elements"]
-
-[node name="ParallaxBackground" type="ParallaxBackground" parent="Background elements/Trees"]
-layer = -1
-
-[node name="ParallaxLayer" type="ParallaxLayer" parent="Background elements/Trees/ParallaxBackground"]
-z_index = -1
-position = Vector2(-32, 40)
-motion_scale = Vector2(0.684, 0.684)
-motion_mirroring = Vector2(800, 0)
-
-[node name="TreePara" type="Sprite2D" parent="Background elements/Trees/ParallaxBackground/ParallaxLayer"]
-z_index = -1
-position = Vector2(162, -222)
-scale = Vector2(0.347, 0.347)
-texture = ExtResource("2_3fqtw")
-centered = false
-
-[node name="TreePara2" type="Sprite2D" parent="Background elements/Trees/ParallaxBackground/ParallaxLayer"]
-z_index = -1
-position = Vector2(-1201, -201)
-scale = Vector2(0.297868, 0.297868)
-texture = ExtResource("2_3fqtw")
-centered = false
-
-[node name="SakuraTree2" type="Sprite2D" parent="Background elements/Trees"]
-position = Vector2(172.566, 170.354)
-scale = Vector2(0.4, 0.4)
-texture = ExtResource("2_fgbcm")
-flip_h = true
-
-[node name="SakuraTree7" type="Sprite2D" parent="Background elements/Trees"]
-position = Vector2(-1615.04, 121.681)
-scale = Vector2(0.4, 0.4)
-texture = ExtResource("2_fgbcm")
-flip_h = true
-
-[node name="SakuraTree5" type="Sprite2D" parent="Background elements/Trees"]
-position = Vector2(-8.84961, 42.0354)
-scale = Vector2(0.633, 0.633)
-texture = ExtResource("2_fgbcm")
-flip_h = true
-
-[node name="SakuraTree6" type="Sprite2D" parent="Background elements/Trees"]
-position = Vector2(668.142, 70.7965)
-scale = Vector2(0.633, 0.633)
-texture = ExtResource("2_fgbcm")
-flip_h = true
-
-[node name="SakuraTree" type="Sprite2D" parent="Background elements/Trees"]
-position = Vector2(1126.11, 110.619)
-scale = Vector2(0.546, 0.546)
-texture = ExtResource("2_fgbcm")
-
-[node name="SakuraTree4" type="Sprite2D" parent="Background elements/Trees"]
-position = Vector2(1816.37, 17.6991)
-scale = Vector2(0.777, 0.777)
-texture = ExtResource("2_fgbcm")
-
-[node name="SakuraTree3" type="Sprite2D" parent="Background elements/Trees"]
-position = Vector2(1495.58, -28.7611)
-scale = Vector2(0.885, 0.885)
-texture = ExtResource("2_fgbcm")
-
-[node name="Bushes" type="Node2D" parent="Background elements"]
-
-[node name="Bush" type="Sprite2D" parent="Background elements/Bushes"]
-position = Vector2(995.575, 296.46)
-scale = Vector2(0.509, 0.509)
-texture = ExtResource("3_wd61b")
-
-[node name="Bush5" type="Sprite2D" parent="Background elements/Bushes"]
-position = Vector2(544.248, 325.221)
-scale = Vector2(0.509, 0.509)
-texture = ExtResource("3_wd61b")
-
-[node name="Bush6" type="Sprite2D" parent="Background elements/Bushes"]
-position = Vector2(829.646, 311.947)
-scale = Vector2(0.509, 0.509)
-texture = ExtResource("3_wd61b")
-
-[node name="Bush7" type="Sprite2D" parent="Background elements/Bushes"]
-position = Vector2(358.407, 305.31)
-scale = Vector2(0.509, 0.509)
-texture = ExtResource("3_wd61b")
-
-[node name="Bush3" type="Sprite2D" parent="Background elements/Bushes"]
-position = Vector2(1192.48, 298.673)
-scale = Vector2(0.509, 0.509)
-texture = ExtResource("3_wd61b")
-
-[node name="Bush2" type="Sprite2D" parent="Background elements/Bushes"]
-position = Vector2(1090.71, 300.885)
-scale = Vector2(0.509, 0.509)
-texture = ExtResource("3_wd61b")
-
-[node name="Bush4" type="Sprite2D" parent="Background elements/Bushes"]
-position = Vector2(126.106, 309.735)
-scale = Vector2(0.509, 0.509)
-texture = ExtResource("3_wd61b")
-
-[node name="Rocks" type="Node2D" parent="Background elements"]
-
-[node name="Rock" type="Sprite2D" parent="Background elements/Rocks"]
-position = Vector2(263.274, 307.522)
-scale = Vector2(0.409, 0.409)
-texture = ExtResource("4_amxbs")
-
-[node name="Rock3" type="Sprite2D" parent="Background elements/Rocks"]
-position = Vector2(907.08, 274.336)
-scale = Vector2(0.644, 0.644)
-texture = ExtResource("4_amxbs")
-
-[node name="Rock2" type="Sprite2D" parent="Background elements/Rocks"]
-position = Vector2(1143.81, 336.283)
-scale = Vector2(0.409, 0.409)
-texture = ExtResource("4_amxbs")
-
 [node name="player" parent="." instance=ExtResource("1_84f63")]
-position = Vector2(933, 293)
-gravity = 25
-
-[node name="Platforms" type="Node2D" parent="."]
-
-[node name="floting_rock" parent="Platforms" instance=ExtResource("2_tbof2")]
-position = Vector2(-1360.62, 580)
-scale = Vector2(25.864, 1)
-
-[node name="floting_rock3" parent="Platforms" instance=ExtResource("2_tbof2")]
-position = Vector2(-157.08, 327.434)
-
-[node name="floting_rock4" parent="Platforms" instance=ExtResource("2_tbof2")]
-position = Vector2(-471.239, 154.867)
-
-[node name="floting_rock5" parent="Platforms" instance=ExtResource("2_tbof2")]
-position = Vector2(-99.5576, -99.5576)
-
-[node name="floting_rock6" parent="Platforms" instance=ExtResource("2_tbof2")]
-position = Vector2(415.929, -97.3451)
-
-[node name="floting_rock7" parent="Platforms" instance=ExtResource("2_tbof2")]
-position = Vector2(991.15, -88.4956)
-
-[node name="floting_rock8" parent="Platforms" instance=ExtResource("2_tbof2")]
-position = Vector2(690.265, -564.159)
-
-[node name="floting_rock22" parent="Platforms" instance=ExtResource("2_tbof2")]
-position = Vector2(1267.7, -325.221)
-
-[node name="floting_rock23" parent="Platforms" instance=ExtResource("2_tbof2")]
-position = Vector2(889.381, -442.478)
-
-[node name="floting_rock24" parent="Platforms" instance=ExtResource("2_tbof2")]
-position = Vector2(-632.743, -853.982)
-
-[node name="floting_rock25" parent="Platforms" instance=ExtResource("2_tbof2")]
-position = Vector2(-1183.63, -893.805)
-
-[node name="floting_rock26" parent="Platforms" instance=ExtResource("2_tbof2")]
-position = Vector2(-842.921, -1132.74)
-
-[node name="floting_rock27" parent="Platforms" instance=ExtResource("2_tbof2")]
-position = Vector2(-314.159, -1143.81)
-
-[node name="floting_rock9" parent="Platforms" instance=ExtResource("2_tbof2")]
-position = Vector2(-88.4956, -628.319)
-
-[node name="floting_rock10" parent="Platforms" instance=ExtResource("2_tbof2")]
-position = Vector2(-331.858, -632.743)
-
-[node name="floting_rock11" parent="Platforms" instance=ExtResource("2_tbof2")]
-position = Vector2(150.442, -1070.8)
-
-[node name="floting_rock12" parent="Platforms" instance=ExtResource("2_tbof2")]
-position = Vector2(780.973, -1064.16)
-
-[node name="floting_rock13" parent="Platforms" instance=ExtResource("2_tbof2")]
-position = Vector2(1334.07, -1210.18)
-
-[node name="floting_rock14" parent="Platforms" instance=ExtResource("2_tbof2")]
-position = Vector2(871.681, -1407.08)
-
-[node name="floting_rock28" parent="Platforms" instance=ExtResource("2_tbof2")]
-position = Vector2(1278.76, -1584.07)
-
-[node name="floting_rock29" parent="Platforms" instance=ExtResource("2_tbof2")]
-position = Vector2(920.354, -1800.88)
-
-[node name="floting_rock21" parent="Platforms" instance=ExtResource("2_tbof2")]
-position = Vector2(-953.54, -2351.77)
-
-[node name="floting_rock15" parent="Platforms" instance=ExtResource("2_tbof2")]
-position = Vector2(1568.58, -1902.66)
-
-[node name="floting_rock30" parent="Platforms" instance=ExtResource("2_tbof2")]
-position = Vector2(1957.96, -1568.58)
-
-[node name="floting_rock31" parent="Platforms" instance=ExtResource("2_tbof2")]
-position = Vector2(2276.55, -1758.85)
-
-[node name="floting_rock32" parent="Platforms" instance=ExtResource("2_tbof2")]
-position = Vector2(2621.68, -1949.11)
-
-[node name="floting_rock33" parent="Platforms" instance=ExtResource("2_tbof2")]
-position = Vector2(2174.78, -2172.57)
-
-[node name="floting_rock34" parent="Platforms" instance=ExtResource("2_tbof2")]
-position = Vector2(1668.14, -2338.5)
-
-[node name="floting_rock16" parent="Platforms" instance=ExtResource("2_tbof2")]
-position = Vector2(1128.32, -2409.29)
-
-[node name="floting_rock17" parent="Platforms" instance=ExtResource("2_tbof2")]
-position = Vector2(626.106, -2174.78)
-scale = Vector2(0.292038, 1)
-
-[node name="floting_rock18" parent="Platforms" instance=ExtResource("2_tbof2")]
-position = Vector2(292.035, -1935.84)
-scale = Vector2(0.431223, 1.02819)
-
-[node name="floting_rock19" parent="Platforms" instance=ExtResource("2_tbof2")]
-position = Vector2(-64.1592, -1789.82)
-scale = Vector2(0.431223, 1.02819)
-
-[node name="floting_rock20" parent="Platforms" instance=ExtResource("2_tbof2")]
-position = Vector2(-453.54, -2075.22)
-scale = Vector2(0.431223, 1.02819)
-
-[node name="Foreground Elements" type="Node2D" parent="."]
-
-[node name="Grass" type="ParallaxBackground" parent="Foreground Elements"]
-layer = 1
-
-[node name="ParallaxLayer" type="ParallaxLayer" parent="Foreground Elements/Grass"]
-position = Vector2(5, -8)
-motion_scale = Vector2(1.1, 1.1)
-
-[node name="GrassPlane" type="Sprite2D" parent="Foreground Elements/Grass/ParallaxLayer"]
-position = Vector2(500, 41)
-scale = Vector2(0.25, 0.25)
-texture = ExtResource("8_bb5io")
-centered = false
-offset = Vector2(0, -80)
-
-[node name="GrassPlane2" type="Sprite2D" parent="Foreground Elements/Grass/ParallaxLayer"]
-position = Vector2(887, 41)
-scale = Vector2(0.25, 0.25)
-texture = ExtResource("8_bb5io")
-centered = false
-offset = Vector2(0, -80)
-
-[node name="GrassPlane3" type="Sprite2D" parent="Foreground Elements/Grass/ParallaxLayer"]
-position = Vector2(-107, 41)
-scale = Vector2(0.25, 0.25)
-texture = ExtResource("8_bb5io")
-centered = false
-offset = Vector2(0, -80)
-
-[node name="GrassPlane4" type="Sprite2D" parent="Foreground Elements/Grass/ParallaxLayer"]
-position = Vector2(-440, 45)
-scale = Vector2(0.25, 0.25)
-texture = ExtResource("8_bb5io")
-centered = false
-offset = Vector2(0, -80)
-
-[node name="ParallaxLayer2" type="ParallaxLayer" parent="Foreground Elements/Grass"]
-position = Vector2(-9, 6)
-motion_scale = Vector2(1.2, 1.2)
-motion_offset = Vector2(0, -180)
-motion_mirroring = Vector2(1920, 0)
-
-[node name="GrassPlane" type="Sprite2D" parent="Foreground Elements/Grass/ParallaxLayer2"]
-self_modulate = Color(0.611765, 0.611765, 0.611765, 1)
-position = Vector2(395, 143)
-scale = Vector2(0.653, 0.653)
-texture = ExtResource("8_bb5io")
-centered = false
-
-[node name="ParallaxLayer3" type="ParallaxLayer" parent="Foreground Elements/Grass"]
-visible = false
-position = Vector2(-39, 49)
-motion_scale = Vector2(1.3, 1.3)
-motion_offset = Vector2(0, -150)
-motion_mirroring = Vector2(1920, 0)
-
-[node name="GrassPlane" type="Sprite2D" parent="Foreground Elements/Grass/ParallaxLayer3"]
-self_modulate = Color(0.329412, 0.329412, 0.329412, 1)
-position = Vector2(268, -8)
-scale = Vector2(0.432, 0.432)
-texture = ExtResource("8_bb5io")
-centered = false
-
-[node name="ParallaxLayer4" type="ParallaxLayer" parent="Foreground Elements/Grass"]
-motion_scale = Vector2(1.75, 1.75)
-motion_offset = Vector2(0, -150)
-motion_mirroring = Vector2(1920, 0)
-
-[node name="GrassPlane" type="Sprite2D" parent="Foreground Elements/Grass/ParallaxLayer4"]
-self_modulate = Color(0.258824, 0.258824, 0.258824, 1)
-position = Vector2(268, -8)
-scale = Vector2(0.741, 0.741)
-texture = ExtResource("8_bb5io")
-centered = false
-
-[node name="ParallaxLayer5" type="ParallaxLayer" parent="Foreground Elements/Grass"]
-motion_scale = Vector2(2, 2)
-motion_offset = Vector2(0, -150)
-motion_mirroring = Vector2(1920, 0)
-
-[node name="GrassPlane" type="Sprite2D" parent="Foreground Elements/Grass/ParallaxLayer5"]
-self_modulate = Color(0.0509804, 0.0509804, 0.0509804, 1)
-position = Vector2(268, -8)
-scale = Vector2(0.741, 0.741)
-texture = ExtResource("8_bb5io")
-centered = false
-
-[node name="Objects" type="ParallaxBackground" parent="Foreground Elements"]
-layer = 1
-
-[node name="ParallaxLayer" type="ParallaxLayer" parent="Foreground Elements/Objects"]
-motion_scale = Vector2(2, 2)
-
-[node name="Trees2" type="Node2D" parent="Foreground Elements/Objects/ParallaxLayer"]
-position = Vector2(211, -2403)
-
-[node name="SakuraTree2" type="Sprite2D" parent="Foreground Elements/Objects/ParallaxLayer/Trees2"]
-self_modulate = Color(0.0588235, 0.0588235, 0.0588235, 1)
-position = Vector2(-655, 1965)
-scale = Vector2(1.494, 1.494)
-texture = ExtResource("8_obq8n")
-flip_h = true
-
-[node name="SakuraTree3" type="Sprite2D" parent="Foreground Elements/Objects/ParallaxLayer/Trees2"]
-self_modulate = Color(0.0588235, 0.0588235, 0.0588235, 1)
-position = Vector2(2621.68, 1309.73)
-scale = Vector2(1.246, 1.246)
-texture = ExtResource("8_obq8n")
-
-[node name="SakuraTree4" type="Sprite2D" parent="Foreground Elements/Objects/ParallaxLayer/Trees2"]
-self_modulate = Color(0.0588235, 0.0588235, 0.0588235, 1)
-position = Vector2(1708, 1902)
-scale = Vector2(1.246, 1.246)
-texture = ExtResource("8_obq8n")
-
-[node name="SakuraTree5" type="Sprite2D" parent="Foreground Elements/Objects/ParallaxLayer/Trees2"]
-self_modulate = Color(0.0588235, 0.0588235, 0.0588235, 1)
-position = Vector2(-407, 1978)
-scale = Vector2(1.246, 1.246)
-texture = ExtResource("8_obq8n")
-
-[node name="SakuraTree6" type="Sprite2D" parent="Foreground Elements/Objects/ParallaxLayer/Trees2"]
-self_modulate = Color(0.0588235, 0.0588235, 0.0588235, 1)
-position = Vector2(-1555.31, 2148.23)
-scale = Vector2(1.246, 1.246)
-texture = ExtResource("8_obq8n")
-
-[node name="SakuraTree7" type="Sprite2D" parent="Foreground Elements/Objects/ParallaxLayer/Trees2"]
-self_modulate = Color(0.0588235, 0.0588235, 0.0588235, 1)
-position = Vector2(3457.97, 1780.97)
-scale = Vector2(1.246, 1.246)
-texture = ExtResource("8_obq8n")
-
-[node name="Rocks2" type="Node2D" parent="Foreground Elements/Objects/ParallaxLayer"]
-position = Vector2(513, -87)
-scale = Vector2(0.452, 0.452)
-
-[node name="Rock" type="Sprite2D" parent="Foreground Elements/Objects/ParallaxLayer/Rocks2"]
-self_modulate = Color(0.0196078, 0.0196078, 0.0196078, 1)
-position = Vector2(873.894, 1123.89)
-scale = Vector2(3.53, 3.53)
-texture = ExtResource("4_amxbs")
-
-[node name="Bushes2" type="Node2D" parent="Foreground Elements/Objects/ParallaxLayer"]
-modulate = Color(0.141176, 0.141176, 0.141176, 1)
-position = Vector2(562, -291)
-scale = Vector2(0.452, 0.452)
-
-[node name="Bush" type="Sprite2D" parent="Foreground Elements/Objects/ParallaxLayer/Bushes2"]
-position = Vector2(-342.92, 575.221)
-scale = Vector2(1.992, 1.992)
-texture = ExtResource("9_flmba")
-
-[node name="Bush3" type="Sprite2D" parent="Foreground Elements/Objects/ParallaxLayer/Bushes2"]
-position = Vector2(993.363, 639.381)
-scale = Vector2(1.953, 1.953)
-texture = ExtResource("9_flmba")
-
-[node name="Bush2" type="Sprite2D" parent="Foreground Elements/Objects/ParallaxLayer/Bushes2"]
-self_modulate = Color(0.709804, 0.709804, 0.709804, 1)
-position = Vector2(-24.3363, 652.655)
-scale = Vector2(1.65, 1.65)
-texture = ExtResource("9_flmba")
-
-[node name="Bush4" type="Sprite2D" parent="Foreground Elements/Objects/ParallaxLayer/Bushes2"]
-self_modulate = Color(0.709804, 0.709804, 0.709804, 1)
-position = Vector2(1402.66, 646.018)
-scale = Vector2(1.949, 1.949)
-texture = ExtResource("9_flmba")
-
-[node name="ColorRect" type="ColorRect" parent="Foreground Elements"]
-offset_left = -1258.85
-offset_top = 586.283
-offset_right = -1218.85
-offset_bottom = 626.283
-scale = Vector2(92.5044, 26.3097)
-color = Color(0.129412, 0.270588, 0.176471, 1)
+z_index = 5
+position = Vector2(92.9203, 1188.05)
+speed = 20
+jump_force = 650
+
+[node name="art" type="Node2D" parent="."]
+
+[node name="GrassPlane" type="Sprite2D" parent="art"]
+z_index = -4
+position = Vector2(-829.646, 1477.88)
+scale = Vector2(1, 1)
+texture = ExtResource("2_0ol81")
+
+[node name="GrassPlane2" type="Sprite2D" parent="art"]
+z_index = -4
+position = Vector2(1059.73, 1488.94)
+scale = Vector2(1, 1)
+texture = ExtResource("2_0ol81")
+
+[node name="COncept" type="Sprite2D" parent="art"]
+z_index = -5
+position = Vector2(42.0355, 296.46)
+scale = Vector2(1, 1)
+texture = ExtResource("1_x22a5")
+
+[node name="SakuraTree" type="Sprite2D" parent="art"]
+z_index = -5
+position = Vector2(-1274.34, 1048.67)
+scale = Vector2(1, 1)
+texture = ExtResource("4_1xdw1")
+
+[node name="SakuraTree2" type="Sprite2D" parent="art"]
+z_index = -5
+position = Vector2(1477.88, 1061.95)
+scale = Vector2(1, 1)
+texture = ExtResource("4_1xdw1")
+
+[node name="floting_obsticals" type="Node2D" parent="."]
+
+[node name="floting_rock" parent="floting_obsticals" instance=ExtResource("4_oce4b")]
+position = Vector2(-1506.64, 1497.79)
+scale = Vector2(15.3018, 0.780991)
+visable = false
+
+[node name="floting_rock2" parent="floting_obsticals" instance=ExtResource("4_oce4b")]
+position = Vector2(-1110.62, 1115.04)
+rotation = 1.91637
+scale = Vector2(1.81375, 1.50335)
+visable = false
+
+[node name="floting_rock3" parent="floting_obsticals" instance=ExtResource("4_oce4b")]
+position = Vector2(1615.04, 1176.99)
+rotation = 2.14675
+scale = Vector2(1.81375, 1.50335)
+visable = false
+
+[node name="floting_rock4" parent="floting_obsticals" instance=ExtResource("4_oce4b")]
+position = Vector2(-539.823, 1263.27)
+scale = Vector2(1, 1)
+
+[node name="floting_rock5" parent="floting_obsticals" instance=ExtResource("4_oce4b")]
+position = Vector2(-50.8849, 1179.2)
+scale = Vector2(1, 1)
+
+[node name="floting_rock6" parent="floting_obsticals" instance=ExtResource("4_oce4b")]
+position = Vector2(389.38, 1055.31)
+scale = Vector2(1, 1)
+
+[node name="floting_rock7" parent="floting_obsticals" instance=ExtResource("4_oce4b")]
+position = Vector2(-106.195, 946.903)
+scale = Vector2(1, 1)
+
+[node name="floting_rock8" parent="floting_obsticals" instance=ExtResource("4_oce4b")]
+position = Vector2(-546.46, 849.557)
+scale = Vector2(1, 1)
+
+[node name="floting_rock9" parent="floting_obsticals" instance=ExtResource("4_oce4b")]
+position = Vector2(-285.398, 280.973)
+scale = Vector2(1, 1)
+
+[node name="floting_rock10" parent="floting_obsticals" instance=ExtResource("4_oce4b")]
+position = Vector2(227.876, 190.266)
+scale = Vector2(1, 1)
+
+[node name="floting_rock11" parent="floting_obsticals" instance=ExtResource("4_oce4b")]
+position = Vector2(581.858, 365.044)
+scale = Vector2(1, 1)

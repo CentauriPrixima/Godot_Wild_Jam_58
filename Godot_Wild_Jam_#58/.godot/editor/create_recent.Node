@@ -1,9 +1,9 @@
-ParallaxLayer
-ParallaxBackground
 ColorRect
+Node2D
+ParallaxBackground
+ParallaxLayer
 CanvasLayer
 WorldEnvironment
-Node2D
 Camera2D
 StaticBody2D
 Area2D
