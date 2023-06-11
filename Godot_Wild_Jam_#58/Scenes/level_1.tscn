@@ -1,32 +1,40 @@
-[gd_scene load_steps=3 format=3 uid="uid://ca6w6vbcu0fa8"]
+[gd_scene load_steps=4 format=3 uid="uid://ca6w6vbcu0fa8"]
 
 [ext_resource type="PackedScene" uid="uid://buxrckkkib3nf" path="res://Scenes/Entities/player.tscn" id="1_84f63"]
+[ext_resource type="Texture2D" uid="uid://d1wib7p0vtl2n" path="res://Assets/Background/COncept.png" id="1_x22a5"]
 [ext_resource type="PackedScene" uid="uid://c7powupijqw71" path="res://Scenes/floting_rock.tscn" id="2_tbof2"]
 
 [node name="Level1" type="Node2D"]
+position = Vector2(534, -191)
+scale = Vector2(0.452, 0.452)
+
+[node name="COncept" type="Sprite2D" parent="."]
+position = Vector2(128.319, -577.434)
+scale = Vector2(0.993, 0.993)
+texture = ExtResource("1_x22a5")
 
 [node name="player" parent="." instance=ExtResource("1_84f63")]
-position = Vector2(391, 279)
+position = Vector2(933, 293)
 gravity = 25
 
 [node name="floting_rock" parent="." instance=ExtResource("2_tbof2")]
-position = Vector2(-494, 586)
+position = Vector2(37, 580)
 scale = Vector2(5.06756, 1)
 
 [node name="floting_rock3" parent="." instance=ExtResource("2_tbof2")]
-position = Vector2(714, 628)
+position = Vector2(-47, 467)
 
 [node name="floting_rock4" parent="." instance=ExtResource("2_tbof2")]
-position = Vector2(1165, 612)
+position = Vector2(-299, 339)
 
 [node name="floting_rock5" parent="." instance=ExtResource("2_tbof2")]
-position = Vector2(1612, 551)
+position = Vector2(40, 194)
 
 [node name="floting_rock6" parent="." instance=ExtResource("2_tbof2")]
-position = Vector2(2099, 542)
+position = Vector2(381, 78)
 
 [node name="floting_rock7" parent="." instance=ExtResource("2_tbof2")]
-position = Vector2(2497, 633)
+position = Vector2(753, -38)
 
 [node name="floting_rock8" parent="." instance=ExtResource("2_tbof2")]
-position = Vector2(2997, 619)
+position = Vector2(436, -136)
