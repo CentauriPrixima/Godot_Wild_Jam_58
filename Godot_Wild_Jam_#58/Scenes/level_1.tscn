@@ -1,18 +1,21 @@
-[gd_scene load_steps=6 format=3 uid="uid://ca6w6vbcu0fa8"]
+[gd_scene load_steps=8 format=3 uid="uid://cfm0gis7lgkvb"]
 
 [ext_resource type="PackedScene" uid="uid://buxrckkkib3nf" path="res://Scenes/Entities/player.tscn" id="1_84f63"]
+[ext_resource type="Script" path="res://scripts/Global.gd" id="1_vxfb6"]
 [ext_resource type="Texture2D" uid="uid://d1wib7p0vtl2n" path="res://Assets/Background/COncept.png" id="1_x22a5"]
 [ext_resource type="Texture2D" uid="uid://c200eyuvnohhj" path="res://Assets/Objects/Grass_Plane.png" id="2_0ol81"]
 [ext_resource type="Texture2D" uid="uid://dimys8k8x8au5" path="res://Assets/Objects/Sakura_Tree.png" id="4_1xdw1"]
 [ext_resource type="PackedScene" uid="uid://c7powupijqw71" path="res://Scenes/floting_rock.tscn" id="4_oce4b"]
+[ext_resource type="PackedScene" uid="uid://bcn7sydlfy4pe" path="res://Scenes/shrine.tscn" id="7_y4il7"]
 
 [node name="Level1" type="Node2D"]
 position = Vector2(534, -191)
 scale = Vector2(0.452, 0.452)
+script = ExtResource("1_vxfb6")
 
 [node name="player" parent="." instance=ExtResource("1_84f63")]
 z_index = 5
-position = Vector2(92.9203, 1188.05)
+position = Vector2(92.9203, 1334.07)
 speed = 20
 jump_force = 650
 
@@ -21,31 +24,26 @@ jump_force = 650
 [node name="GrassPlane" type="Sprite2D" parent="art"]
 z_index = -4
 position = Vector2(-829.646, 1477.88)
-scale = Vector2(1, 1)
 texture = ExtResource("2_0ol81")
 
 [node name="GrassPlane2" type="Sprite2D" parent="art"]
 z_index = -4
 position = Vector2(1059.73, 1488.94)
-scale = Vector2(1, 1)
 texture = ExtResource("2_0ol81")
 
 [node name="COncept" type="Sprite2D" parent="art"]
 z_index = -5
 position = Vector2(42.0355, 296.46)
-scale = Vector2(1, 1)
 texture = ExtResource("1_x22a5")
 
 [node name="SakuraTree" type="Sprite2D" parent="art"]
 z_index = -5
 position = Vector2(-1274.34, 1048.67)
-scale = Vector2(1, 1)
 texture = ExtResource("4_1xdw1")
 
 [node name="SakuraTree2" type="Sprite2D" parent="art"]
 z_index = -5
 position = Vector2(1477.88, 1061.95)
-scale = Vector2(1, 1)
 texture = ExtResource("4_1xdw1")
 
 [node name="floting_obsticals" type="Node2D" parent="."]
@@ -56,45 +54,43 @@ scale = Vector2(15.3018, 0.780991)
 visable = false
 
 [node name="floting_rock2" parent="floting_obsticals" instance=ExtResource("4_oce4b")]
-position = Vector2(-1110.62, 1115.04)
+position = Vector2(-1024.34, 858.407)
 rotation = 1.91637
-scale = Vector2(1.81375, 1.50335)
+scale = Vector2(3.44574, 1.50335)
 visable = false
 
 [node name="floting_rock3" parent="floting_obsticals" instance=ExtResource("4_oce4b")]
-position = Vector2(1615.04, 1176.99)
+position = Vector2(1862.83, 816.372)
 rotation = 2.14675
-scale = Vector2(1.81375, 1.50335)
+scale = Vector2(4.31797, 1.50335)
 visable = false
 
 [node name="floting_rock4" parent="floting_obsticals" instance=ExtResource("4_oce4b")]
 position = Vector2(-539.823, 1263.27)
-scale = Vector2(1, 1)
 
 [node name="floting_rock5" parent="floting_obsticals" instance=ExtResource("4_oce4b")]
-position = Vector2(-50.8849, 1179.2)
-scale = Vector2(1, 1)
+position = Vector2(-97.3452, 1203.54)
 
 [node name="floting_rock6" parent="floting_obsticals" instance=ExtResource("4_oce4b")]
-position = Vector2(389.38, 1055.31)
-scale = Vector2(1, 1)
+position = Vector2(320.796, 1115.04)
 
 [node name="floting_rock7" parent="floting_obsticals" instance=ExtResource("4_oce4b")]
-position = Vector2(-106.195, 946.903)
-scale = Vector2(1, 1)
+position = Vector2(-33.1858, 986.726)
+scale = Vector2(0.380531, 1)
 
 [node name="floting_rock8" parent="floting_obsticals" instance=ExtResource("4_oce4b")]
-position = Vector2(-546.46, 849.557)
-scale = Vector2(1, 1)
+position = Vector2(-513.274, 860.619)
 
 [node name="floting_rock9" parent="floting_obsticals" instance=ExtResource("4_oce4b")]
-position = Vector2(-285.398, 280.973)
-scale = Vector2(1, 1)
+position = Vector2(84.0709, 780.973)
+scale = Vector2(0.469027, 1)
 
 [node name="floting_rock10" parent="floting_obsticals" instance=ExtResource("4_oce4b")]
-position = Vector2(227.876, 190.266)
-scale = Vector2(1, 1)
+position = Vector2(409.292, 703.54)
 
 [node name="floting_rock11" parent="floting_obsticals" instance=ExtResource("4_oce4b")]
-position = Vector2(581.858, 365.044)
-scale = Vector2(1, 1)
+position = Vector2(756.637, 601.77)
+
+[node name="shrine" parent="." instance=ExtResource("7_y4il7")]
+position = Vector2(1347.35, 610.619)
+scale = Vector2(2, 2)

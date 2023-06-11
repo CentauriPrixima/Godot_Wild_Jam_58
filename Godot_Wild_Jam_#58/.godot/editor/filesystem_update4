@@ -1,3 +1,7 @@
 res://Scenes/level_1.tscn
+res://Global.gd
 res://Scenes/Entities/player.tscn
 res://Scenes/floting_rock.tscn
+res://Scenes/shrine.tscn
+res://Scenes/shrine.gd
+res://scripts/shrine.gd
