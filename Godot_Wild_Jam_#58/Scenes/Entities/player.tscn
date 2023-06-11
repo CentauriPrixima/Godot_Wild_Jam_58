@@ -161,8 +161,6 @@ position = Vector2(0, 4)
 scale = Vector2(0.3, 0.3)
 sprite_frames = SubResource("SpriteFrames_k8msp")
 animation = &"run"
-frame = 5
-frame_progress = 0.929993
 metadata/_edit_lock_ = true
 metadata/_edit_group_ = true
 

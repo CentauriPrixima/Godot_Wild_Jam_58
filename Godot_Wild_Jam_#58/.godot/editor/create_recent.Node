@@ -1,6 +1,6 @@
-ColorRect
 ParallaxLayer
 ParallaxBackground
+ColorRect
 CanvasLayer
 WorldEnvironment
 Node2D

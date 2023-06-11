@@ -1,12 +1,18 @@
-[gd_scene load_steps=12 format=3 uid="uid://ca6w6vbcu0fa8"]
+[gd_scene load_steps=18 format=3 uid="uid://ca6w6vbcu0fa8"]
 
 [ext_resource type="PackedScene" uid="uid://buxrckkkib3nf" path="res://Scenes/Entities/player.tscn" id="1_84f63"]
 [ext_resource type="Texture2D" uid="uid://d1wib7p0vtl2n" path="res://Assets/Background/COncept.png" id="1_x22a5"]
 [ext_resource type="Texture2D" uid="uid://cw8hoysv7phjd" path="res://Assets/Objects/Tree_Para.png" id="2_3fqtw"]
+[ext_resource type="Texture2D" uid="uid://bygmtbpav6kwa" path="res://Assets/Background/Sky Gradient.png" id="2_a6sik"]
 [ext_resource type="Texture2D" uid="uid://dimys8k8x8au5" path="res://Assets/Objects/Sakura_Tree.png" id="2_fgbcm"]
 [ext_resource type="PackedScene" uid="uid://c7powupijqw71" path="res://Scenes/floting_rock.tscn" id="2_tbof2"]
+[ext_resource type="Texture2D" uid="uid://hthbav41ury2" path="res://Assets/Background/Forest_L_B.png" id="3_0rtt0"]
+[ext_resource type="Texture2D" uid="uid://b2c4ruvgmp4yw" path="res://Assets/Background/Tower_CenterPiece.png" id="3_ifvst"]
+[ext_resource type="Texture2D" uid="uid://dxpq2o4c7lk3q" path="res://Assets/Background/Mountains far.png" id="3_p2tcf"]
 [ext_resource type="Texture2D" uid="uid://cxc770pia83t7" path="res://Assets/Objects/Bush.png" id="3_wd61b"]
 [ext_resource type="Texture2D" uid="uid://w01rgxvsoull" path="res://Assets/Objects/Rock.png" id="4_amxbs"]
+[ext_resource type="Texture2D" uid="uid://dlc1v7pfgmujf" path="res://Assets/Background/Mountain Layer.png" id="4_h56ja"]
+[ext_resource type="Texture2D" uid="uid://cj77l316burto" path="res://Assets/Background/Forest_R_B.png" id="4_y3eau"]
 [ext_resource type="Texture2D" uid="uid://c200eyuvnohhj" path="res://Assets/Objects/Grass_Plane.png" id="8_bb5io"]
 [ext_resource type="Texture2D" uid="uid://cnmqu8h6exx7g" path="res://Assets/Objects/Sakura_Tree_B.png" id="8_obq8n"]
 [ext_resource type="Texture2D" uid="uid://rfrpk4hq0t6c" path="res://Assets/Objects/Bush_B.png" id="9_flmba"]
@@ -29,18 +35,64 @@ environment = SubResource("Environment_mvuu1")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 layer = -10
-follow_viewport_enabled = true
-follow_viewport_scale = 0.75
+follow_viewport_scale = 83.319
 
 [node name="COncept" type="Sprite2D" parent="CanvasLayer"]
+visible = false
 z_index = -19
 position = Vector2(-160, -2140)
 scale = Vector2(0.658564, 0.658564)
 texture = ExtResource("1_x22a5")
 centered = false
 
+[node name="SkyGradient" type="Sprite2D" parent="CanvasLayer"]
+position = Vector2(1204, -448)
+scale = Vector2(3.203, 3.203)
+texture = ExtResource("2_a6sik")
+
 [node name="Background elements" type="Node2D" parent="."]
 position = Vector2(-46.4602, 230.089)
+
+[node name="Background_Pieces" type="ParallaxBackground" parent="Background elements"]
+layer = -1
+
+[node name="Far" type="ParallaxLayer" parent="Background elements/Background_Pieces"]
+motion_scale = Vector2(0.1, 0.1)
+motion_offset = Vector2(0, 500)
+
+[node name="MountainsFar" type="Sprite2D" parent="Background elements/Background_Pieces/Far"]
+position = Vector2(560, -349)
+texture = ExtResource("3_p2tcf")
+
+[node name="Mid" type="ParallaxLayer" parent="Background elements/Background_Pieces"]
+position = Vector2(0, 410)
+scale = Vector2(0.93, 0.93)
+motion_scale = Vector2(0.2, 0.2)
+motion_offset = Vector2(0, 400)
+
+[node name="MountainLayer" type="Sprite2D" parent="Background elements/Background_Pieces/Mid"]
+position = Vector2(594.624, -732.258)
+texture = ExtResource("4_h56ja")
+
+[node name="Close" type="ParallaxLayer" parent="Background elements/Background_Pieces"]
+motion_scale = Vector2(0.3, 0.3)
+motion_offset = Vector2(0, 450)
+
+[node name="ForestLB" type="Sprite2D" parent="Background elements/Background_Pieces/Close"]
+position = Vector2(-324, -576)
+texture = ExtResource("3_0rtt0")
+centered = false
+
+[node name="ForestRB" type="Sprite2D" parent="Background elements/Background_Pieces/Close"]
+position = Vector2(1042, -680)
+texture = ExtResource("4_y3eau")
+centered = false
+
+[node name="TowerCenterPiece" type="Sprite2D" parent="Background elements/Background_Pieces/Close"]
+position = Vector2(229, -876)
+scale = Vector2(1.641, 1.641)
+texture = ExtResource("3_ifvst")
+centered = false
 
 [node name="Trees" type="Node2D" parent="Background elements"]
 
