@@ -8,10 +8,6 @@ script/source = "extends Area2D
 func _ready():
 	$ColorRect.visible = visable
 
-func ground():
-	pass
-
-
 "
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g3n23"]
