@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://cfm0gis7lgkvb"]
+[gd_scene load_steps=9 format=3 uid="uid://cfm0gis7lgkvb"]
 
 [ext_resource type="PackedScene" uid="uid://buxrckkkib3nf" path="res://Scenes/Entities/player.tscn" id="1_84f63"]
 [ext_resource type="Script" path="res://scripts/Global.gd" id="1_vxfb6"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://dimys8k8x8au5" path="res://Assets/Objects/Sakura_Tree.png" id="4_1xdw1"]
 [ext_resource type="PackedScene" uid="uid://c7powupijqw71" path="res://Scenes/floting_rock.tscn" id="4_oce4b"]
 [ext_resource type="PackedScene" uid="uid://bcn7sydlfy4pe" path="res://Scenes/shrine.tscn" id="7_y4il7"]
+[ext_resource type="PackedScene" uid="uid://d2wdltfnkd7s6" path="res://Scenes/powerups.tscn" id="8_2wy1u"]
 
 [node name="Level1" type="Node2D"]
 position = Vector2(534, -191)
@@ -94,3 +95,7 @@ position = Vector2(756.637, 601.77)
 [node name="shrine" parent="." instance=ExtResource("7_y4il7")]
 position = Vector2(1347.35, 610.619)
 scale = Vector2(2, 2)
+
+[node name="powerups" parent="." instance=ExtResource("8_2wy1u")]
+position = Vector2(692.478, 1334.07)
+double_jump_pu = true

@@ -12,6 +12,8 @@ var og_speed = speed
 @export var gravity = 30
 @export var maxfallspeed = 1000
 @export var jump_force = 500
+var can_die = true
+var can_double_jump = false
 
 # ready func
 func _ready():
@@ -31,8 +33,12 @@ func player_movement(delta):
 		velocity.y += gravity
 	if velocity.y > maxfallspeed:
 		velocity.y = maxfallspeed
-	if Input.get_action_strength(\"up\") and is_on_floor():
+	if Input.is_action_just_pressed(\"up\") and is_on_floor():
 		velocity.y = -jump_force
+	elif Input.is_action_just_pressed(\"up\") and can_double_jump == true and !is_on_floor():
+		velocity.y = 0
+		velocity.y = -jump_force
+		can_double_jump = false
 	
 	
 	velocity.x = Input.get_action_strength(\"right\") - Input.get_action_strength(\"left\")
@@ -72,6 +78,18 @@ func hbox_idleish():
 
 func player():
 	pass
+
+func invincable_pu(time):
+	can_die = false
+	$invincable_timer.wait_time = time
+	$invincable_timer.start()
+
+func double_jump_pu():
+	can_double_jump = true
+
+
+func _on_invincable_timer_timeout():
+	can_die = true
 "
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5u4do"]
@@ -174,3 +192,7 @@ zoom = Vector2(1.81, 1.81)
 limit_left = -329
 limit_smoothed = true
 drag_horizontal_enabled = true
+
+[node name="invincable_timer" type="Timer" parent="."]
+
+[connection signal="timeout" from="invincable_timer" to="." method="_on_invincable_timer_timeout"]
