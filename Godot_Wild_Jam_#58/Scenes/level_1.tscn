@@ -9,9 +9,10 @@ position = Vector2(534, -191)
 scale = Vector2(0.452, 0.452)
 
 [node name="COncept" type="Sprite2D" parent="."]
-position = Vector2(128.319, -577.434)
-scale = Vector2(0.993, 0.993)
+position = Vector2(650.442, -1132.74)
+scale = Vector2(1.457, 1.457)
 texture = ExtResource("1_x22a5")
+metadata/_edit_lock_ = true
 
 [node name="player" parent="." instance=ExtResource("1_84f63")]
 position = Vector2(933, 293)
@@ -22,19 +23,101 @@ position = Vector2(37, 580)
 scale = Vector2(5.06756, 1)
 
 [node name="floting_rock3" parent="." instance=ExtResource("2_tbof2")]
-position = Vector2(-47, 467)
+position = Vector2(-157.08, 327.434)
 
 [node name="floting_rock4" parent="." instance=ExtResource("2_tbof2")]
-position = Vector2(-299, 339)
+position = Vector2(-471.239, 154.867)
 
 [node name="floting_rock5" parent="." instance=ExtResource("2_tbof2")]
-position = Vector2(40, 194)
+position = Vector2(-99.5576, -99.5576)
 
 [node name="floting_rock6" parent="." instance=ExtResource("2_tbof2")]
-position = Vector2(381, 78)
+position = Vector2(415.929, -97.3452)
 
 [node name="floting_rock7" parent="." instance=ExtResource("2_tbof2")]
-position = Vector2(753, -38)
+position = Vector2(991.15, -88.4956)
 
 [node name="floting_rock8" parent="." instance=ExtResource("2_tbof2")]
-position = Vector2(436, -136)
+position = Vector2(690.265, -564.159)
+
+[node name="floting_rock22" parent="." instance=ExtResource("2_tbof2")]
+position = Vector2(1267.7, -325.221)
+
+[node name="floting_rock23" parent="." instance=ExtResource("2_tbof2")]
+position = Vector2(889.381, -442.478)
+
+[node name="floting_rock24" parent="." instance=ExtResource("2_tbof2")]
+position = Vector2(-632.743, -853.982)
+
+[node name="floting_rock25" parent="." instance=ExtResource("2_tbof2")]
+position = Vector2(-1183.63, -893.805)
+
+[node name="floting_rock26" parent="." instance=ExtResource("2_tbof2")]
+position = Vector2(-842.92, -1132.74)
+
+[node name="floting_rock27" parent="." instance=ExtResource("2_tbof2")]
+position = Vector2(-314.159, -1143.81)
+
+[node name="floting_rock9" parent="." instance=ExtResource("2_tbof2")]
+position = Vector2(-88.4955, -628.319)
+
+[node name="floting_rock10" parent="." instance=ExtResource("2_tbof2")]
+position = Vector2(-331.858, -632.743)
+
+[node name="floting_rock11" parent="." instance=ExtResource("2_tbof2")]
+position = Vector2(150.442, -1070.8)
+
+[node name="floting_rock12" parent="." instance=ExtResource("2_tbof2")]
+position = Vector2(780.973, -1064.16)
+
+[node name="floting_rock13" parent="." instance=ExtResource("2_tbof2")]
+position = Vector2(1334.07, -1210.18)
+
+[node name="floting_rock14" parent="." instance=ExtResource("2_tbof2")]
+position = Vector2(871.682, -1407.08)
+
+[node name="floting_rock28" parent="." instance=ExtResource("2_tbof2")]
+position = Vector2(1278.76, -1584.07)
+
+[node name="floting_rock29" parent="." instance=ExtResource("2_tbof2")]
+position = Vector2(920.354, -1800.88)
+
+[node name="floting_rock21" parent="." instance=ExtResource("2_tbof2")]
+position = Vector2(-969.026, -2493.36)
+
+[node name="floting_rock15" parent="." instance=ExtResource("2_tbof2")]
+position = Vector2(1568.58, -1902.65)
+
+[node name="floting_rock30" parent="." instance=ExtResource("2_tbof2")]
+position = Vector2(1957.96, -1568.58)
+
+[node name="floting_rock31" parent="." instance=ExtResource("2_tbof2")]
+position = Vector2(2276.55, -1758.85)
+
+[node name="floting_rock32" parent="." instance=ExtResource("2_tbof2")]
+position = Vector2(2621.68, -1949.12)
+
+[node name="floting_rock33" parent="." instance=ExtResource("2_tbof2")]
+position = Vector2(2174.78, -2172.57)
+
+[node name="floting_rock34" parent="." instance=ExtResource("2_tbof2")]
+position = Vector2(1668.14, -2338.5)
+
+[node name="floting_rock16" parent="." instance=ExtResource("2_tbof2")]
+position = Vector2(1128.32, -2409.29)
+
+[node name="floting_rock17" parent="." instance=ExtResource("2_tbof2")]
+position = Vector2(626.106, -2174.78)
+scale = Vector2(0.292038, 1)
+
+[node name="floting_rock18" parent="." instance=ExtResource("2_tbof2")]
+position = Vector2(292.035, -1935.84)
+scale = Vector2(0.431223, 1.02819)
+
+[node name="floting_rock19" parent="." instance=ExtResource("2_tbof2")]
+position = Vector2(-64.1592, -1789.82)
+scale = Vector2(0.431223, 1.02819)
+
+[node name="floting_rock20" parent="." instance=ExtResource("2_tbof2")]
+position = Vector2(-453.54, -2075.22)
+scale = Vector2(0.431223, 1.02819)
