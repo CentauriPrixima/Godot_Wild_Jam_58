@@ -12,6 +12,8 @@ script/source = "extends Node2D
 @onready var tween = create_tween()
 
 func _ready():
+	tween.set_trans(Tween.TRANS_QUAD)
+	tween.set_ease(Tween.EASE_OUT)
 	if can_move:
 		$Node2D/AnimationPlayer.play(\"Idle\")
 
