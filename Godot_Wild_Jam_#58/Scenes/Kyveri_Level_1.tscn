@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://cbitufe7rw8b4"]
+[gd_scene load_steps=19 format=3 uid="uid://cbitufe7rw8b4"]
 
 [ext_resource type="Texture2D" uid="uid://d1wib7p0vtl2n" path="res://Assets/Background/COncept.png" id="1_4xlty"]
 [ext_resource type="Texture2D" uid="uid://bygmtbpav6kwa" path="res://Assets/Background/Sky Gradient.png" id="2_jhp7o"]
@@ -16,6 +16,7 @@
 [ext_resource type="Texture2D" uid="uid://c200eyuvnohhj" path="res://Assets/Objects/Grass_Plane.png" id="14_scs0q"]
 [ext_resource type="Texture2D" uid="uid://cnmqu8h6exx7g" path="res://Assets/Objects/Sakura_Tree_B.png" id="15_soocs"]
 [ext_resource type="Texture2D" uid="uid://rfrpk4hq0t6c" path="res://Assets/Objects/Bush_B.png" id="16_lfpbp"]
+[ext_resource type="AudioStream" uid="uid://b2mi3vtnd5oj3" path="res://Assets/SFX/Placeholder Music from SoundCloud Steve Oxen.mp3" id="17_psyi3"]
 
 [sub_resource type="Environment" id="Environment_5eko8"]
 
@@ -40,7 +41,7 @@ centered = false
 
 [node name="SkyGradient" type="Sprite2D" parent="CanvasLayer"]
 position = Vector2(1204, -448)
-scale = Vector2(3.203, 3.203)
+scale = Vector2(3.161, 3.161)
 texture = ExtResource("2_jhp7o")
 
 [node name="Background elements" type="Node2D" parent="."]
@@ -79,6 +80,18 @@ centered = false
 [node name="ForestRB" type="Sprite2D" parent="Background elements/Background_Pieces/Close"]
 position = Vector2(1042, -680)
 texture = ExtResource("6_32cjc")
+centered = false
+
+[node name="TreePara3" type="Sprite2D" parent="Background elements/Background_Pieces/Close"]
+position = Vector2(684, -454)
+scale = Vector2(0.297868, 0.297868)
+texture = ExtResource("8_joxfa")
+centered = false
+
+[node name="TreePara4" type="Sprite2D" parent="Background elements/Background_Pieces/Close"]
+position = Vector2(-330, -410)
+scale = Vector2(0.297868, 0.297868)
+texture = ExtResource("8_joxfa")
 centered = false
 
 [node name="TowerCenterPiece" type="Sprite2D" parent="Background elements/Background_Pieces/Close"]
@@ -212,7 +225,7 @@ gravity = 25
 [node name="Platforms" type="Node2D" parent="."]
 
 [node name="floting_rock" parent="Platforms" instance=ExtResource("13_184o8")]
-position = Vector2(-1360.62, 580)
+position = Vector2(-1526.55, 522.124)
 scale = Vector2(25.864, 1)
 
 [node name="floting_rock3" parent="Platforms" instance=ExtResource("13_184o8")]
@@ -249,7 +262,7 @@ position = Vector2(-1183.63, -893.805)
 position = Vector2(-842.921, -1132.74)
 
 [node name="floting_rock27" parent="Platforms" instance=ExtResource("13_184o8")]
-position = Vector2(-314.159, -1143.81)
+position = Vector2(-329.646, -1044.25)
 
 [node name="floting_rock9" parent="Platforms" instance=ExtResource("13_184o8")]
 position = Vector2(-88.4956, -628.319)
@@ -276,7 +289,8 @@ position = Vector2(1278.76, -1584.07)
 position = Vector2(920.354, -1800.88)
 
 [node name="floting_rock21" parent="Platforms" instance=ExtResource("13_184o8")]
-position = Vector2(-953.54, -2351.77)
+position = Vector2(-1398.23, -2356.19)
+scale = Vector2(2.604, 2.604)
 
 [node name="floting_rock15" parent="Platforms" instance=ExtResource("13_184o8")]
 position = Vector2(1568.58, -1902.66)
@@ -301,7 +315,7 @@ position = Vector2(1128.32, -2409.29)
 
 [node name="floting_rock17" parent="Platforms" instance=ExtResource("13_184o8")]
 position = Vector2(626.106, -2174.78)
-scale = Vector2(0.292038, 1)
+scale = Vector2(0.585, 0.585)
 
 [node name="floting_rock18" parent="Platforms" instance=ExtResource("13_184o8")]
 position = Vector2(292.035, -1935.84)
@@ -447,6 +461,7 @@ scale = Vector2(1.246, 1.246)
 texture = ExtResource("15_soocs")
 
 [node name="SakuraTree5" type="Sprite2D" parent="Foreground Elements/Objects/ParallaxLayer/Trees2"]
+visible = false
 self_modulate = Color(0.0588235, 0.0588235, 0.0588235, 1)
 position = Vector2(-407, 1978)
 scale = Vector2(1.246, 1.246)
@@ -518,3 +533,7 @@ range_layer_max = 100
 shadow_enabled = true
 shadow_color = Color(0.647059, 0, 0.639216, 0.631373)
 height = 0.11
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("17_psyi3")
+autoplay = true
