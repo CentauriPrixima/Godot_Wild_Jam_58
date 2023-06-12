@@ -17,21 +17,14 @@
 [ext_resource type="Texture2D" uid="uid://cnmqu8h6exx7g" path="res://Assets/Objects/Sakura_Tree_B.png" id="15_soocs"]
 [ext_resource type="Texture2D" uid="uid://rfrpk4hq0t6c" path="res://Assets/Objects/Bush_B.png" id="16_lfpbp"]
 
-[sub_resource type="Environment" id="Environment_mvuu1"]
-background_mode = 3
-background_energy_multiplier = 5.2
-fog_enabled = true
-fog_light_color = Color(0.137255, 0.623529, 0.623529, 1)
-fog_light_energy = 1.48
-fog_density = 0.2221
-fog_height = -62.06
+[sub_resource type="Environment" id="Environment_5eko8"]
 
 [node name="Level1" type="Node2D"]
 position = Vector2(534, -191)
 scale = Vector2(0.452, 0.452)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_mvuu1")
+environment = SubResource("Environment_5eko8")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 layer = -10
@@ -223,19 +216,19 @@ position = Vector2(-1360.62, 580)
 scale = Vector2(25.864, 1)
 
 [node name="floting_rock3" parent="Platforms" instance=ExtResource("13_184o8")]
-position = Vector2(-157.08, 327.434)
+position = Vector2(-157.08, 382.743)
 
 [node name="floting_rock4" parent="Platforms" instance=ExtResource("13_184o8")]
-position = Vector2(-471.239, 154.867)
+position = Vector2(-471.239, 252.212)
 
 [node name="floting_rock5" parent="Platforms" instance=ExtResource("13_184o8")]
-position = Vector2(-99.5576, -99.5576)
+position = Vector2(-90.708, 44.2477)
 
 [node name="floting_rock6" parent="Platforms" instance=ExtResource("13_184o8")]
-position = Vector2(415.929, -97.3451)
+position = Vector2(351.77, -61.9469)
 
 [node name="floting_rock7" parent="Platforms" instance=ExtResource("13_184o8")]
-position = Vector2(991.15, -88.4956)
+position = Vector2(823.009, -112.832)
 
 [node name="floting_rock8" parent="Platforms" instance=ExtResource("13_184o8")]
 position = Vector2(690.265, -564.159)
@@ -330,6 +323,7 @@ layer = 1
 [node name="ParallaxLayer" type="ParallaxLayer" parent="Foreground Elements/Grass"]
 position = Vector2(5, -8)
 motion_scale = Vector2(1.1, 1.1)
+motion_offset = Vector2(0, 50)
 
 [node name="GrassPlane" type="Sprite2D" parent="Foreground Elements/Grass/ParallaxLayer"]
 position = Vector2(500, 41)
@@ -346,7 +340,21 @@ centered = false
 offset = Vector2(0, -80)
 
 [node name="GrassPlane3" type="Sprite2D" parent="Foreground Elements/Grass/ParallaxLayer"]
-position = Vector2(-107, 41)
+position = Vector2(1047, -11)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("14_scs0q")
+centered = false
+offset = Vector2(0, -80)
+
+[node name="GrassPlane5" type="Sprite2D" parent="Foreground Elements/Grass/ParallaxLayer"]
+position = Vector2(580, -13)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("14_scs0q")
+centered = false
+offset = Vector2(0, -80)
+
+[node name="GrassPlane6" type="Sprite2D" parent="Foreground Elements/Grass/ParallaxLayer"]
+position = Vector2(137, -3)
 scale = Vector2(0.25, 0.25)
 texture = ExtResource("14_scs0q")
 centered = false
@@ -500,3 +508,13 @@ offset_right = -1218.85
 offset_bottom = 626.283
 scale = Vector2(92.5044, 26.3097)
 color = Color(0.129412, 0.270588, 0.176471, 1)
+
+[node name="PointLight2D" type="DirectionalLight2D" parent="."]
+position = Vector2(-513.274, -1772.12)
+color = Color(0.694118, 0.360784, 0.0901961, 1)
+energy = 0.59
+range_layer_min = -100
+range_layer_max = 100
+shadow_enabled = true
+shadow_color = Color(0.647059, 0, 0.639216, 0.631373)
+height = 0.11

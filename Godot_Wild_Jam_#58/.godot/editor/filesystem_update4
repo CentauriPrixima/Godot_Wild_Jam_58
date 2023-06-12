@@ -1,10 +1,6 @@
 res://Scenes/level_1.tscn
-res://Global.gd
 res://Scenes/Entities/player.tscn
 res://Scenes/floting_rock.tscn
 res://Scenes/shrine.tscn
-res://Scenes/shrine.gd
-res://scripts/shrine.gd
-res://scripts/Global.gd
 res://Scenes/powerups.tscn
-res://scripts/powerups.gd
+res://Scenes/Kyveri_Level_1.tscn
