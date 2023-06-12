@@ -1,14 +1,16 @@
+Timer
 AnimationPlayer
-GPUParticles2D
+Line2D
+Sprite2D
 Node2D
+GPUParticles2D
+AnimatedSprite2D
 CollisionShape2D
 StaticBody2D
-Sprite2D
 AudioStreamPlayer
 DirectionalLight2D
 PointLight2D
 WorldEnvironment
-Timer
 Area2D
 CollisionPolygon2D
 Camera2D
@@ -16,5 +18,4 @@ ColorRect
 ParallaxBackground
 ParallaxLayer
 CanvasLayer
-AnimatedSprite2D
 CharacterBody2D

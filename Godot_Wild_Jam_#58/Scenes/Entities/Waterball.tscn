@@ -1,0 +1,107 @@
+[gd_scene load_steps=11 format=3 uid="uid://1lu00201hiyw"]
+
+[ext_resource type="Texture2D" uid="uid://dm8e8es226d2x" path="res://Assets/Objects/Water_Particle.png" id="1_7xg7p"]
+[ext_resource type="Texture2D" uid="uid://3jmjfeh45nt1" path="res://Assets/Objects/Water_Ball_Sheet.png" id="2_njx2t"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4rkah"]
+atlas = ExtResource("2_njx2t")
+region = Rect2(0, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ooq42"]
+atlas = ExtResource("2_njx2t")
+region = Rect2(256, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r8l5b"]
+atlas = ExtResource("2_njx2t")
+region = Rect2(512, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yjx0a"]
+atlas = ExtResource("2_njx2t")
+region = Rect2(768, 0, 256, 256)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6d4l7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4rkah")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ooq42")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r8l5b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yjx0a")
+}],
+"loop": true,
+"name": &"default",
+"speed": 7.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"new_animation",
+"speed": 5.0
+}]
+
+[sub_resource type="Animation" id="Animation_nl54t"]
+resource_name = "new_animation"
+length = 10.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 10),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 6.28319]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_wyern"]
+_data = {
+"new_animation": SubResource("Animation_nl54t")
+}
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_ablu1"]
+emission_shape = 1
+emission_sphere_radius = 117.35
+particle_flag_disable_z = true
+spread = 79.55
+flatness = 0.2
+gravity = Vector3(0, 98, 0)
+orbit_velocity_min = 0.0
+orbit_velocity_max = 0.0
+damping_max = 1.01
+scale_min = 0.3
+scale_max = 0.7
+color = Color(1, 1, 1, 0.521569)
+turbulence_enabled = true
+turbulence_noise_strength = 8.68
+
+[node name="Waterball" type="Node2D"]
+position = Vector2(19, 9)
+
+[node name="Node2D" type="AnimatedSprite2D" parent="."]
+self_modulate = Color(1, 1, 1, 0.866667)
+position = Vector2(36, 43)
+rotation = 1.79969
+sprite_frames = SubResource("SpriteFrames_6d4l7")
+autoplay = "default"
+frame_progress = 0.657878
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Node2D"]
+autoplay = "new_animation"
+libraries = {
+"": SubResource("AnimationLibrary_wyern")
+}
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+z_index = -1
+position = Vector2(44, 34)
+amount = 6
+process_material = SubResource("ParticleProcessMaterial_ablu1")
+texture = ExtResource("1_7xg7p")

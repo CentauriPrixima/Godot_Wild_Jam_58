@@ -1,7 +1,6 @@
-[gd_scene load_steps=11 format=3 uid="uid://bsgabdtkyhb1c"]
+[gd_scene load_steps=10 format=3 uid="uid://cc4mo68yvhi30"]
 
 [ext_resource type="Texture2D" uid="uid://daup1av614qyq" path="res://Assets/Objects/Platform_1.png" id="1_1qhtg"]
-[ext_resource type="Script" path="res://scripts/Platforms.gd" id="2_gcxas"]
 [ext_resource type="Texture2D" uid="uid://0r6m8njfonuv" path="res://Assets/Objects/Platform_P.png" id="2_qk8jk"]
 
 [sub_resource type="Gradient" id="Gradient_jbv0j"]
@@ -16,6 +15,7 @@ emission_shape = 1
 emission_sphere_radius = 50.13
 particle_flag_disable_z = true
 direction = Vector3(10, 1, 0)
+spread = 0.0
 gravity = Vector3(0, 100, 0)
 initial_velocity_max = 0.1
 angular_velocity_min = -523.64
@@ -33,12 +33,12 @@ turbulence_enabled = true
 turbulence_influence_max = 0.23
 turbulence_initial_displacement_max = 26.3
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_wreks"]
-size = Vector2(14.5022, 98.049)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xahlw"]
+size = Vector2(105, 26)
 
 [sub_resource type="Animation" id="Animation_073sp"]
 resource_name = "Idle"
-length = 3.0
+length = 4.0
 loop_mode = 2
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -47,8 +47,8 @@ tracks/0/path = NodePath(".:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 3),
-"transitions": PackedFloat32Array(-2.36, 2.63902),
+"times": PackedFloat32Array(0, 3.9),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector2(-18, -95), Vector2(-18, -64)]
 }
@@ -79,10 +79,10 @@ position = Vector2(-18, -95)
 scale = Vector2(1.999, 1.999)
 texture = ExtResource("1_1qhtg")
 centered = false
-script = ExtResource("2_gcxas")
 
 [node name="GPUParticles2D" type="GPUParticles2D" parent="."]
 position = Vector2(66.5333, 68.034)
+scale = Vector2(1, 1)
 amount = 7
 process_material = SubResource("ParticleProcessMaterial_f3fhs")
 texture = ExtResource("2_qk8jk")
@@ -91,12 +91,11 @@ speed_scale = 0.4
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(62.031, 78.7869)
-rotation = 1.5708
-scale = Vector2(1, 1)
-shape = SubResource("RectangleShape2D_wreks")
+position = Vector2(63, 74)
+shape = SubResource("RectangleShape2D_xahlw")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "Idle"
 libraries = {
 "": SubResource("AnimationLibrary_q6g47")
 }

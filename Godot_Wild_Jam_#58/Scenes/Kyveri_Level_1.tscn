@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://bqeaeqskk0f8e"]
+[gd_scene load_steps=25 format=3 uid="uid://cbitufe7rw8b4"]
 
 [ext_resource type="Texture2D" uid="uid://d1wib7p0vtl2n" path="res://Assets/Background/COncept.png" id="1_4xlty"]
 [ext_resource type="Texture2D" uid="uid://bygmtbpav6kwa" path="res://Assets/Background/Sky Gradient.png" id="2_jhp7o"]
@@ -18,6 +18,8 @@
 [ext_resource type="Texture2D" uid="uid://cnmqu8h6exx7g" path="res://Assets/Objects/Sakura_Tree_B.png" id="15_soocs"]
 [ext_resource type="Texture2D" uid="uid://rfrpk4hq0t6c" path="res://Assets/Objects/Bush_B.png" id="16_lfpbp"]
 [ext_resource type="AudioStream" uid="uid://b2mi3vtnd5oj3" path="res://Assets/SFX/Placeholder Music from SoundCloud Steve Oxen.mp3" id="17_psyi3"]
+[ext_resource type="PackedScene" uid="uid://1lu00201hiyw" path="res://Scenes/Entities/Waterball.tscn" id="19_rp1mf"]
+[ext_resource type="PackedScene" uid="uid://c4dumlyhmo74m" path="res://Scenes/Entities/Orb.tscn" id="20_w2vtx"]
 
 [sub_resource type="Animation" id="Animation_64vm0"]
 resource_name = "CLoud Panning"
@@ -619,3 +621,46 @@ height = 0.11
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("17_psyi3")
 autoplay = true
+
+[node name="Hazards" type="Node2D" parent="."]
+
+[node name="WaterBall" parent="Hazards" instance=ExtResource("19_rp1mf")]
+position = Vector2(342.92, -641.593)
+scale = Vector2(1.995, 1.995)
+
+[node name="WaterBall3" parent="Hazards" instance=ExtResource("19_rp1mf")]
+position = Vector2(1940.27, -2221.24)
+scale = Vector2(1.995, 1.995)
+
+[node name="WaterBall4" parent="Hazards" instance=ExtResource("19_rp1mf")]
+position = Vector2(889.381, -2303.1)
+scale = Vector2(1.995, 1.995)
+
+[node name="WaterBall2" parent="Hazards" instance=ExtResource("19_rp1mf")]
+position = Vector2(203.54, -1493.36)
+scale = Vector2(1.995, 1.995)
+
+[node name="Water Spouts" parent="Hazards" instance=ExtResource("20_w2vtx")]
+position = Vector2(157.08, 13.2744)
+
+[node name="Water Spouts5" parent="Hazards" instance=ExtResource("20_w2vtx")]
+position = Vector2(1123.89, -1130.53)
+
+[node name="Water Spouts2" parent="Hazards" instance=ExtResource("20_w2vtx")]
+position = Vector2(643.805, -90.7079)
+Sprout_timer = 0.5
+
+[node name="Water Spouts3" parent="Hazards" instance=ExtResource("20_w2vtx")]
+position = Vector2(-44.2477, -1055.31)
+
+[node name="Water Spouts6" parent="Hazards" instance=ExtResource("20_w2vtx")]
+position = Vector2(1440.27, -1807.52)
+
+[node name="Water Spouts7" parent="Hazards" instance=ExtResource("20_w2vtx")]
+position = Vector2(1440.27, -2263.27)
+
+[node name="Water Spouts8" parent="Hazards" instance=ExtResource("20_w2vtx")]
+position = Vector2(477.876, -2084.07)
+
+[node name="Water Spouts4" parent="Hazards" instance=ExtResource("20_w2vtx")]
+position = Vector2(524.336, -1044.25)
