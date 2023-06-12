@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://cbitufe7rw8b4"]
+[gd_scene load_steps=19 format=3 uid="uid://bqeaeqskk0f8e"]
 
 [ext_resource type="Texture2D" uid="uid://d1wib7p0vtl2n" path="res://Assets/Background/COncept.png" id="1_4xlty"]
 [ext_resource type="Texture2D" uid="uid://bygmtbpav6kwa" path="res://Assets/Background/Sky Gradient.png" id="2_jhp7o"]
@@ -16,6 +16,7 @@
 [ext_resource type="Texture2D" uid="uid://c200eyuvnohhj" path="res://Assets/Objects/Grass_Plane.png" id="14_scs0q"]
 [ext_resource type="Texture2D" uid="uid://cnmqu8h6exx7g" path="res://Assets/Objects/Sakura_Tree_B.png" id="15_soocs"]
 [ext_resource type="Texture2D" uid="uid://rfrpk4hq0t6c" path="res://Assets/Objects/Bush_B.png" id="16_lfpbp"]
+[ext_resource type="PackedScene" uid="uid://d2wdltfnkd7s6" path="res://Scenes/powerups.tscn" id="17_vjatv"]
 
 [sub_resource type="Environment" id="Environment_5eko8"]
 
@@ -206,7 +207,8 @@ scale = Vector2(0.409, 0.409)
 texture = ExtResource("11_d0gxa")
 
 [node name="player" parent="." instance=ExtResource("12_6xjbr")]
-position = Vector2(933, 293)
+position = Vector2(353.982, -2055.31)
+speed = 20
 gravity = 25
 
 [node name="Platforms" type="Node2D" parent="."]
@@ -252,7 +254,7 @@ position = Vector2(-842.921, -1132.74)
 position = Vector2(-314.159, -1143.81)
 
 [node name="floting_rock9" parent="Platforms" instance=ExtResource("13_184o8")]
-position = Vector2(-88.4956, -628.319)
+position = Vector2(216.814, -606.195)
 
 [node name="floting_rock10" parent="Platforms" instance=ExtResource("13_184o8")]
 position = Vector2(-331.858, -632.743)
@@ -425,6 +427,7 @@ layer = 1
 motion_scale = Vector2(2, 2)
 
 [node name="Trees2" type="Node2D" parent="Foreground Elements/Objects/ParallaxLayer"]
+visible = false
 position = Vector2(211, -2403)
 
 [node name="SakuraTree2" type="Sprite2D" parent="Foreground Elements/Objects/ParallaxLayer/Trees2"]
@@ -518,3 +521,17 @@ range_layer_max = 100
 shadow_enabled = true
 shadow_color = Color(0.647059, 0, 0.639216, 0.631373)
 height = 0.11
+
+[node name="powerups" parent="." instance=ExtResource("17_vjatv")]
+position = Vector2(601.77, -831.858)
+double_jump_pu = true
+
+[node name="powerups2" parent="." instance=ExtResource("17_vjatv")]
+position = Vector2(-473.451, -1011.06)
+double_jump_pu = true
+
+[node name="powerups3" parent="." instance=ExtResource("17_vjatv")]
+position = Vector2(-126.106, -2006.64)
+
+[node name="powerups4" parent="." instance=ExtResource("17_vjatv")]
+position = Vector2(-544.248, -2272.12)

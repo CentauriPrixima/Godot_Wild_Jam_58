@@ -1,9 +1,9 @@
+CollisionShape2D
+Area2D
 DirectionalLight2D
 PointLight2D
 WorldEnvironment
 Timer
-CollisionShape2D
-Area2D
 CollisionPolygon2D
 StaticBody2D
 Camera2D

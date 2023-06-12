@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://fewxs2ql2415"]
+
+[ext_resource type="Script" path="res://scripts/gyser.gd" id="1_of6kl"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_wec8q"]
+radius = 13.0
+height = 194.0
+
+[node name="gyser" type="Area2D"]
+script = ExtResource("1_of6kl")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -78)
+shape = SubResource("CapsuleShape2D_wec8q")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

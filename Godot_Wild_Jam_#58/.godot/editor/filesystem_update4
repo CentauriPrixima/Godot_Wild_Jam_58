@@ -4,3 +4,6 @@ res://Scenes/floting_rock.tscn
 res://Scenes/shrine.tscn
 res://Scenes/powerups.tscn
 res://Scenes/Kyveri_Level_1.tscn
+res://scripts/gyser.gd
+res://Scenes/gyser.tscn
+res://scripts/Global.gd
