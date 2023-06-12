@@ -8,9 +8,9 @@
 [ext_resource type="PackedScene" uid="uid://c7powupijqw71" path="res://Scenes/floting_rock.tscn" id="4_oce4b"]
 [ext_resource type="PackedScene" uid="uid://bcn7sydlfy4pe" path="res://Scenes/shrine.tscn" id="7_y4il7"]
 [ext_resource type="PackedScene" uid="uid://d2wdltfnkd7s6" path="res://Scenes/powerups.tscn" id="8_2wy1u"]
-[ext_resource type="PackedScene" uid="uid://fewxs2ql2415" path="res://Scenes/gyser.tscn" id="9_r7q5n"]
+[ext_resource type="PackedScene" path="res://Scenes/gyser.tscn" id="9_r7q5n"]
 
-[node name="Level1" type="Node2D"]
+[node name="Level2" type="Node2D"]
 position = Vector2(534, -191)
 scale = Vector2(0.452, 0.452)
 script = ExtResource("1_vxfb6")

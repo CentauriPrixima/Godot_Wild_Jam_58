@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://co7pldwja4mgk"
+path="res://.godot/imported/Walking PlaceHolder.wav-dc8420479a95002b0bbf135bac60a764.sample"
+
+[deps]
+
+source_file="res://Assets/SFX/Walking PlaceHolder.wav"
+dest_files=["res://.godot/imported/Walking PlaceHolder.wav-dc8420479a95002b0bbf135bac60a764.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=false
+edit/loop_mode=1
+edit/loop_begin=0
+edit/loop_end=2
+compress/mode=0
