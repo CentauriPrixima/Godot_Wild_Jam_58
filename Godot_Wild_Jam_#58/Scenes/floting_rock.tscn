@@ -17,4 +17,3 @@ script = SubResource("GDScript_ncl7j")
 visable = true
 
 [node name="Node2D" parent="." instance=ExtResource("1_p3hku")]
-position = Vector2(-6, -61)

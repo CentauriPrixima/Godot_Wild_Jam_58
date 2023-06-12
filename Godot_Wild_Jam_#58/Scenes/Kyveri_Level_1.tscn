@@ -1,8 +1,9 @@
-[gd_scene load_steps=19 format=3 uid="uid://cbitufe7rw8b4"]
+[gd_scene load_steps=23 format=3 uid="uid://cbitufe7rw8b4"]
 
 [ext_resource type="Texture2D" uid="uid://d1wib7p0vtl2n" path="res://Assets/Background/COncept.png" id="1_4xlty"]
 [ext_resource type="Texture2D" uid="uid://bygmtbpav6kwa" path="res://Assets/Background/Sky Gradient.png" id="2_jhp7o"]
 [ext_resource type="Texture2D" uid="uid://dxpq2o4c7lk3q" path="res://Assets/Background/Mountains far.png" id="3_y5dr6"]
+[ext_resource type="Texture2D" uid="uid://bhurrc5go27k7" path="res://Assets/Background/clouds.png" id="4_h6b5m"]
 [ext_resource type="Texture2D" uid="uid://dlc1v7pfgmujf" path="res://Assets/Background/Mountain Layer.png" id="4_kxsns"]
 [ext_resource type="Texture2D" uid="uid://hthbav41ury2" path="res://Assets/Background/Forest_L_B.png" id="5_dyo2e"]
 [ext_resource type="Texture2D" uid="uid://cj77l316burto" path="res://Assets/Background/Forest_R_B.png" id="6_32cjc"]
@@ -18,11 +19,80 @@
 [ext_resource type="Texture2D" uid="uid://rfrpk4hq0t6c" path="res://Assets/Objects/Bush_B.png" id="16_lfpbp"]
 [ext_resource type="AudioStream" uid="uid://b2mi3vtnd5oj3" path="res://Assets/SFX/Placeholder Music from SoundCloud Steve Oxen.mp3" id="17_psyi3"]
 
+[sub_resource type="Animation" id="Animation_64vm0"]
+resource_name = "CLoud Panning"
+length = 60.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Background elements/Background_Pieces/Far/Clouds:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.1, 30, 30.1, 59.9),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(996, -1077), Vector2(-1242, -1100), Vector2(3293, -946), Vector2(996, -1077)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Background elements/Background_Pieces/Far/Clouds2:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.1, 30, 30.1, 59.9),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(2199, -1185), Vector2(-1132, -1169), Vector2(3182, -1432), Vector2(2199, -1185)]
+}
+
+[sub_resource type="Animation" id="Animation_yc5cv"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Background elements/Background_Pieces/Far/Clouds:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(996, -1077)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Background elements/Background_Pieces/Far/Clouds2:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(2199, -1185)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_5kiqr"]
+_data = {
+"CLoud Panning": SubResource("Animation_64vm0"),
+"RESET": SubResource("Animation_yc5cv")
+}
+
 [sub_resource type="Environment" id="Environment_5eko8"]
 
 [node name="Level1" type="Node2D"]
 position = Vector2(534, -191)
 scale = Vector2(0.452, 0.452)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "CLoud Panning"
+speed_scale = 0.15
+libraries = {
+"": SubResource("AnimationLibrary_5kiqr")
+}
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_5eko8")
@@ -51,8 +121,20 @@ position = Vector2(-46.4602, 230.089)
 layer = -1
 
 [node name="Far" type="ParallaxLayer" parent="Background elements/Background_Pieces"]
+position = Vector2(-835, 489)
 motion_scale = Vector2(0.1, 0.1)
 motion_offset = Vector2(0, 500)
+
+[node name="Clouds" type="Sprite2D" parent="Background elements/Background_Pieces/Far"]
+position = Vector2(996, -1077)
+scale = Vector2(0.356, 0.356)
+texture = ExtResource("4_h6b5m")
+
+[node name="Clouds2" type="Sprite2D" parent="Background elements/Background_Pieces/Far"]
+position = Vector2(2199, -1185)
+scale = Vector2(0.356, 0.356)
+texture = ExtResource("4_h6b5m")
+flip_h = true
 
 [node name="MountainsFar" type="Sprite2D" parent="Background elements/Background_Pieces/Far"]
 position = Vector2(560, -349)
