@@ -24,6 +24,8 @@ func _ready():
 # physics prosses
 func _physics_process(delta):
 	player_movement(delta)
+	if can_die and Global.player_dead:
+		queue_free()
 	
 
 # player movement func

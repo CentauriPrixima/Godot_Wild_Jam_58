@@ -8,18 +8,12 @@
 [ext_resource type="PackedScene" uid="uid://c7powupijqw71" path="res://Scenes/floting_rock.tscn" id="4_oce4b"]
 [ext_resource type="PackedScene" uid="uid://bcn7sydlfy4pe" path="res://Scenes/shrine.tscn" id="7_y4il7"]
 [ext_resource type="PackedScene" uid="uid://d2wdltfnkd7s6" path="res://Scenes/powerups.tscn" id="8_2wy1u"]
-[ext_resource type="PackedScene" path="res://Scenes/gyser.tscn" id="9_r7q5n"]
+[ext_resource type="PackedScene" uid="uid://fewxs2ql2415" path="res://Scenes/gyser.tscn" id="9_r7q5n"]
 
 [node name="Level2" type="Node2D"]
 position = Vector2(534, -191)
-scale = Vector2(0.452, 0.452)
+scale = Vector2(0.450721, 0.452)
 script = ExtResource("1_vxfb6")
-
-[node name="player" parent="." instance=ExtResource("1_84f63")]
-z_index = 5
-position = Vector2(92.9203, 1334.07)
-speed = 20
-jump_force = 650
 
 [node name="art" type="Node2D" parent="."]
 
@@ -53,22 +47,21 @@ texture = ExtResource("4_1xdw1")
 [node name="floting_rock" parent="floting_obsticals" instance=ExtResource("4_oce4b")]
 position = Vector2(-1506.64, 1497.79)
 scale = Vector2(15.3018, 0.780991)
-visable = false
 
 [node name="floting_rock2" parent="floting_obsticals" instance=ExtResource("4_oce4b")]
 position = Vector2(-1024.34, 858.407)
 rotation = 1.91637
 scale = Vector2(3.44574, 1.50335)
-visable = false
 
 [node name="floting_rock3" parent="floting_obsticals" instance=ExtResource("4_oce4b")]
 position = Vector2(1862.83, 816.372)
 rotation = 2.14675
 scale = Vector2(4.31797, 1.50335)
-visable = false
 
 [node name="floting_rock4" parent="floting_obsticals" instance=ExtResource("4_oce4b")]
 position = Vector2(-539.823, 1263.27)
+moving_platform = true
+range = 150
 
 [node name="floting_rock5" parent="floting_obsticals" instance=ExtResource("4_oce4b")]
 position = Vector2(-97.3452, 1203.54)
@@ -104,3 +97,10 @@ time_of_pu = 1
 
 [node name="gyser" parent="." instance=ExtResource("9_r7q5n")]
 position = Vector2(787.61, 1163.72)
+
+[node name="player" parent="." instance=ExtResource("1_84f63")]
+z_index = 5
+position = Vector2(8.84949, 1407.08)
+scale = Vector2(1, 1)
+speed = 20
+jump_force = 650
