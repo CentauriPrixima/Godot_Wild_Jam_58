@@ -17,15 +17,15 @@ var can_double_jump = false
 
 # ready func
 func _ready():
+	
 	$AnimatedSprite2D.play(\"idle-ish\")
 	hbox_idleish()
 
 
 # physics prosses
 func _physics_process(delta):
+	print(velocity.y)
 	player_movement(delta)
-	if can_die and Global.player_dead:
-		queue_free()
 	
 
 # player movement func
@@ -41,6 +41,12 @@ func player_movement(delta):
 		velocity.y = 0
 		velocity.y = -jump_force
 		can_double_jump = false
+	if Input.is_action_just_released(\"up\"):
+		
+		if velocity.y > 0:
+			velocity.y +100
+		else: 
+			velocity.y = 0
 	
 	
 	velocity.x = Input.get_action_strength(\"right\") - Input.get_action_strength(\"left\")
@@ -180,7 +186,6 @@ metadata/_edit_group_ = true
 [node name="idle_hbox" type="CollisionShape2D" parent="."]
 position = Vector2(1, 3)
 shape = SubResource("CapsuleShape2D_k31qq")
-metadata/_edit_group_ = true
 
 [node name="Area2D" type="Area2D" parent="."]
 
@@ -193,6 +198,9 @@ position = Vector2(2, -95)
 zoom = Vector2(1.81, 1.81)
 limit_left = -329
 limit_smoothed = true
+position_smoothing_enabled = true
+position_smoothing_speed = 10.0
+rotation_smoothing_enabled = true
 drag_horizontal_enabled = true
 
 [node name="invincable_timer" type="Timer" parent="."]
