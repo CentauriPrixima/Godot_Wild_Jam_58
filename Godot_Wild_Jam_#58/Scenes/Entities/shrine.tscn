@@ -1,0 +1,67 @@
+[gd_scene load_steps=9 format=3 uid="uid://57s0fh2mlkkf"]
+
+[ext_resource type="Script" path="res://Scenes/Entities/shrine.gd" id="1_e8ub7"]
+[ext_resource type="Texture2D" uid="uid://bqahwlpiom2f5" path="res://Assets/Objects/Shrine.png" id="1_gvpov"]
+[ext_resource type="Texture2D" uid="uid://daup1av614qyq" path="res://Assets/Objects/Platform_1.png" id="3_llh7w"]
+[ext_resource type="Texture2D" uid="uid://0r6m8njfonuv" path="res://Assets/Objects/Platform_P.png" id="4_1afv2"]
+
+[sub_resource type="Gradient" id="Gradient_jbv0j"]
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_gqw2e"]
+gradient = SubResource("Gradient_jbv0j")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_f3fhs"]
+lifetime_randomness = 0.03
+emission_shape = 1
+emission_sphere_radius = 50.13
+particle_flag_disable_z = true
+direction = Vector3(10, 1, 0)
+spread = 0.0
+gravity = Vector3(0, 100, 0)
+initial_velocity_max = 0.1
+angular_velocity_min = -523.64
+angular_velocity_max = 160.0
+orbit_velocity_min = 0.0
+orbit_velocity_max = 0.0
+linear_accel_min = -4.04
+linear_accel_max = 18.18
+damping_max = 42.76
+scale_min = 0.0
+scale_max = 0.7
+color_ramp = SubResource("GradientTexture1D_gqw2e")
+hue_variation_max = 0.04
+turbulence_enabled = true
+turbulence_influence_max = 0.23
+turbulence_initial_displacement_max = 26.3
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xahlw"]
+size = Vector2(105, 26)
+
+[node name="Shrine" type="Node2D"]
+script = ExtResource("1_e8ub7")
+
+[node name="Shrine" type="Sprite2D" parent="."]
+position = Vector2(361, 413)
+texture = ExtResource("1_gvpov")
+offset = Vector2(-254, -289)
+
+[node name="Node2D" type="Sprite2D" parent="."]
+position = Vector2(341, 542)
+rotation = 3.1412
+scale = Vector2(3.576, 3.576)
+texture = ExtResource("3_llh7w")
+centered = false
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="Node2D"]
+position = Vector2(66.5333, 68.034)
+amount = 7
+process_material = SubResource("ParticleProcessMaterial_f3fhs")
+texture = ExtResource("4_1afv2")
+speed_scale = 0.4
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Node2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/StaticBody2D"]
+position = Vector2(63, 74)
+shape = SubResource("RectangleShape2D_xahlw")

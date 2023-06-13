@@ -17,12 +17,14 @@ var can_double_jump = false
 
 # ready func
 func _ready():
+	
 	$AnimatedSprite2D.play(\"idle-ish\")
 	hbox_idleish()
 
 
 # physics prosses
 func _physics_process(delta):
+	print(velocity.y)
 	player_movement(delta)
 	
 
@@ -39,6 +41,12 @@ func player_movement(delta):
 		velocity.y = 0
 		velocity.y = -jump_force
 		can_double_jump = false
+	if Input.is_action_just_released(\"up\"):
+		
+		if velocity.y > 0:
+			velocity.y +100
+		else: 
+			velocity.y = 0
 	
 	
 	velocity.x = Input.get_action_strength(\"right\") - Input.get_action_strength(\"left\")

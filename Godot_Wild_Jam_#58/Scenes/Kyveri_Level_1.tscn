@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://cbitufe7rw8b4"]
+[gd_scene load_steps=26 format=3 uid="uid://cbitufe7rw8b4"]
 
 [ext_resource type="Texture2D" uid="uid://d1wib7p0vtl2n" path="res://Assets/Background/COncept.png" id="1_4xlty"]
 [ext_resource type="Texture2D" uid="uid://bygmtbpav6kwa" path="res://Assets/Background/Sky Gradient.png" id="2_jhp7o"]
@@ -20,6 +20,7 @@
 [ext_resource type="AudioStream" uid="uid://b2mi3vtnd5oj3" path="res://Assets/SFX/Placeholder Music from SoundCloud Steve Oxen.mp3" id="17_psyi3"]
 [ext_resource type="PackedScene" uid="uid://1lu00201hiyw" path="res://Scenes/Entities/Waterball.tscn" id="19_rp1mf"]
 [ext_resource type="PackedScene" uid="uid://c4dumlyhmo74m" path="res://Scenes/Entities/Orb.tscn" id="20_w2vtx"]
+[ext_resource type="PackedScene" uid="uid://57s0fh2mlkkf" path="res://Scenes/Entities/shrine.tscn" id="21_g1vep"]
 
 [sub_resource type="Animation" id="Animation_64vm0"]
 resource_name = "CLoud Panning"
@@ -99,6 +100,10 @@ libraries = {
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_5eko8")
 
+[node name="Shrine" parent="." instance=ExtResource("21_g1vep")]
+position = Vector2(-1289.82, -2588.5)
+scale = Vector2(1.564, 1.564)
+
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 layer = -10
 follow_viewport_scale = 83.319
@@ -115,6 +120,7 @@ centered = false
 position = Vector2(1204, -448)
 scale = Vector2(3.161, 3.161)
 texture = ExtResource("2_jhp7o")
+metadata/_edit_lock_ = true
 
 [node name="Background elements" type="Node2D" parent="."]
 position = Vector2(-46.4602, 230.089)
@@ -216,6 +222,7 @@ texture = ExtResource("9_b1pim")
 flip_h = true
 
 [node name="SakuraTree7" type="Sprite2D" parent="Background elements/Trees"]
+visible = false
 position = Vector2(-1615.04, 121.681)
 scale = Vector2(0.4, 0.4)
 texture = ExtResource("9_b1pim")
@@ -371,10 +378,6 @@ position = Vector2(1278.76, -1584.07)
 
 [node name="floting_rock29" parent="Platforms" instance=ExtResource("13_184o8")]
 position = Vector2(920.354, -1800.88)
-
-[node name="floting_rock21" parent="Platforms" instance=ExtResource("13_184o8")]
-position = Vector2(-1398.23, -2356.19)
-scale = Vector2(2.604, 2.604)
 
 [node name="floting_rock15" parent="Platforms" instance=ExtResource("13_184o8")]
 position = Vector2(1568.58, -1902.66)

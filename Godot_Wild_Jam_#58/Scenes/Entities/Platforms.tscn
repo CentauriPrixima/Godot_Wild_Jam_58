@@ -82,7 +82,6 @@ centered = false
 
 [node name="GPUParticles2D" type="GPUParticles2D" parent="."]
 position = Vector2(66.5333, 68.034)
-scale = Vector2(1, 1)
 amount = 7
 process_material = SubResource("ParticleProcessMaterial_f3fhs")
 texture = ExtResource("2_qk8jk")

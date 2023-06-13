@@ -1,11 +1,12 @@
+res://Scenes/Kyveri_Level_1.tscn
 res://Scenes/level_1.tscn
 res://Scenes/Entities/player.tscn
 res://Scenes/floting_rock.tscn
 res://Scenes/shrine.tscn
 res://Scenes/powerups.tscn
-res://Scenes/Kyveri_Level_1.tscn
 res://Scenes/Entities/Platforms.tscn
 res://Scenes/Entities/Waterball.tscn
-res://Water Spouts.gd
 res://Scenes/Entities/Orb.tscn
 res://Scenes/gyser.tscn
+res://Scenes/Entities/shrine.tscn
+res://Scenes/Entities/shrine.gd
