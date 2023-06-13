@@ -973,7 +973,6 @@ color = Color(0.121569, 0.254902, 0.117647, 1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ground/StaticBody2D"]
 position = Vector2(6669.62, 187.655)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_ep5r1")
 
 [node name="GPUParticles2D" type="GPUParticles2D" parent="."]

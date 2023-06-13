@@ -1,8 +1,14 @@
-[gd_scene load_steps=13 format=3 uid="uid://cc4mo68yvhi30"]
+[gd_scene load_steps=15 format=3 uid="uid://d4lhfbgcleo67"]
 
-[ext_resource type="Texture2D" uid="uid://daup1av614qyq" path="res://Assets/Objects/Platform_1.png" id="1_1qhtg"]
-[ext_resource type="Script" path="res://Scenes/Entities/Platforms.gd" id="2_clc8v"]
-[ext_resource type="Texture2D" uid="uid://0r6m8njfonuv" path="res://Assets/Objects/Platform_P.png" id="2_qk8jk"]
+[ext_resource type="Texture2D" uid="uid://daup1av614qyq" path="res://Assets/Objects/Platform_1.png" id="1_7p34l"]
+[ext_resource type="Script" path="res://Scenes/Entities/Platforms.gd" id="2_u1b2m"]
+[ext_resource type="Texture2D" uid="uid://0r6m8njfonuv" path="res://Assets/Objects/Platform_P.png" id="3_y7rqs"]
+
+[sub_resource type="Curve2D" id="Curve2D_tffbk"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 251, -136, 0, 0, 0, 0, 258, -582)
+}
+point_count = 2
 
 [sub_resource type="Gradient" id="Gradient_jbv0j"]
 colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
@@ -33,9 +39,6 @@ hue_variation_max = 0.04
 turbulence_enabled = true
 turbulence_influence_max = 0.23
 turbulence_initial_displacement_max = 26.3
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_xahlw"]
-size = Vector2(105, 26)
 
 [sub_resource type="Animation" id="Animation_073sp"]
 resource_name = "Idle"
@@ -111,28 +114,49 @@ _data = {
 "VMove": SubResource("Animation_ol24l")
 }
 
-[node name="Node2D" type="Sprite2D"]
-position = Vector2(-18, -95)
-scale = Vector2(1.999, 1.999)
-texture = ExtResource("1_1qhtg")
-centered = false
-script = ExtResource("2_clc8v")
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_63k1c"]
+friction = 0.0
+rough = true
+bounce = 0.12
 
-[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4pe81"]
+size = Vector2(100.632, 22.7047)
+
+[node name="Moving_Platform" type="Node2D"]
+
+[node name="Path2D" type="Path2D" parent="."]
+position = Vector2(-123, 271)
+curve = SubResource("Curve2D_tffbk")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
+position = Vector2(251, -136)
+rotation = -1.5551
+
+[node name="Node2D" type="Sprite2D" parent="Path2D/PathFollow2D"]
+position = Vector2(-18, -95)
+rotation = 1.5551
+scale = Vector2(1.999, 1.999)
+texture = ExtResource("1_7p34l")
+centered = false
+script = ExtResource("2_u1b2m")
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="Path2D/PathFollow2D/Node2D"]
 position = Vector2(66.5333, 68.034)
 amount = 7
 process_material = SubResource("ParticleProcessMaterial_f3fhs")
-texture = ExtResource("2_qk8jk")
+texture = ExtResource("3_y7rqs")
 speed_scale = 0.4
 
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(63, 74)
-shape = SubResource("RectangleShape2D_xahlw")
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-autoplay = "Idle"
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Path2D/PathFollow2D/Node2D"]
+autoplay = "VMove"
 libraries = {
 "": SubResource("AnimationLibrary_q6g47")
 }
+
+[node name="AnimatableBody2D" type="StaticBody2D" parent="Path2D/PathFollow2D/Node2D"]
+physics_material_override = SubResource("PhysicsMaterial_63k1c")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Path2D/PathFollow2D/Node2D/AnimatableBody2D"]
+position = Vector2(64.1186, 75.2359)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_4pe81")

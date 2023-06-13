@@ -1,0 +1,150 @@
+[gd_scene load_steps=8 format=3 uid="uid://c1j6ue8sw6fw1"]
+
+[ext_resource type="Texture2D" uid="uid://bygmtbpav6kwa" path="res://Assets/Background/Sky Gradient.png" id="1_bcv0y"]
+[ext_resource type="PackedScene" uid="uid://57s0fh2mlkkf" path="res://Scenes/Entities/shrine.tscn" id="2_pgf0x"]
+[ext_resource type="PackedScene" uid="uid://buxrckkkib3nf" path="res://Scenes/Entities/player.tscn" id="3_v58uj"]
+[ext_resource type="PackedScene" uid="uid://c7powupijqw71" path="res://Scenes/floting_rock.tscn" id="5_2fqc2"]
+[ext_resource type="PackedScene" uid="uid://d4lhfbgcleo67" path="res://Scenes/Entities/moving_platform.tscn" id="5_5vkos"]
+[ext_resource type="PackedScene" uid="uid://1lu00201hiyw" path="res://Scenes/Entities/Waterball.tscn" id="5_nqajk"]
+[ext_resource type="PackedScene" uid="uid://c4dumlyhmo74m" path="res://Scenes/Entities/Orb.tscn" id="7_m5t07"]
+
+[node name="Level2" type="Node2D"]
+scale = Vector2(0.452, 0.452)
+
+[node name="SkyGradient" type="Sprite2D" parent="."]
+z_index = -3
+position = Vector2(1508.85, 513.274)
+scale = Vector2(3.161, 3.161)
+texture = ExtResource("1_bcv0y")
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="Shrine" parent="." instance=ExtResource("2_pgf0x")]
+position = Vector2(2230.09, 915.929)
+
+[node name="player" parent="." instance=ExtResource("3_v58uj")]
+position = Vector2(2315.09, 997.929)
+
+[node name="Platforms" type="Node2D" parent="."]
+position = Vector2(1933.63, 1269.91)
+
+[node name="Moving_Platform" parent="Platforms" instance=ExtResource("5_5vkos")]
+position = Vector2(-163.717, -380.531)
+
+[node name="floting_rock" parent="Platforms" instance=ExtResource("5_2fqc2")]
+position = Vector2(-283.186, -648.23)
+
+[node name="floting_rock2" parent="Platforms" instance=ExtResource("5_2fqc2")]
+position = Vector2(-676.991, 4.4248)
+
+[node name="floting_rock3" parent="Platforms" instance=ExtResource("5_2fqc2")]
+position = Vector2(-1101.77, -2.21228)
+
+[node name="floting_rock4" parent="Platforms" instance=ExtResource("5_2fqc2")]
+position = Vector2(-955.752, -356.195)
+
+[node name="floting_rock6" parent="Platforms" instance=ExtResource("5_2fqc2")]
+position = Vector2(-727.876, -495.575)
+
+[node name="floting_rock7" parent="Platforms" instance=ExtResource("5_2fqc2")]
+position = Vector2(-1103.98, -603.982)
+
+[node name="floting_rock8" parent="Platforms" instance=ExtResource("5_2fqc2")]
+position = Vector2(-674.779, -774.336)
+
+[node name="floting_rock9" parent="Platforms" instance=ExtResource("5_2fqc2")]
+position = Vector2(-1159.29, -904.867)
+
+[node name="floting_rock10" parent="Platforms" instance=ExtResource("5_2fqc2")]
+position = Vector2(-745.575, -1084.07)
+
+[node name="floting_rock11" parent="Platforms" instance=ExtResource("5_2fqc2")]
+position = Vector2(-369.469, -1232.3)
+
+[node name="floting_rock12" parent="Platforms" instance=ExtResource("5_2fqc2")]
+position = Vector2(53.0975, -1373.89)
+
+[node name="floting_rock5" parent="Platforms" instance=ExtResource("5_2fqc2")]
+position = Vector2(-1356.19, -170.354)
+
+[node name="Hazards" type="Node2D" parent="."]
+
+[node name="Water Balls" type="Node2D" parent="Hazards"]
+scale = Vector2(1, 1)
+
+[node name="Waterball" parent="Hazards/Water Balls" instance=ExtResource("5_nqajk")]
+position = Vector2(1703.54, 734.513)
+
+[node name="Waterball2" parent="Hazards/Water Balls" instance=ExtResource("5_nqajk")]
+position = Vector2(1365.04, 617.257)
+
+[node name="Waterball3" parent="Hazards/Water Balls" instance=ExtResource("5_nqajk")]
+position = Vector2(1544.25, 1223.45)
+scale = Vector2(1.469, 1.469)
+
+[node name="Waterball10" parent="Hazards/Water Balls" instance=ExtResource("5_nqajk")]
+position = Vector2(1643.81, 962.389)
+scale = Vector2(1.469, 1.469)
+
+[node name="Waterball7" parent="Hazards/Water Balls" instance=ExtResource("5_nqajk")]
+position = Vector2(469.027, 1101.77)
+scale = Vector2(1.469, 1.469)
+
+[node name="Waterball8" parent="Hazards/Water Balls" instance=ExtResource("5_nqajk")]
+position = Vector2(654.867, 701.328)
+scale = Vector2(1.469, 1.469)
+
+[node name="Waterball9" parent="Hazards/Water Balls" instance=ExtResource("5_nqajk")]
+position = Vector2(566.372, 305.31)
+scale = Vector2(1.469, 1.469)
+
+[node name="Waterball4" parent="Hazards/Water Balls" instance=ExtResource("5_nqajk")]
+position = Vector2(1261.06, 915.929)
+
+[node name="Waterball5" parent="Hazards/Water Balls" instance=ExtResource("5_nqajk")]
+position = Vector2(776.549, 513.274)
+
+[node name="Waterball11" parent="Hazards/Water Balls" instance=ExtResource("5_nqajk")]
+position = Vector2(1387.17, -365.044)
+scale = Vector2(1.9, 1.9)
+
+[node name="Waterball14" parent="Hazards/Water Balls" instance=ExtResource("5_nqajk")]
+position = Vector2(767.699, -219.027)
+scale = Vector2(2.976, 2.976)
+
+[node name="Waterball12" parent="Hazards/Water Balls" instance=ExtResource("5_nqajk")]
+position = Vector2(1796.46, -493.363)
+scale = Vector2(1.9, 1.9)
+
+[node name="Waterball13" parent="Hazards/Water Balls" instance=ExtResource("5_nqajk")]
+position = Vector2(2188.05, -535.398)
+scale = Vector2(1.9, 1.9)
+
+[node name="Waterball6" parent="Hazards/Water Balls" instance=ExtResource("5_nqajk")]
+position = Vector2(1856.19, 285.398)
+scale = Vector2(1.705, 1.705)
+
+[node name="Gyser" type="Node2D" parent="Hazards"]
+
+[node name="Water Spouts" parent="Hazards/Gyser" instance=ExtResource("7_m5t07")]
+position = Vector2(1103.98, 1340.71)
+
+[node name="Water Spouts5" parent="Hazards/Gyser" instance=ExtResource("7_m5t07")]
+position = Vector2(1413.72, 207.965)
+
+[node name="Water Spouts6" parent="Hazards/Gyser" instance=ExtResource("7_m5t07")]
+position = Vector2(1803.1, 61.9469)
+
+[node name="Water Spouts7" parent="Hazards/Gyser" instance=ExtResource("7_m5t07")]
+position = Vector2(2221.24, -84.0708)
+
+[node name="Water Spouts2" parent="Hazards/Gyser" instance=ExtResource("7_m5t07")]
+position = Vector2(358.407, 1263.27)
+
+[node name="Water Spouts3" parent="Hazards/Gyser" instance=ExtResource("7_m5t07")]
+position = Vector2(566.372, 876.106)
+rotation = 1.5825
+
+[node name="Water Spouts4" parent="Hazards/Gyser" instance=ExtResource("7_m5t07")]
+position = Vector2(1367.26, 469.027)
+rotation = -1.56832
