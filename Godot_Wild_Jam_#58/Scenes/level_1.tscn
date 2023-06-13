@@ -47,42 +47,53 @@ texture = ExtResource("4_1xdw1")
 [node name="floting_rock" parent="floting_obsticals" instance=ExtResource("4_oce4b")]
 position = Vector2(-1506.64, 1497.79)
 scale = Vector2(15.3018, 0.780991)
+visable = false
 
 [node name="floting_rock2" parent="floting_obsticals" instance=ExtResource("4_oce4b")]
 position = Vector2(-1024.34, 858.407)
 rotation = 1.91637
 scale = Vector2(3.44574, 1.50335)
+visable = false
 
 [node name="floting_rock3" parent="floting_obsticals" instance=ExtResource("4_oce4b")]
 position = Vector2(1862.83, 816.372)
 rotation = 2.14675
 scale = Vector2(4.31797, 1.50335)
+visable = false
 
 [node name="floting_rock4" parent="floting_obsticals" instance=ExtResource("4_oce4b")]
 position = Vector2(-539.823, 1263.27)
+visable = false
 
 [node name="floting_rock5" parent="floting_obsticals" instance=ExtResource("4_oce4b")]
 position = Vector2(-97.3452, 1203.54)
+visable = false
 
 [node name="floting_rock6" parent="floting_obsticals" instance=ExtResource("4_oce4b")]
 position = Vector2(320.796, 1115.04)
+visable = false
 
 [node name="floting_rock7" parent="floting_obsticals" instance=ExtResource("4_oce4b")]
 position = Vector2(-33.1858, 986.726)
 scale = Vector2(0.380531, 1)
+visable = false
 
 [node name="floting_rock8" parent="floting_obsticals" instance=ExtResource("4_oce4b")]
 position = Vector2(-513.274, 860.619)
+visable = false
 
 [node name="floting_rock9" parent="floting_obsticals" instance=ExtResource("4_oce4b")]
 position = Vector2(84.0709, 780.973)
 scale = Vector2(0.469027, 1)
+visable = false
 
 [node name="floting_rock10" parent="floting_obsticals" instance=ExtResource("4_oce4b")]
 position = Vector2(409.292, 703.54)
+visable = false
 
 [node name="floting_rock11" parent="floting_obsticals" instance=ExtResource("4_oce4b")]
 position = Vector2(756.637, 601.77)
+visable = false
 
 [node name="shrine" parent="." instance=ExtResource("7_y4il7")]
 position = Vector2(1347.35, 610.619)

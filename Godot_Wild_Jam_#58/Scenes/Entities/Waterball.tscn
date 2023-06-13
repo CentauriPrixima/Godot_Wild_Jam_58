@@ -1,8 +1,8 @@
-[gd_scene load_steps=13 format=3 uid="uid://1lu00201hiyw"]
+[gd_scene load_steps=13 format=3 uid="uid://b00v5v5171vx5"]
 
 [ext_resource type="Texture2D" uid="uid://dm8e8es226d2x" path="res://Assets/Objects/Water_Particle.png" id="1_7xg7p"]
+[ext_resource type="Script" path="res://scripts/Water_ball.gd" id="1_umkus"]
 [ext_resource type="Texture2D" uid="uid://3jmjfeh45nt1" path="res://Assets/Objects/Water_Ball_Sheet.png" id="2_njx2t"]
-[ext_resource type="Script" path="res://Water_ball.gd" id="3_y55ht"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4rkah"]
 atlas = ExtResource("2_njx2t")
@@ -88,6 +88,7 @@ radius = 81.0
 
 [node name="Waterball" type="Node2D"]
 position = Vector2(19, 9)
+script = ExtResource("1_umkus")
 
 [node name="Node2D" type="AnimatedSprite2D" parent="."]
 self_modulate = Color(1, 1, 1, 0.866667)
@@ -95,7 +96,8 @@ position = Vector2(36, 43)
 rotation = 1.79969
 sprite_frames = SubResource("SpriteFrames_6d4l7")
 autoplay = "default"
-frame_progress = 0.657878
+frame = 2
+frame_progress = 0.0654532
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Node2D"]
 autoplay = "new_animation"
@@ -111,8 +113,10 @@ process_material = SubResource("ParticleProcessMaterial_ablu1")
 texture = ExtResource("1_7xg7p")
 
 [node name="Area2D" type="Area2D" parent="."]
-script = ExtResource("3_y55ht")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(36, 44)
 shape = SubResource("CircleShape2D_uuk8m")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

@@ -1,11 +1,11 @@
-[gd_scene load_steps=11 format=3 uid="uid://c4dumlyhmo74m"]
+[gd_scene load_steps=11 format=3 uid="uid://d4gb2qrqauc7r"]
 
-[ext_resource type="Script" path="res://Water Spouts.gd" id="1_hddkt"]
+[ext_resource type="Script" path="res://scripts/Water Spouts.gd" id="1_myge6"]
 [ext_resource type="Texture2D" uid="uid://dm8e8es226d2x" path="res://Assets/Objects/Water_Particle.png" id="2_oblpx"]
 [ext_resource type="Texture2D" uid="uid://bljgwyt2e4bo7" path="res://Assets/Objects/WG_1.png" id="3_tluya"]
-[ext_resource type="Script" path="res://AnimationPlayer.gd" id="3_y0upg"]
 [ext_resource type="Texture2D" uid="uid://b3vc8ylyo8u6u" path="res://Assets/Objects/WG_2.png" id="4_s73oj"]
 [ext_resource type="Texture2D" uid="uid://chn4q35i1nvq8" path="res://Assets/Objects/WG_3.png" id="5_g42lm"]
+[ext_resource type="Script" path="res://scripts/AnimationPlayer.gd" id="6_yi2tk"]
 
 [sub_resource type="AnimatedTexture" id="AnimatedTexture_asuag"]
 frames = 3
@@ -54,7 +54,7 @@ _data = {
 }
 
 [node name="Water Spouts" type="Node2D"]
-script = ExtResource("1_hddkt")
+script = ExtResource("1_myge6")
 Sprout_timer = 1.1
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -76,7 +76,7 @@ end_cap_mode = 2
 libraries = {
 "": SubResource("AnimationLibrary_3fcee")
 }
-script = ExtResource("3_y0upg")
+script = ExtResource("6_yi2tk")
 
 [node name="Timer" type="Timer" parent="."]
 

@@ -19,8 +19,8 @@
 [ext_resource type="Texture2D" uid="uid://rfrpk4hq0t6c" path="res://Assets/Objects/Bush_B.png" id="16_lfpbp"]
 [ext_resource type="Shader" path="res://Scenes/Kyveri_Level_1.gdshader" id="16_rhl37"]
 [ext_resource type="AudioStream" uid="uid://b2mi3vtnd5oj3" path="res://Assets/SFX/Placeholder Music from SoundCloud Steve Oxen.mp3" id="17_psyi3"]
-[ext_resource type="PackedScene" uid="uid://1lu00201hiyw" path="res://Scenes/Entities/Waterball.tscn" id="19_rp1mf"]
-[ext_resource type="PackedScene" uid="uid://c4dumlyhmo74m" path="res://Scenes/Entities/Orb.tscn" id="20_w2vtx"]
+[ext_resource type="PackedScene" uid="uid://b00v5v5171vx5" path="res://Scenes/Entities/Waterball.tscn" id="19_rp1mf"]
+[ext_resource type="PackedScene" uid="uid://d4gb2qrqauc7r" path="res://Scenes/Entities/Orb.tscn" id="20_w2vtx"]
 [ext_resource type="PackedScene" uid="uid://57s0fh2mlkkf" path="res://Scenes/Entities/shrine.tscn" id="21_g1vep"]
 [ext_resource type="Texture2D" uid="uid://drroe0q0ogkc2" path="res://Assets/Objects/Leaf particle.png" id="23_p17bv"]
 
