@@ -1,6 +1,7 @@
-[gd_scene load_steps=37 format=3 uid="uid://cbitufe7rw8b4"]
+[gd_scene load_steps=39 format=3 uid="uid://cbitufe7rw8b4"]
 
 [ext_resource type="Texture2D" uid="uid://d1wib7p0vtl2n" path="res://Assets/Background/COncept.png" id="1_4xlty"]
+[ext_resource type="PackedScene" uid="uid://cruvf6s5legry" path="res://Scenes/Entities/respawn.tscn" id="1_issix"]
 [ext_resource type="Texture2D" uid="uid://bygmtbpav6kwa" path="res://Assets/Background/Sky Gradient.png" id="2_jhp7o"]
 [ext_resource type="Texture2D" uid="uid://dxpq2o4c7lk3q" path="res://Assets/Background/Mountains far.png" id="3_y5dr6"]
 [ext_resource type="Texture2D" uid="uid://bhurrc5go27k7" path="res://Assets/Background/clouds.png" id="4_h6b5m"]
@@ -23,6 +24,7 @@
 [ext_resource type="PackedScene" uid="uid://d4gb2qrqauc7r" path="res://Scenes/Entities/Orb.tscn" id="20_w2vtx"]
 [ext_resource type="PackedScene" uid="uid://57s0fh2mlkkf" path="res://Scenes/Entities/shrine.tscn" id="21_g1vep"]
 [ext_resource type="Texture2D" uid="uid://drroe0q0ogkc2" path="res://Assets/Objects/Leaf particle.png" id="23_p17bv"]
+[ext_resource type="PackedScene" uid="uid://vcb3t8fqh3vx" path="res://Scenes/ui.tscn" id="24_fraup"]
 
 [sub_resource type="Animation" id="Animation_64vm0"]
 resource_name = "CLoud Panning"
@@ -177,6 +179,9 @@ speed_scale = 0.15
 libraries = {
 "": SubResource("AnimationLibrary_5kiqr")
 }
+
+[node name="Respawn" parent="AnimationPlayer" instance=ExtResource("1_issix")]
+position = Vector2(701, -183)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_5eko8")
@@ -1022,3 +1027,12 @@ lifetime = 8.83
 preprocess = 20.0
 speed_scale = 0.72
 randomness = 0.16
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="."]
+layer = 19
+
+[node name="UI" parent="CanvasLayer2" instance=ExtResource("24_fraup")]
+offset_left = -3.0
+offset_top = 8.0
+offset_right = -3.0
+offset_bottom = 8.0

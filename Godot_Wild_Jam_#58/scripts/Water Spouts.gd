@@ -19,3 +19,14 @@ func _on_timer_timeout():
 
 func _on_animation_player_animation_finished(anim_name):
 	$Timer.start()
+
+
+func _on_area_2d_area_entered(hitbox: HurtBox) -> void:
+		if hitbox == null:
+			return
+		print("Death by orb", Global.phealth)
+		if Global.phealth >0:
+			Global.phealth = Global.phealth - 1 
+		elif Global.phealth<=0:
+			print("Game Over")
+	

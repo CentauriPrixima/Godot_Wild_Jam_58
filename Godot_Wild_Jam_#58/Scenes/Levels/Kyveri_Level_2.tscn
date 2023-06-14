@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://c1j6ue8sw6fw1"]
+[gd_scene load_steps=24 format=3 uid="uid://c1j6ue8sw6fw1"]
 
 [ext_resource type="Texture2D" uid="uid://bygmtbpav6kwa" path="res://Assets/Background/Sky Gradient.png" id="1_bcv0y"]
 [ext_resource type="Texture2D" uid="uid://bn3li154fbxce" path="res://Assets/Background/Concept 2.png" id="2_0rgmj"]
@@ -18,6 +18,7 @@
 [ext_resource type="Texture2D" uid="uid://dimys8k8x8au5" path="res://Assets/Objects/Sakura_Tree.png" id="10_e66em"]
 [ext_resource type="Texture2D" uid="uid://cnmqu8h6exx7g" path="res://Assets/Objects/Sakura_Tree_B.png" id="17_sjj1m"]
 [ext_resource type="AudioStream" uid="uid://b2mi3vtnd5oj3" path="res://Assets/SFX/Placeholder Music from SoundCloud Steve Oxen.mp3" id="18_5y0in"]
+[ext_resource type="PackedScene" uid="uid://vcb3t8fqh3vx" path="res://Scenes/ui.tscn" id="19_cvmlp"]
 
 [sub_resource type="Gradient" id="Gradient_41ej2"]
 colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
@@ -425,3 +426,7 @@ height = 0.11
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("18_5y0in")
 autoplay = true
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="."]
+
+[node name="UI" parent="CanvasLayer2" instance=ExtResource("19_cvmlp")]
