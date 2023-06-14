@@ -12,3 +12,5 @@ res://Scenes/Levels/Kyveri_Level_2.tscn
 res://Scenes/Entities/Crystal_being.tscn
 res://Rock.gd
 res://Scenes/Entities/Rocks.tscn
+res://Scenes/Entities/Rocks.gd
+res://scripts/Global.gd

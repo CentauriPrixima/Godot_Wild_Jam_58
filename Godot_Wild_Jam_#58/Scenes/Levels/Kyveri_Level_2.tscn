@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://c1j6ue8sw6fw1"]
+[gd_scene load_steps=23 format=3 uid="uid://c1j6ue8sw6fw1"]
 
 [ext_resource type="Texture2D" uid="uid://bygmtbpav6kwa" path="res://Assets/Background/Sky Gradient.png" id="1_bcv0y"]
 [ext_resource type="Texture2D" uid="uid://bn3li154fbxce" path="res://Assets/Background/Concept 2.png" id="2_0rgmj"]
@@ -17,6 +17,7 @@
 [ext_resource type="PackedScene" uid="uid://d4gb2qrqauc7r" path="res://Scenes/Entities/Orb.tscn" id="7_m5t07"]
 [ext_resource type="Texture2D" uid="uid://dimys8k8x8au5" path="res://Assets/Objects/Sakura_Tree.png" id="10_e66em"]
 [ext_resource type="Texture2D" uid="uid://cnmqu8h6exx7g" path="res://Assets/Objects/Sakura_Tree_B.png" id="17_sjj1m"]
+[ext_resource type="AudioStream" uid="uid://b2mi3vtnd5oj3" path="res://Assets/SFX/Placeholder Music from SoundCloud Steve Oxen.mp3" id="18_5y0in"]
 
 [sub_resource type="Gradient" id="Gradient_41ej2"]
 colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
@@ -72,6 +73,34 @@ layer = -1
 position = Vector2(-722, -111)
 motion_scale = Vector2(0.1, 0.1)
 
+[node name="Rock3" parent="Background/Far" instance=ExtResource("6_kryt2")]
+self_modulate = Color(1, 1, 1, 0.360784)
+z_index = 1
+position = Vector2(965, 234)
+scale = Vector2(0.226, 0.226)
+Texture_Override = "res://Assets/Objects/Rock_B_B.png"
+
+[node name="SakuraTreeB" type="Sprite2D" parent="Background/Far"]
+self_modulate = Color(1, 1, 1, 0.52549)
+position = Vector2(1521, 61)
+scale = Vector2(0.056, 0.056)
+texture = ExtResource("17_sjj1m")
+
+[node name="Rock4" parent="Background/Far" instance=ExtResource("6_kryt2")]
+self_modulate = Color(1, 1, 1, 0.403922)
+z_index = 1
+position = Vector2(1513, 100)
+scale = Vector2(0.226, 0.226)
+Texture_Override = "res://Assets/Objects/Rock_C_B.png"
+
+[node name="Rock5" parent="Background/Far" instance=ExtResource("6_kryt2")]
+self_modulate = Color(1, 1, 1, 0.403922)
+z_index = 1
+position = Vector2(913.154, 423.672)
+rotation = 0.514019
+scale = Vector2(0.226, 0.226)
+Texture_Override = "res://Assets/Objects/Rock_B_B.png"
+
 [node name="GPUParticles2D" type="GPUParticles2D" parent="Background/Far"]
 position = Vector2(1248, 460)
 amount = 15
@@ -101,6 +130,12 @@ lifetime = 8.35
 preprocess = 5.0
 speed_scale = 0.87
 randomness = 0.01
+
+[node name="Rock2" parent="Background/Far" instance=ExtResource("6_kryt2")]
+z_index = 1
+position = Vector2(1266, 565)
+scale = Vector2(0.341, 0.341)
+Texture_Override = "res://Assets/Objects/Rock_B_B.png"
 
 [node name="Clouds2" type="Sprite2D" parent="Background/Far"]
 position = Vector2(1389, -502)
@@ -337,3 +372,24 @@ z_index = 1
 position = Vector2(502.354, 1173.56)
 rotation = 0.0331613
 scale = Vector2(3.392, 3.392)
+
+[node name="Rock2" parent="Foreground/Foreground/Far/SakuraTree" instance=ExtResource("6_kryt2")]
+z_index = 1
+position = Vector2(-2358.93, 1156.07)
+rotation = 0.0331613
+scale = Vector2(3.392, 3.392)
+Texture_Override = "res://Assets/Objects/Rock_B_B.png"
+
+[node name="PointLight2D" type="DirectionalLight2D" parent="."]
+position = Vector2(-513.274, -1772.12)
+color = Color(0.694118, 0.360784, 0.0901961, 1)
+energy = 0.59
+range_layer_min = -100
+range_layer_max = 100
+shadow_enabled = true
+shadow_color = Color(0.647059, 0, 0.639216, 0.631373)
+height = 0.11
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("18_5y0in")
+autoplay = true

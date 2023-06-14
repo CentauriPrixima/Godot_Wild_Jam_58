@@ -515,7 +515,7 @@ position = Vector2(-842.921, -1132.74)
 position = Vector2(-329.646, -1044.25)
 
 [node name="floting_rock9" parent="Platforms" instance=ExtResource("13_184o8")]
-position = Vector2(-88.4956, -628.319)
+position = Vector2(-26.5487, -566.372)
 
 [node name="floting_rock10" parent="Platforms" instance=ExtResource("13_184o8")]
 position = Vector2(-331.858, -632.743)
@@ -572,7 +572,15 @@ position = Vector2(-64.1592, -1789.82)
 scale = Vector2(0.431223, 1.02819)
 
 [node name="floting_rock20" parent="Platforms" instance=ExtResource("13_184o8")]
-position = Vector2(-453.54, -2075.22)
+position = Vector2(-316.372, -1896.02)
+scale = Vector2(0.431223, 1.02819)
+
+[node name="floting_rock21" parent="Platforms" instance=ExtResource("13_184o8")]
+position = Vector2(-535.398, -2048.67)
+scale = Vector2(0.431223, 1.02819)
+
+[node name="floting_rock35" parent="Platforms" instance=ExtResource("13_184o8")]
+position = Vector2(-721.239, -2196.9)
 scale = Vector2(0.431223, 1.02819)
 
 [node name="Foreground Elements" type="Node2D" parent="."]
@@ -921,7 +929,7 @@ autoplay = true
 [node name="Hazards" type="Node2D" parent="."]
 
 [node name="WaterBall" parent="Hazards" instance=ExtResource("19_rp1mf")]
-position = Vector2(342.92, -641.593)
+position = Vector2(342.92, -623.894)
 scale = Vector2(1.995, 1.995)
 
 [node name="WaterBall3" parent="Hazards" instance=ExtResource("19_rp1mf")]
