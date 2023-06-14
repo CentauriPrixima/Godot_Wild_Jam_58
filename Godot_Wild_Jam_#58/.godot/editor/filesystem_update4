@@ -11,6 +11,4 @@ res://Scenes/Entities/Crystal_being.tscn
 res://Scenes/Entities/Rocks.tscn
 res://Scenes/ui.tscn
 res://Scenes/Entities/respawn.tscn
-res://scripts/Water Spouts.gd
 res://scripts/Water_ball.gd
-res://Scenes/Entities/ColorRect.gd

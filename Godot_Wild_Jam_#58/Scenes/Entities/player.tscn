@@ -39,9 +39,8 @@ func _process(delta):
 		Global.lastknownx = pos1
 		Global.lastknowny = pos2
 	if Global.hurting == true:
-		$\".\".position = Vector2(Global.lastknownx,Global.lastknownx)
+		position = Vector2(Global.lastknownx,Global.lastknowny)
 		Global.hurting = false
-	
 		
 
 # physics prosses
@@ -138,10 +137,8 @@ func die():
 	
 
 
-func _on_hurtbox_area_entered(hitbox:EnemyBox2,hitbox2:Gbox)->void:
-	if hitbox ==null:
-		return
-	spawn = true
+
+	
 	
 "
 

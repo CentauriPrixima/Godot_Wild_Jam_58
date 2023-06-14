@@ -14,12 +14,13 @@ func _process(delta):
 
 
 func _on_area_2d_area_entered(hitbox2: HurtBox) -> void:
-		if hitbox2 == null:
+	if hitbox2 == null:
 			return
+		
+	print("Death by orb", Global.phealth)
+	if Global.phealth >0:
 		Global.hurting = true
-		print("Death by orb", Global.phealth)
-		if Global.phealth >0:
-			Global.phealth = Global.phealth - 1 
-		elif Global.phealth<=0:
-			print("Game Over")
-
+		Global.phealth = Global.phealth - 1 
+	elif Global.phealth<=0:
+		print("Game Over")
+	
