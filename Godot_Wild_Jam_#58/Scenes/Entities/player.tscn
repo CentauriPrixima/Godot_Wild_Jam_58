@@ -23,7 +23,7 @@ var is_dead = false
 var life = 3
 var pos1
 var pos2
-# ready func
+var spawn = false
 func _ready():
 	
 	$AnimatedSprite2D.play(\"idle-ish\")
@@ -38,7 +38,10 @@ func _process(delta):
 		pos2 = position.y
 		Global.lastknownx = pos1
 		Global.lastknowny = pos2
-		
+	if Global.hurting == true:
+		$\".\".position = Vector2(Global.lastknownx,Global.lastknownx)
+		Global.hurting = false
+	
 		
 
 # physics prosses
@@ -132,6 +135,13 @@ func die():
 		$AnimatedSprite2D.play(\"Death\")
 	
 
+	
+
+
+func _on_hurtbox_area_entered(hitbox:EnemyBox2,hitbox2:Gbox)->void:
+	if hitbox ==null:
+		return
+	spawn = true
 	
 "
 

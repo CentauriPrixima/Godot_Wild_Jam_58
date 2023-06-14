@@ -1,4 +1,4 @@
-class_name EnemyBox
+class_name Gbox
 extends Node2D
 var Hp = false
 
@@ -16,6 +16,7 @@ func _process(delta):
 func _on_area_2d_area_entered(hitbox2: HurtBox) -> void:
 		if hitbox2 == null:
 			return
+		Global.hurting = true
 		print("Death by orb", Global.phealth)
 		if Global.phealth >0:
 			Global.phealth = Global.phealth - 1 

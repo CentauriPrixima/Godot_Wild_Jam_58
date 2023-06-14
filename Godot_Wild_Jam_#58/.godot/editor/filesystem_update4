@@ -10,11 +10,7 @@ res://Scenes/Levels/Kyveri_Level_2.tscn
 res://Scenes/Entities/Crystal_being.tscn
 res://Scenes/Entities/Rocks.tscn
 res://Scenes/ui.tscn
-res://Scenes/ProgressBar.gd
-res://scripts/Global.gd
-res://scripts/Water_ball.gd
-res://scripts/Water Spouts.gd
-res://Scenes/Entities/Hurtbox.gd
 res://Scenes/Entities/respawn.tscn
-res://Scenes/Entities/Area2D.gd
+res://scripts/Water Spouts.gd
+res://scripts/Water_ball.gd
 res://Scenes/Entities/ColorRect.gd
