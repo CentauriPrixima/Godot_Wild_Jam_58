@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=3 uid="uid://cbitufe7rw8b4"]
+[gd_scene load_steps=40 format=3 uid="uid://cbitufe7rw8b4"]
 
 [ext_resource type="Texture2D" uid="uid://d1wib7p0vtl2n" path="res://Assets/Background/COncept.png" id="1_4xlty"]
 [ext_resource type="PackedScene" uid="uid://cruvf6s5legry" path="res://Scenes/Entities/respawn.tscn" id="1_issix"]
@@ -169,6 +169,9 @@ turbulence_enabled = true
 turbulence_noise_strength = 3.64
 turbulence_noise_scale = 8.81
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0jaow"]
+size = Vector2(496.681, 5086.94)
+
 [node name="Level1" type="Node2D"]
 position = Vector2(534, -191)
 scale = Vector2(0.452, 0.452)
@@ -189,6 +192,8 @@ environment = SubResource("Environment_5eko8")
 [node name="Shrine" parent="." instance=ExtResource("21_g1vep")]
 position = Vector2(-1289.82, -2588.5)
 scale = Vector2(1.564, 1.564)
+Exit = true
+Level = 1
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 layer = -10
@@ -339,6 +344,15 @@ scale = Vector2(0.838, 0.39)
 texture = ExtResource("14_scs0q")
 centered = false
 
+[node name="GrassPlane8" type="Sprite2D" parent="Background elements/Trees/ParallaxBackground/ParallaxLayer"]
+self_modulate = Color(0.729412, 0.541176, 0.541176, 1)
+z_index = 2
+material = SubResource("ShaderMaterial_66617")
+position = Vector2(1615, 46)
+scale = Vector2(0.838, 0.39)
+texture = ExtResource("14_scs0q")
+centered = false
+
 [node name="SakuraTree2" type="Sprite2D" parent="Background elements/Trees"]
 position = Vector2(172.566, 170.354)
 scale = Vector2(0.4, 0.4)
@@ -380,7 +394,7 @@ scale = Vector2(0.885, 0.885)
 texture = ExtResource("9_b1pim")
 
 [node name="SakuraTree8" type="Sprite2D" parent="Background elements/Trees"]
-position = Vector2(3057.52, -294.248)
+position = Vector2(3057.52, -234.514)
 scale = Vector2(1.332, 1.332)
 texture = ExtResource("9_b1pim")
 
@@ -609,6 +623,22 @@ offset = Vector2(0, -80)
 [node name="GrassPlane7" type="Sprite2D" parent="Foreground Elements/Grass/ParallaxLayer"]
 material = SubResource("ShaderMaterial_rhley")
 position = Vector2(62, 41)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("14_scs0q")
+centered = false
+offset = Vector2(0, -80)
+
+[node name="GrassPlane12" type="Sprite2D" parent="Foreground Elements/Grass/ParallaxLayer"]
+material = SubResource("ShaderMaterial_rhley")
+position = Vector2(1483, -9)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("14_scs0q")
+centered = false
+offset = Vector2(0, -80)
+
+[node name="GrassPlane13" type="Sprite2D" parent="Foreground Elements/Grass/ParallaxLayer"]
+material = SubResource("ShaderMaterial_rhley")
+position = Vector2(1947, -14)
 scale = Vector2(0.25, 0.25)
 texture = ExtResource("14_scs0q")
 centered = false
@@ -1036,3 +1066,29 @@ offset_left = -3.0
 offset_top = 8.0
 offset_right = -3.0
 offset_bottom = 8.0
+
+[node name="INVis walls" type="ColorRect" parent="."]
+offset_left = -2365.0
+offset_top = -3088.0
+offset_right = -1922.0
+offset_bottom = 2122.0
+color = Color(1, 1, 1, 0)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="INVis walls"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="INVis walls/StaticBody2D"]
+position = Vector2(238.341, 2533.47)
+shape = SubResource("RectangleShape2D_0jaow")
+
+[node name="INVis walls2" type="ColorRect" parent="."]
+offset_left = 3482.3
+offset_top = -3347.35
+offset_right = 3925.3
+offset_bottom = 1862.65
+color = Color(1, 1, 1, 0)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="INVis walls2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="INVis walls2/StaticBody2D"]
+position = Vector2(15.4872, 2522.12)
+shape = SubResource("RectangleShape2D_0jaow")

@@ -11,4 +11,12 @@ res://Scenes/Entities/Crystal_being.tscn
 res://Scenes/Entities/Rocks.tscn
 res://Scenes/ui.tscn
 res://Scenes/Entities/respawn.tscn
+res://scripts/shrine.gd
+res://Scenes/Restart.gd
+res://Scenes/Levels/Kyveri_level_3.tscn
+res://Scenes/Levels/RainOni.gd
+res://AnimationPlayer.gd
+res://ColorRect.gd
+res://Scenes/Entities/boss Laser.tscn
+res://Scenes/Entities/Charge.gd
 res://scripts/Water_ball.gd

@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://vcb3t8fqh3vx"]
+[gd_scene load_steps=5 format=3 uid="uid://vcb3t8fqh3vx"]
 
 [ext_resource type="Texture2D" uid="uid://co6c3wxpylf4n" path="res://Assets/UI/Health_bar.png" id="1_ypgeq"]
 [ext_resource type="Script" path="res://Scenes/ProgressBar.gd" id="2_i34ek"]
+[ext_resource type="Script" path="res://Scenes/Restart.gd" id="3_kqcgd"]
 
 [sub_resource type="Theme" id="Theme_qqnon"]
 
@@ -26,3 +27,14 @@ value = 3.0
 texture_progress = ExtResource("1_ypgeq")
 texture_progress_offset = Vector2(7.74, 0)
 script = ExtResource("2_i34ek")
+
+[node name="Restart" type="Button" parent="."]
+layout_mode = 0
+offset_left = 268.0
+offset_top = 19.0
+offset_right = 484.0
+offset_bottom = 72.0
+text = "Restart"
+script = ExtResource("3_kqcgd")
+
+[connection signal="pressed" from="Restart" to="Restart" method="_on_pressed"]

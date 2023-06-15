@@ -1,0 +1,70 @@
+[gd_scene load_steps=8 format=3 uid="uid://6hodv5swi1g3"]
+
+[ext_resource type="Texture2D" uid="uid://c7t1bcas5jxsl" path="res://Assets/Objects/Rain_Oni_b.png" id="1_n2cww"]
+[ext_resource type="PackedScene" uid="uid://57s0fh2mlkkf" path="res://Scenes/Entities/shrine.tscn" id="2_iw32x"]
+[ext_resource type="Script" path="res://Scenes/Levels/RainOni.gd" id="2_sv5wy"]
+[ext_resource type="PackedScene" uid="uid://c7powupijqw71" path="res://Scenes/floting_rock.tscn" id="3_6e1t1"]
+[ext_resource type="PackedScene" uid="uid://buxrckkkib3nf" path="res://Scenes/Entities/player.tscn" id="3_pbhwm"]
+[ext_resource type="PackedScene" uid="uid://vcb3t8fqh3vx" path="res://Scenes/ui.tscn" id="4_7fa84"]
+[ext_resource type="PackedScene" uid="uid://cecrqua6y3umm" path="res://Scenes/Entities/boss Laser.tscn" id="7_76yup"]
+
+[node name="Level 3" type="Node2D"]
+position = Vector2(135, -63)
+scale = Vector2(0.452, 0.452)
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+position = Vector2(135, -63)
+scale = Vector2(0.452, 0.452)
+motion_scale = Vector2(0.4, 0.4)
+
+[node name="RainOni" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2(1050.89, 1296.46)
+scale = Vector2(1.708, 1.708)
+texture = ExtResource("1_n2cww")
+offset = Vector2(33.3528, -151.94)
+script = ExtResource("2_sv5wy")
+
+[node name="Platforms" type="Node2D" parent="."]
+
+[node name="floting_rock" parent="Platforms" instance=ExtResource("3_6e1t1")]
+position = Vector2(429.203, 1407.08)
+
+[node name="floting_rock5" parent="Platforms" instance=ExtResource("3_6e1t1")]
+position = Vector2(1230.09, 1411.5)
+
+[node name="floting_rock6" parent="Platforms" instance=ExtResource("3_6e1t1")]
+position = Vector2(1517.7, 1269.91)
+
+[node name="floting_rock7" parent="Platforms" instance=ExtResource("3_6e1t1")]
+position = Vector2(1716.81, 1141.59)
+
+[node name="floting_rock8" parent="Platforms" instance=ExtResource("3_6e1t1")]
+position = Vector2(1911.5, 1026.55)
+
+[node name="floting_rock2" parent="Platforms" instance=ExtResource("3_6e1t1")]
+position = Vector2(128.319, 1314.16)
+
+[node name="floting_rock3" parent="Platforms" instance=ExtResource("3_6e1t1")]
+position = Vector2(-176.991, 1128.32)
+
+[node name="floting_rock4" parent="Platforms" instance=ExtResource("3_6e1t1")]
+position = Vector2(176.991, 920.354)
+
+[node name="Shrine" parent="." instance=ExtResource("2_iw32x")]
+position = Vector2(856.195, 1274.34)
+
+[node name="player" parent="." instance=ExtResource("3_pbhwm")]
+position = Vector2(958.195, 1411.34)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="UI" parent="CanvasLayer" instance=ExtResource("4_7fa84")]
+offset_left = 14.0
+offset_top = 5.0
+offset_right = 14.0
+offset_bottom = 5.0
+
+[node name="boss attack" parent="." instance=ExtResource("7_76yup")]
+position = Vector2(-44.2478, -1865.04)
