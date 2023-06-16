@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=3 uid="uid://cbitufe7rw8b4"]
+[gd_scene load_steps=42 format=3 uid="uid://cbitufe7rw8b4"]
 
 [ext_resource type="Texture2D" uid="uid://d1wib7p0vtl2n" path="res://Assets/Background/COncept.png" id="1_4xlty"]
 [ext_resource type="PackedScene" uid="uid://cruvf6s5legry" path="res://Scenes/Entities/respawn.tscn" id="1_issix"]
@@ -25,6 +25,8 @@
 [ext_resource type="PackedScene" uid="uid://57s0fh2mlkkf" path="res://Scenes/Entities/shrine.tscn" id="21_g1vep"]
 [ext_resource type="Texture2D" uid="uid://drroe0q0ogkc2" path="res://Assets/Objects/Leaf particle.png" id="23_p17bv"]
 [ext_resource type="PackedScene" uid="uid://vcb3t8fqh3vx" path="res://Scenes/ui.tscn" id="24_fraup"]
+[ext_resource type="PackedScene" uid="uid://dovoduq5j6klu" path="res://Scenes/Entities/gems.tscn" id="26_rtglw"]
+[ext_resource type="PackedScene" uid="uid://xpyegpjq5xvc" path="res://Scenes/Entities/yokai_barrier.tscn" id="27_ud10t"]
 
 [sub_resource type="Animation" id="Animation_64vm0"]
 resource_name = "CLoud Panning"
@@ -1092,3 +1094,22 @@ color = Color(1, 1, 1, 0)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="INVis walls2/StaticBody2D"]
 position = Vector2(15.4872, 2522.12)
 shape = SubResource("RectangleShape2D_0jaow")
+
+[node name="Gems" type="Node2D" parent="."]
+
+[node name="Gems" parent="Gems" instance=ExtResource("26_rtglw")]
+position = Vector2(-1227.88, -1590.71)
+
+[node name="Gems2" parent="Gems" instance=ExtResource("26_rtglw")]
+position = Vector2(-519.911, -2289.82)
+
+[node name="Gems4" parent="Gems" instance=ExtResource("26_rtglw")]
+position = Vector2(1269.91, -2849.56)
+
+[node name="Gems3" parent="Gems" instance=ExtResource("26_rtglw")]
+position = Vector2(845.133, -878.319)
+
+[node name="Yokai Barrier" parent="." instance=ExtResource("27_ud10t")]
+position = Vector2(-2119.47, -2692.48)
+scale = Vector2(5.019, 5.019)
+Gems_Needed = 4

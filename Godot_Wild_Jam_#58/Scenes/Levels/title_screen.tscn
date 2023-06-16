@@ -1,0 +1,45 @@
+[gd_scene load_steps=7 format=3 uid="uid://ciajt57d741o0"]
+
+[ext_resource type="Texture2D" uid="uid://dhw32cf415iwx" path="res://Assets/UI/Title.png" id="1_qmx1l"]
+[ext_resource type="AudioStream" uid="uid://dx2sdv818llbl" path="res://Assets/SFX/japanese-garden-139092.mp3" id="2_7llok"]
+[ext_resource type="FontFile" uid="uid://dscockw6qgwgx" path="res://Assets/UI/JAPAB___.TTF" id="2_arolv"]
+[ext_resource type="Script" path="res://Scenes/Levels/Button.gd" id="4_pyuvx"]
+
+[sub_resource type="FontVariation" id="FontVariation_m2uew"]
+base_font = ExtResource("2_arolv")
+
+[sub_resource type="Theme" id="Theme_pwxje"]
+default_font = SubResource("FontVariation_m2uew")
+
+[node name="Title Screen" type="Node2D"]
+
+[node name="Title" type="Sprite2D" parent="."]
+position = Vector2(775, 555)
+scale = Vector2(0.733, 0.733)
+texture = ExtResource("1_qmx1l")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_7llok")
+autoplay = true
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Button" type="Button" parent="Control"]
+layout_mode = 0
+offset_left = 971.0
+offset_top = 704.0
+offset_right = 1460.0
+offset_bottom = 794.0
+theme = SubResource("Theme_pwxje")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.792157, 0.14902, 0.501961, 1)
+theme_override_font_sizes/font_size = 57
+text = "Start Game"
+flat = true
+script = ExtResource("4_pyuvx")
+
+[connection signal="pressed" from="Control/Button" to="Control/Button" method="_on_pressed"]

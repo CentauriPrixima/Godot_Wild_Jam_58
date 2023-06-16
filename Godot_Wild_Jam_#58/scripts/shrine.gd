@@ -18,6 +18,7 @@ func _on_area_2d_body_entered(body)-> void:
 	if body == null:
 		return
 	if Exit == true:
+		Global.gemcount = 0 
 		Global.win()
 		
 		if Level == 1:

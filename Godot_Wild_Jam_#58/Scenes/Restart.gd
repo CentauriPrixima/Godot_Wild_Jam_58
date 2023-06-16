@@ -14,3 +14,4 @@ func _process(delta):
 func _on_pressed():
 	get_tree().reload_current_scene()
 	Global.phealth = 3
+	Global.gemcount = 0

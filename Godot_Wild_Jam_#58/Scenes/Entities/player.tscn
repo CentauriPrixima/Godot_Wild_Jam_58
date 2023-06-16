@@ -32,6 +32,7 @@ func _ready():
 
 func _process(delta):
 	die()
+	tori_teleport()
 	life = Global.phealth
 	if is_on_floor():
 		pos1 = position.x
@@ -135,7 +136,11 @@ func die():
 	
 
 	
-
+func tori_teleport():
+	if Global.torigate == true:
+		$\".\".position = Vector2(Global.tori_spawnx,Global.tori_spawny)
+		Global.torigate = false
+		
 
 
 	

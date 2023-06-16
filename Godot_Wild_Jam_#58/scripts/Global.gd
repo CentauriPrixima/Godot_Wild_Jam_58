@@ -7,6 +7,11 @@ var ptrigger = false
 var lastknownx:float 
 var lastknowny:float
 var hurting = false
+var gemcount:int
+var torigate:bool
+var tori_present:bool
+var tori_spawnx:float
+var tori_spawny:float
 func _ready():
 	pass
 
@@ -32,4 +37,4 @@ func _Health_Loss():
 		phealth = phealth - 1
 		
 	
-	
+

@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://c1j6ue8sw6fw1"]
+[gd_scene load_steps=27 format=3 uid="uid://c1j6ue8sw6fw1"]
 
 [ext_resource type="Texture2D" uid="uid://bygmtbpav6kwa" path="res://Assets/Background/Sky Gradient.png" id="1_bcv0y"]
 [ext_resource type="Texture2D" uid="uid://bn3li154fbxce" path="res://Assets/Background/Concept 2.png" id="2_0rgmj"]
@@ -19,6 +19,9 @@
 [ext_resource type="Texture2D" uid="uid://cnmqu8h6exx7g" path="res://Assets/Objects/Sakura_Tree_B.png" id="17_sjj1m"]
 [ext_resource type="AudioStream" uid="uid://b2mi3vtnd5oj3" path="res://Assets/SFX/Placeholder Music from SoundCloud Steve Oxen.mp3" id="18_5y0in"]
 [ext_resource type="PackedScene" uid="uid://vcb3t8fqh3vx" path="res://Scenes/ui.tscn" id="19_cvmlp"]
+[ext_resource type="PackedScene" uid="uid://dovoduq5j6klu" path="res://Scenes/Entities/gems.tscn" id="20_6gwlx"]
+[ext_resource type="PackedScene" uid="uid://xpyegpjq5xvc" path="res://Scenes/Entities/yokai_barrier.tscn" id="21_pi6rf"]
+[ext_resource type="PackedScene" uid="uid://b278vi3ndunhj" path="res://Scenes/Entities/killbox.tscn" id="22_bjynk"]
 
 [sub_resource type="Gradient" id="Gradient_41ej2"]
 colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
@@ -432,3 +435,26 @@ autoplay = true
 [node name="CanvasLayer2" type="CanvasLayer" parent="."]
 
 [node name="UI" parent="CanvasLayer2" instance=ExtResource("19_cvmlp")]
+
+[node name="Gems" type="Node2D" parent="."]
+
+[node name="Gems" parent="Gems" instance=ExtResource("20_6gwlx")]
+position = Vector2(400.443, -108.407)
+
+[node name="Gems2" parent="Gems" instance=ExtResource("20_6gwlx")]
+position = Vector2(486.726, 809.734)
+
+[node name="Gems3" parent="Gems" instance=ExtResource("20_6gwlx")]
+position = Vector2(1250, 170.354)
+
+[node name="Gems4" parent="Gems" instance=ExtResource("20_6gwlx")]
+position = Vector2(792.035, -1216.81)
+
+[node name="Yokai Barrier" parent="." instance=ExtResource("21_pi6rf")]
+position = Vector2(736.726, -1639.38)
+scale = Vector2(2.629, 2.629)
+Gems_Needed = 4
+
+[node name="Killbox" parent="." instance=ExtResource("22_bjynk")]
+position = Vector2(435.841, 1953.54)
+scale = Vector2(1920, 1)

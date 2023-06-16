@@ -1,16 +1,32 @@
-[gd_scene load_steps=8 format=3 uid="uid://6hodv5swi1g3"]
+[gd_scene load_steps=16 format=3 uid="uid://6hodv5swi1g3"]
 
 [ext_resource type="Texture2D" uid="uid://c7t1bcas5jxsl" path="res://Assets/Objects/Rain_Oni_b.png" id="1_n2cww"]
+[ext_resource type="Texture2D" uid="uid://punhll3yigst" path="res://Assets/Background/Boss BG.png" id="1_yvsnl"]
 [ext_resource type="PackedScene" uid="uid://57s0fh2mlkkf" path="res://Scenes/Entities/shrine.tscn" id="2_iw32x"]
 [ext_resource type="Script" path="res://Scenes/Levels/RainOni.gd" id="2_sv5wy"]
 [ext_resource type="PackedScene" uid="uid://c7powupijqw71" path="res://Scenes/floting_rock.tscn" id="3_6e1t1"]
 [ext_resource type="PackedScene" uid="uid://buxrckkkib3nf" path="res://Scenes/Entities/player.tscn" id="3_pbhwm"]
 [ext_resource type="PackedScene" uid="uid://vcb3t8fqh3vx" path="res://Scenes/ui.tscn" id="4_7fa84"]
 [ext_resource type="PackedScene" uid="uid://cecrqua6y3umm" path="res://Scenes/Entities/boss Laser.tscn" id="7_76yup"]
+[ext_resource type="PackedScene" uid="uid://d4gb2qrqauc7r" path="res://Scenes/Entities/Orb.tscn" id="8_fl2eo"]
+[ext_resource type="PackedScene" uid="uid://b00v5v5171vx5" path="res://Scenes/Entities/Waterball.tscn" id="9_3i33a"]
+[ext_resource type="AudioStream" uid="uid://cghgn2rts7f82" path="res://Assets/SFX/koto-traditional-japanese-music_01-141355.mp3" id="11_g4doq"]
+[ext_resource type="PackedScene" uid="uid://dovoduq5j6klu" path="res://Scenes/Entities/gems.tscn" id="12_vlakx"]
+[ext_resource type="PackedScene" uid="uid://bg4gxh5y8mjm2" path="res://Scenes/Entities/Tori_Gate.tscn" id="13_1cckg"]
+[ext_resource type="PackedScene" uid="uid://bdm4d2ofm1v1b" path="res://Scenes/Entities/tori_spawn.tscn" id="14_k01up"]
+[ext_resource type="PackedScene" uid="uid://b278vi3ndunhj" path="res://Scenes/Entities/killbox.tscn" id="15_iviab"]
 
 [node name="Level 3" type="Node2D"]
 position = Vector2(135, -63)
 scale = Vector2(0.452, 0.452)
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="."]
+layer = -100
+
+[node name="BossBg" type="Sprite2D" parent="CanvasLayer2"]
+position = Vector2(911, 417)
+scale = Vector2(0.898742, 0.796135)
+texture = ExtResource("1_yvsnl")
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
@@ -20,13 +36,14 @@ scale = Vector2(0.452, 0.452)
 motion_scale = Vector2(0.4, 0.4)
 
 [node name="RainOni" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
-position = Vector2(1050.89, 1296.46)
-scale = Vector2(1.708, 1.708)
+position = Vector2(2376.11, 1004.42)
+scale = Vector2(1.644, 1.644)
 texture = ExtResource("1_n2cww")
 offset = Vector2(33.3528, -151.94)
 script = ExtResource("2_sv5wy")
 
 [node name="Platforms" type="Node2D" parent="."]
+position = Vector2(3614.75, 129.009)
 
 [node name="floting_rock" parent="Platforms" instance=ExtResource("3_6e1t1")]
 position = Vector2(429.203, 1407.08)
@@ -35,13 +52,103 @@ position = Vector2(429.203, 1407.08)
 position = Vector2(1230.09, 1411.5)
 
 [node name="floting_rock6" parent="Platforms" instance=ExtResource("3_6e1t1")]
-position = Vector2(1517.7, 1269.91)
+position = Vector2(1841.01, 1406.39)
 
 [node name="floting_rock7" parent="Platforms" instance=ExtResource("3_6e1t1")]
-position = Vector2(1716.81, 1141.59)
+position = Vector2(1533.48, 1222.76)
 
 [node name="floting_rock8" parent="Platforms" instance=ExtResource("3_6e1t1")]
-position = Vector2(1911.5, 1026.55)
+position = Vector2(2199.41, 1587.8)
+
+[node name="floting_rock29" parent="Platforms" instance=ExtResource("3_6e1t1")]
+position = Vector2(2515.78, 1468.34)
+
+[node name="floting_rock30" parent="Platforms" instance=ExtResource("3_6e1t1")]
+position = Vector2(2774.63, 1278.07)
+
+[node name="floting_rock34" parent="Platforms" instance=ExtResource("3_6e1t1")]
+position = Vector2(3980.39, 1207.27)
+scale = Vector2(0.291, 0.291)
+
+[node name="floting_rock35" parent="Platforms" instance=ExtResource("3_6e1t1")]
+position = Vector2(4168.44, 1032.5)
+scale = Vector2(0.401, 0.401)
+
+[node name="floting_rock36" parent="Platforms" instance=ExtResource("3_6e1t1")]
+position = Vector2(3902.95, 915.238)
+scale = Vector2(0.322, 0.322)
+
+[node name="floting_rock37" parent="Platforms" instance=ExtResource("3_6e1t1")]
+position = Vector2(3582.16, 747.097)
+scale = Vector2(0.283, 0.283)
+
+[node name="floting_rock59" parent="Platforms" instance=ExtResource("3_6e1t1")]
+position = Vector2(2655.17, 596.655)
+
+[node name="floting_rock60" parent="Platforms" instance=ExtResource("3_6e1t1")]
+position = Vector2(2394.1, 678.513)
+
+[node name="floting_rock61" parent="Platforms" instance=ExtResource("3_6e1t1")]
+position = Vector2(2447.2, 461.699)
+
+[node name="floting_rock62" parent="Platforms" instance=ExtResource("3_6e1t1")]
+position = Vector2(2776.85, 430.725)
+scale = Vector2(0.413, 0.413)
+
+[node name="floting_rock63" parent="Platforms" instance=ExtResource("3_6e1t1")]
+position = Vector2(2405.17, 264.796)
+
+[node name="floting_rock64" parent="Platforms" instance=ExtResource("3_6e1t1")]
+position = Vector2(2048.97, 282.495)
+scale = Vector2(0.517, 0.517)
+
+[node name="floting_rock65" parent="Platforms" instance=ExtResource("3_6e1t1")]
+position = Vector2(1832.16, 286.92)
+scale = Vector2(0.517, 0.517)
+
+[node name="floting_rock66" parent="Platforms" instance=ExtResource("3_6e1t1")]
+position = Vector2(1506.94, 286.92)
+scale = Vector2(0.517, 0.517)
+
+[node name="floting_rock67" parent="Platforms" instance=ExtResource("3_6e1t1")]
+position = Vector2(1418.44, 286.92)
+scale = Vector2(0.517, 0.517)
+
+[node name="floting_rock68" parent="Platforms" instance=ExtResource("3_6e1t1")]
+position = Vector2(1323.31, 291.345)
+scale = Vector2(0.517, 0.517)
+
+[node name="floting_rock69" parent="Platforms" instance=ExtResource("3_6e1t1")]
+position = Vector2(1230.39, 286.92)
+scale = Vector2(0.517, 0.517)
+
+[node name="floting_rock70" parent="Platforms" instance=ExtResource("3_6e1t1")]
+position = Vector2(1130.83, 291.345)
+scale = Vector2(0.517, 0.517)
+
+[node name="floting_rock71" parent="Platforms" instance=ExtResource("3_6e1t1")]
+position = Vector2(1055.61, 291.345)
+scale = Vector2(0.517, 0.517)
+
+[node name="floting_rock38" parent="Platforms" instance=ExtResource("3_6e1t1")]
+position = Vector2(3327.73, 554.619)
+scale = Vector2(0.446, 0.446)
+
+[node name="floting_rock58" parent="Platforms" instance=ExtResource("3_6e1t1")]
+position = Vector2(3040.12, 539.133)
+scale = Vector2(0.315, 0.315)
+
+[node name="floting_rock31" parent="Platforms" instance=ExtResource("3_6e1t1")]
+position = Vector2(3223.75, 1289.13)
+scale = Vector2(0.382, 0.382)
+
+[node name="floting_rock32" parent="Platforms" instance=ExtResource("3_6e1t1")]
+position = Vector2(3489.24, 1289.13)
+scale = Vector2(0.382, 0.382)
+
+[node name="floting_rock33" parent="Platforms" instance=ExtResource("3_6e1t1")]
+position = Vector2(3774.63, 1295.77)
+scale = Vector2(0.382, 0.382)
 
 [node name="floting_rock2" parent="Platforms" instance=ExtResource("3_6e1t1")]
 position = Vector2(128.319, 1314.16)
@@ -50,13 +157,141 @@ position = Vector2(128.319, 1314.16)
 position = Vector2(-176.991, 1128.32)
 
 [node name="floting_rock4" parent="Platforms" instance=ExtResource("3_6e1t1")]
-position = Vector2(176.991, 920.354)
+position = Vector2(176.991, 944.69)
+
+[node name="floting_rock9" parent="Platforms" instance=ExtResource("3_6e1t1")]
+position = Vector2(-236.726, 765.487)
+
+[node name="floting_rock10" parent="Platforms" instance=ExtResource("3_6e1t1")]
+position = Vector2(-767.699, 765.487)
+
+[node name="floting_rock11" parent="Platforms" instance=ExtResource("3_6e1t1")]
+position = Vector2(-1365.04, 747.788)
+
+[node name="floting_rock12" parent="Platforms" instance=ExtResource("3_6e1t1")]
+position = Vector2(-1907.08, 736.726)
+
+[node name="floting_rock13" parent="Platforms" instance=ExtResource("3_6e1t1")]
+position = Vector2(-2251.91, 550.194)
+
+[node name="floting_rock14" parent="Platforms" instance=ExtResource("3_6e1t1")]
+position = Vector2(-2519.61, 682.938)
+
+[node name="floting_rock15" parent="Platforms" instance=ExtResource("3_6e1t1")]
+position = Vector2(-108.109, -706.443)
+
+[node name="floting_rock16" parent="Platforms" instance=ExtResource("3_6e1t1")]
+position = Vector2(-665.631, -697.593)
+
+[node name="floting_rock17" parent="Platforms" instance=ExtResource("3_6e1t1")]
+position = Vector2(-2798.37, 848.867)
+
+[node name="floting_rock18" parent="Platforms" instance=ExtResource("3_6e1t1")]
+position = Vector2(-2798.37, 848.867)
+
+[node name="floting_rock19" parent="Platforms" instance=ExtResource("3_6e1t1")]
+position = Vector2(-3402.36, 559.044)
+
+[node name="floting_rock20" parent="Platforms" instance=ExtResource("3_6e1t1")]
+position = Vector2(-3130.23, 738.248)
+
+[node name="floting_rock21" parent="Platforms" instance=ExtResource("3_6e1t1")]
+position = Vector2(-3767.4, 430.725)
+
+[node name="floting_rock22" parent="Platforms" instance=ExtResource("3_6e1t1")]
+position = Vector2(-3338.2, 269.221)
+
+[node name="floting_rock25" parent="Platforms" instance=ExtResource("3_6e1t1")]
+position = Vector2(-3769.61, 81.1679)
+
+[node name="floting_rock26" parent="Platforms" instance=ExtResource("3_6e1t1")]
+position = Vector2(-3327.14, -95.8233)
+
+[node name="floting_rock27" parent="Platforms" instance=ExtResource("3_6e1t1")]
+position = Vector2(-3787.31, -217.505)
+
+[node name="floting_rock39" parent="Platforms" instance=ExtResource("3_6e1t1")]
+position = Vector2(-4030.68, -224.142)
+
+[node name="floting_rock40" parent="Platforms" instance=ExtResource("3_6e1t1")]
+position = Vector2(-3103.68, -93.6109)
+
+[node name="floting_rock41" parent="Platforms" instance=ExtResource("3_6e1t1")]
+position = Vector2(-4043.95, 78.9554)
+
+[node name="floting_rock42" parent="Platforms" instance=ExtResource("3_6e1t1")]
+position = Vector2(-3114.74, 278.07)
+
+[node name="floting_rock43" parent="Platforms" instance=ExtResource("3_6e1t1")]
+position = Vector2(-3984.22, 424.088)
+
+[node name="floting_rock28" parent="Platforms" instance=ExtResource("3_6e1t1")]
+position = Vector2(-4362.53, -416.62)
+
+[node name="floting_rock44" parent="Platforms" instance=ExtResource("3_6e1t1")]
+position = Vector2(-4579.35, -547.151)
+
+[node name="floting_rock45" parent="Platforms" instance=ExtResource("3_6e1t1")]
+position = Vector2(-4532.89, -874.584)
+
+[node name="floting_rock46" parent="Platforms" instance=ExtResource("3_6e1t1")]
+position = Vector2(-4245.28, -876.797)
+
+[node name="floting_rock48" parent="Platforms" instance=ExtResource("3_6e1t1")]
+position = Vector2(-4245.28, -876.797)
+
+[node name="floting_rock49" parent="Platforms" instance=ExtResource("3_6e1t1")]
+position = Vector2(-3982, -817.062)
+
+[node name="floting_rock50" parent="Platforms" instance=ExtResource("3_6e1t1")]
+position = Vector2(-3570.5, -808.213)
+
+[node name="floting_rock51" parent="Platforms" instance=ExtResource("3_6e1t1")]
+position = Vector2(-3271.83, -752.903)
+
+[node name="floting_rock47" parent="Platforms" instance=ExtResource("3_6e1t1")]
+position = Vector2(-4758.55, -686.531)
+
+[node name="floting_rock23" parent="Platforms" instance=ExtResource("3_6e1t1")]
+position = Vector2(-3006.34, -763.965)
+rotation = 0.0120386
+scale = Vector2(1.383, 1.383)
+
+[node name="floting_rock52" parent="Platforms" instance=ExtResource("3_6e1t1")]
+position = Vector2(-2718.73, -759.54)
+rotation = 0.0120386
+scale = Vector2(1.383, 1.383)
+
+[node name="floting_rock53" parent="Platforms" instance=ExtResource("3_6e1t1")]
+position = Vector2(-2444.39, -755.115)
+rotation = 0.0120386
+scale = Vector2(1.383, 1.383)
+
+[node name="floting_rock54" parent="Platforms" instance=ExtResource("3_6e1t1")]
+position = Vector2(-2024.04, -744.053)
+rotation = 0.0120386
+scale = Vector2(1.383, 1.383)
+
+[node name="floting_rock55" parent="Platforms" instance=ExtResource("3_6e1t1")]
+position = Vector2(-1612.53, -748.478)
+rotation = 0.0120386
+scale = Vector2(1.383, 1.383)
+
+[node name="floting_rock56" parent="Platforms" instance=ExtResource("3_6e1t1")]
+position = Vector2(-1318.29, -748.478)
+rotation = 0.0120386
+scale = Vector2(1.383, 1.383)
+
+[node name="floting_rock57" parent="Platforms" instance=ExtResource("3_6e1t1")]
+position = Vector2(-1046.16, -748.478)
+rotation = 0.0120386
+scale = Vector2(1.383, 1.383)
 
 [node name="Shrine" parent="." instance=ExtResource("2_iw32x")]
-position = Vector2(856.195, 1274.34)
+position = Vector2(4464.6, 1373.89)
 
 [node name="player" parent="." instance=ExtResource("3_pbhwm")]
-position = Vector2(958.195, 1411.34)
+position = Vector2(4568.58, 1500)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -65,6 +300,230 @@ offset_left = 14.0
 offset_top = 5.0
 offset_right = 14.0
 offset_bottom = 5.0
+metadata/_edit_lock_ = true
 
 [node name="boss attack" parent="." instance=ExtResource("7_76yup")]
 position = Vector2(-44.2478, -1865.04)
+
+[node name="Traps" type="Node2D" parent="."]
+
+[node name="Orbs" type="Node2D" parent="Traps"]
+scale = Vector2(1, 1)
+
+[node name="Water Spouts" parent="Traps/Orbs" instance=ExtResource("8_fl2eo")]
+position = Vector2(3617.26, 1422.57)
+
+[node name="Water Spouts7" parent="Traps/Orbs" instance=ExtResource("8_fl2eo")]
+position = Vector2(3617.26, 1422.57)
+Sprout_timer = 0.9
+
+[node name="Water Spouts12" parent="Traps/Orbs" instance=ExtResource("8_fl2eo")]
+position = Vector2(-511.062, -37.6106)
+
+[node name="Water Spouts13" parent="Traps/Orbs" instance=ExtResource("8_fl2eo")]
+position = Vector2(1938.05, -997.788)
+rotation = -3.13979
+
+[node name="Water Spouts14" parent="Traps/Orbs" instance=ExtResource("8_fl2eo")]
+position = Vector2(1796.46, -1006.64)
+rotation = -3.13979
+Sprout_timer = 1.0
+
+[node name="Water Spouts15" parent="Traps/Orbs" instance=ExtResource("8_fl2eo")]
+position = Vector2(1619.47, -991.151)
+rotation = -3.13979
+Sprout_timer = 0.9
+
+[node name="Water Spouts16" parent="Traps/Orbs" instance=ExtResource("8_fl2eo")]
+position = Vector2(1462.39, -1004.42)
+rotation = -3.13979
+Sprout_timer = 0.8
+
+[node name="Water Spouts17" parent="Traps/Orbs" instance=ExtResource("8_fl2eo")]
+position = Vector2(1318.58, -1000)
+rotation = -3.13979
+Sprout_timer = 0.7
+
+[node name="Water Spouts18" parent="Traps/Orbs" instance=ExtResource("8_fl2eo")]
+position = Vector2(1190.27, -1002.21)
+rotation = -3.13979
+Sprout_timer = 0.6
+
+[node name="Water Spouts19" parent="Traps/Orbs" instance=ExtResource("8_fl2eo")]
+position = Vector2(1057.52, -1019.91)
+rotation = -3.13979
+Sprout_timer = 0.5
+
+[node name="Water Spouts20" parent="Traps/Orbs" instance=ExtResource("8_fl2eo")]
+position = Vector2(926.991, -1035.4)
+rotation = -3.13979
+Sprout_timer = 0.4
+
+[node name="Water Spouts21" parent="Traps/Orbs" instance=ExtResource("8_fl2eo")]
+position = Vector2(783.186, -1030.97)
+rotation = -3.13979
+Sprout_timer = 0.3
+
+[node name="Water Spouts22" parent="Traps/Orbs" instance=ExtResource("8_fl2eo")]
+position = Vector2(641.593, -1026.55)
+rotation = -3.13979
+Sprout_timer = 0.2
+
+[node name="Water Spouts8" parent="Traps/Orbs" instance=ExtResource("8_fl2eo")]
+position = Vector2(3935.84, 1519.91)
+Sprout_timer = 0.2
+
+[node name="Water Spouts2" parent="Traps/Orbs" instance=ExtResource("8_fl2eo")]
+position = Vector2(2601.77, 977.876)
+Sprout_timer = 5.0
+
+[node name="Water Spouts9" parent="Traps/Orbs" instance=ExtResource("8_fl2eo")]
+position = Vector2(3081.86, 995.575)
+
+[node name="Water Spouts10" parent="Traps/Orbs" instance=ExtResource("8_fl2eo")]
+position = Vector2(3236.73, 1004.42)
+
+[node name="Water Spouts3" parent="Traps/Orbs" instance=ExtResource("8_fl2eo")]
+position = Vector2(1000, 1011.06)
+
+[node name="Water Spouts6" parent="Traps/Orbs" instance=ExtResource("8_fl2eo")]
+position = Vector2(77.4336, 789.823)
+
+[node name="Water Spouts11" parent="Traps/Orbs" instance=ExtResource("8_fl2eo")]
+position = Vector2(207.965, -303.097)
+rotation = -3.13418
+
+[node name="Water Spouts5" parent="Traps/Orbs" instance=ExtResource("8_fl2eo")]
+position = Vector2(1278.76, 926.991)
+Sprout_timer = 0.5
+
+[node name="Water Spouts4" parent="Traps/Orbs" instance=ExtResource("8_fl2eo")]
+position = Vector2(1575.22, 887.168)
+
+[node name="Waterballs" type="Node2D" parent="Traps"]
+
+[node name="Waterball" parent="Traps/Waterballs" instance=ExtResource("9_3i33a")]
+position = Vector2(6380.53, 993.363)
+
+[node name="Waterball7" parent="Traps/Waterballs" instance=ExtResource("9_3i33a")]
+position = Vector2(5747.79, 19.9113)
+
+[node name="Waterball24" parent="Traps/Waterballs" instance=ExtResource("9_3i33a")]
+position = Vector2(5904.87, 794.248)
+
+[node name="Waterball25" parent="Traps/Waterballs" instance=ExtResource("9_3i33a")]
+position = Vector2(6103.98, 493.363)
+
+[node name="Waterball26" parent="Traps/Waterballs" instance=ExtResource("9_3i33a")]
+position = Vector2(6847.34, 168.142)
+
+[node name="Waterball27" parent="Traps/Waterballs" instance=ExtResource("9_3i33a")]
+position = Vector2(6103.98, 668.142)
+
+[node name="Waterball8" parent="Traps/Waterballs" instance=ExtResource("9_3i33a")]
+position = Vector2(6825.22, 672.566)
+
+[node name="Waterball22" parent="Traps/Waterballs" instance=ExtResource("9_3i33a")]
+position = Vector2(6661.5, 252.212)
+
+[node name="Waterball28" parent="Traps/Waterballs" instance=ExtResource("9_3i33a")]
+position = Vector2(7309.73, 522.124)
+
+[node name="Waterball23" parent="Traps/Waterballs" instance=ExtResource("9_3i33a")]
+position = Vector2(6506.64, 758.85)
+
+[node name="Waterball9" parent="Traps/Waterballs" instance=ExtResource("9_3i33a")]
+position = Vector2(6128.32, 4.42419)
+
+[node name="Waterball10" parent="Traps/Waterballs" instance=ExtResource("9_3i33a")]
+position = Vector2(7070.8, 245.575)
+scale = Vector2(1.569, 1.569)
+
+[node name="Waterball5" parent="Traps/Waterballs" instance=ExtResource("9_3i33a")]
+position = Vector2(4942.48, 1168.14)
+
+[node name="Waterball4" parent="Traps/Waterballs" instance=ExtResource("9_3i33a")]
+position = Vector2(5192.48, 1486.73)
+scale = Vector2(1.748, 1.748)
+
+[node name="Waterball6" parent="Traps/Waterballs" instance=ExtResource("9_3i33a")]
+position = Vector2(5845.13, 1214.6)
+scale = Vector2(2.29, 2.29)
+
+[node name="Waterball12" parent="Traps/Waterballs" instance=ExtResource("9_3i33a")]
+position = Vector2(5477.88, 980.089)
+scale = Vector2(2.29, 2.29)
+
+[node name="Waterball13" parent="Traps/Waterballs" instance=ExtResource("9_3i33a")]
+position = Vector2(5502.21, 1785.4)
+scale = Vector2(2.29, 2.29)
+
+[node name="Waterball14" parent="Traps/Waterballs" instance=ExtResource("9_3i33a")]
+position = Vector2(6112.83, 1849.56)
+scale = Vector2(2.29, 2.29)
+
+[node name="Waterball2" parent="Traps/Waterballs" instance=ExtResource("9_3i33a")]
+position = Vector2(5154.87, 991.15)
+
+[node name="Waterball3" parent="Traps/Waterballs" instance=ExtResource("9_3i33a")]
+position = Vector2(6170.35, 1201.33)
+
+[node name="Waterball11" parent="Traps/Waterballs" instance=ExtResource("9_3i33a")]
+position = Vector2(6710.18, 1378.32)
+
+[node name="Waterball15" parent="Traps/Waterballs" instance=ExtResource("9_3i33a")]
+position = Vector2(6977.88, 1407.08)
+
+[node name="Waterball16" parent="Traps/Waterballs" instance=ExtResource("9_3i33a")]
+position = Vector2(7241.15, 1387.17)
+
+[node name="Waterball17" parent="Traps/Waterballs" instance=ExtResource("9_3i33a")]
+position = Vector2(6705.75, 977.877)
+
+[node name="Waterball30" parent="Traps/Waterballs" instance=ExtResource("9_3i33a")]
+position = Vector2(7015.49, 982.301)
+
+[node name="Waterball29" parent="Traps/Waterballs" instance=ExtResource("9_3i33a")]
+position = Vector2(6393.81, 1522.12)
+
+[node name="Waterball20" parent="Traps/Waterballs" instance=ExtResource("9_3i33a")]
+position = Vector2(7561.95, 661.505)
+
+[node name="Waterball21" parent="Traps/Waterballs" instance=ExtResource("9_3i33a")]
+position = Vector2(7849.56, 796.46)
+
+[node name="Waterball18" parent="Traps/Waterballs" instance=ExtResource("9_3i33a")]
+position = Vector2(7347.35, 931.416)
+
+[node name="Waterball19" parent="Traps/Waterballs" instance=ExtResource("9_3i33a")]
+position = Vector2(7033.19, 761.062)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("11_g4doq")
+autoplay = true
+
+[node name="Gems" parent="." instance=ExtResource("12_vlakx")]
+position = Vector2(2006.64, -1106.19)
+
+[node name="Gems2" parent="." instance=ExtResource("12_vlakx")]
+position = Vector2(4590.71, -146.018)
+
+[node name="Gems3" parent="." instance=ExtResource("12_vlakx")]
+position = Vector2(7128.32, 853.982)
+
+[node name="Gems4" parent="." instance=ExtResource("12_vlakx")]
+position = Vector2(106.195, -68.5841)
+
+[node name="Tori_Spawn" parent="." instance=ExtResource("14_k01up")]
+position = Vector2(4488.94, 1252.21)
+scale = Vector2(1, 1)
+
+[node name="Tori Gate" parent="." instance=ExtResource("13_1cckg")]
+position = Vector2(2938.05, -780.973)
+
+[node name="Tori Gate2" parent="." instance=ExtResource("13_1cckg")]
+position = Vector2(4668.14, 199.115)
+
+[node name="Killbox" parent="." instance=ExtResource("15_iviab")]
+position = Vector2(-232.301, 3013.27)
+scale = Vector2(1920, 1)
