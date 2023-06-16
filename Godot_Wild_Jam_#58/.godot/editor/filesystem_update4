@@ -1,10 +1,16 @@
-res://Scenes/level_1.tscn
-res://Scenes/Kyveri_Level_1.gdshader
 res://Scenes/Entities/player.tscn
-res://Scenes/powerups.tscn
-res://Scenes/gyser.tscn
+res://Scenes/Kyveri_Level_1.gdshader
 res://Scenes/floting_rock.tscn
 res://Scenes/Kyveri_Level_1.tscn
 res://Scenes/Entities/Orb.tscn
 res://Scenes/Entities/shrine.tscn
 res://Scenes/Entities/Waterball.tscn
+res://Scenes/Levels/Kyveri_Level_2.tscn
+res://Scenes/ui.tscn
+res://Scenes/Levels/Kyveri_level_3.tscn
+res://Scenes/Entities/boss Laser.tscn
+res://Scenes/Entities/Tori_Gate.tscn
+res://Scenes/Entities/tori_spawn.tscn
+res://Scenes/Entities/killbox.tscn
+res://Scenes/Entities/Platforms.tscn
+res://Scenes/Entities/gems.tscn

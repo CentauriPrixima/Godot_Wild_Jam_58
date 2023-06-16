@@ -11,8 +11,8 @@ func _process(delta):
 	pass
 
 
-func _on_area_entered(hitbox:HurtBox)-> void:
-	if hitbox == null:
+func _on_area_entered(HurtBox)-> void:
+	if HurtBox == null:
 		return
 	SFX.play()
 	if pickedup == false:

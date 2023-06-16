@@ -328,16 +328,8 @@ scale = Vector2(1.9, 1.9)
 position = Vector2(767.699, -219.027)
 scale = Vector2(2.976, 2.976)
 
-[node name="Waterball12" parent="Hazards/Water Balls" instance=ExtResource("5_nqajk")]
-position = Vector2(1796.46, -493.363)
-scale = Vector2(1.9, 1.9)
-
-[node name="Waterball16" parent="Hazards/Water Balls" instance=ExtResource("5_nqajk")]
-position = Vector2(1796.46, -493.363)
-scale = Vector2(1.9, 1.9)
-
 [node name="Waterball13" parent="Hazards/Water Balls" instance=ExtResource("5_nqajk")]
-position = Vector2(2207.96, -630.531)
+position = Vector2(2181.42, -758.849)
 scale = Vector2(1.9, 1.9)
 
 [node name="Waterball6" parent="Hazards/Water Balls" instance=ExtResource("5_nqajk")]

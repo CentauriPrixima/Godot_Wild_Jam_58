@@ -12,7 +12,7 @@ func _process(delta):
 
 
 func _on_area_entered(hitbox:HurtBox)-> void:
-	if hitbox == null:
+	if HurtBox == null:
 			return
 		
 	print("Death by orb", Global.phealth)

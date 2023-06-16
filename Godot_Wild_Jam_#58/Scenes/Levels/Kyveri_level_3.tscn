@@ -308,14 +308,10 @@ position = Vector2(-44.2478, -1865.04)
 [node name="Traps" type="Node2D" parent="."]
 
 [node name="Orbs" type="Node2D" parent="Traps"]
-scale = Vector2(1, 1)
-
-[node name="Water Spouts" parent="Traps/Orbs" instance=ExtResource("8_fl2eo")]
-position = Vector2(3617.26, 1422.57)
 
 [node name="Water Spouts7" parent="Traps/Orbs" instance=ExtResource("8_fl2eo")]
-position = Vector2(3617.26, 1422.57)
-Sprout_timer = 0.9
+position = Vector2(3632.74, 1451.33)
+Sprout_timer = 0.2
 
 [node name="Water Spouts12" parent="Traps/Orbs" instance=ExtResource("8_fl2eo")]
 position = Vector2(-511.062, -37.6106)
@@ -379,12 +375,15 @@ Sprout_timer = 5.0
 
 [node name="Water Spouts9" parent="Traps/Orbs" instance=ExtResource("8_fl2eo")]
 position = Vector2(3081.86, 995.575)
+Sprout_timer = 0.1
 
 [node name="Water Spouts10" parent="Traps/Orbs" instance=ExtResource("8_fl2eo")]
 position = Vector2(3236.73, 1004.42)
+Sprout_timer = 0.1
 
 [node name="Water Spouts3" parent="Traps/Orbs" instance=ExtResource("8_fl2eo")]
 position = Vector2(1000, 1011.06)
+Sprout_timer = 0.1
 
 [node name="Water Spouts6" parent="Traps/Orbs" instance=ExtResource("8_fl2eo")]
 position = Vector2(77.4336, 789.823)
@@ -399,14 +398,9 @@ Sprout_timer = 0.5
 
 [node name="Water Spouts4" parent="Traps/Orbs" instance=ExtResource("8_fl2eo")]
 position = Vector2(1575.22, 887.168)
+Sprout_timer = 0.1
 
 [node name="Waterballs" type="Node2D" parent="Traps"]
-
-[node name="Waterball" parent="Traps/Waterballs" instance=ExtResource("9_3i33a")]
-position = Vector2(6380.53, 993.363)
-
-[node name="Waterball7" parent="Traps/Waterballs" instance=ExtResource("9_3i33a")]
-position = Vector2(5747.79, 19.9113)
 
 [node name="Waterball24" parent="Traps/Waterballs" instance=ExtResource("9_3i33a")]
 position = Vector2(5904.87, 794.248)
@@ -427,7 +421,7 @@ position = Vector2(6825.22, 672.566)
 position = Vector2(6661.5, 252.212)
 
 [node name="Waterball28" parent="Traps/Waterballs" instance=ExtResource("9_3i33a")]
-position = Vector2(7309.73, 522.124)
+position = Vector2(7336.28, 444.69)
 
 [node name="Waterball23" parent="Traps/Waterballs" instance=ExtResource("9_3i33a")]
 position = Vector2(6506.64, 758.85)
@@ -477,17 +471,11 @@ position = Vector2(6977.88, 1407.08)
 [node name="Waterball16" parent="Traps/Waterballs" instance=ExtResource("9_3i33a")]
 position = Vector2(7241.15, 1387.17)
 
-[node name="Waterball17" parent="Traps/Waterballs" instance=ExtResource("9_3i33a")]
-position = Vector2(6705.75, 977.877)
-
-[node name="Waterball30" parent="Traps/Waterballs" instance=ExtResource("9_3i33a")]
-position = Vector2(7015.49, 982.301)
-
 [node name="Waterball29" parent="Traps/Waterballs" instance=ExtResource("9_3i33a")]
 position = Vector2(6393.81, 1522.12)
 
 [node name="Waterball20" parent="Traps/Waterballs" instance=ExtResource("9_3i33a")]
-position = Vector2(7561.95, 661.505)
+position = Vector2(7588.5, 612.832)
 
 [node name="Waterball21" parent="Traps/Waterballs" instance=ExtResource("9_3i33a")]
 position = Vector2(7849.56, 796.46)
@@ -516,7 +504,6 @@ position = Vector2(106.195, -68.5841)
 
 [node name="Tori_Spawn" parent="." instance=ExtResource("14_k01up")]
 position = Vector2(4488.94, 1252.21)
-scale = Vector2(1, 1)
 
 [node name="Tori Gate" parent="." instance=ExtResource("13_1cckg")]
 position = Vector2(2938.05, -780.973)
