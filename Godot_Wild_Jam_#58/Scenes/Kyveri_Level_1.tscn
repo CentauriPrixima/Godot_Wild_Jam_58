@@ -1,7 +1,7 @@
 [gd_scene load_steps=42 format=3 uid="uid://cbitufe7rw8b4"]
 
 [ext_resource type="Texture2D" uid="uid://d1wib7p0vtl2n" path="res://Assets/Background/COncept.png" id="1_4xlty"]
-[ext_resource type="PackedScene" uid="uid://cruvf6s5legry" path="res://Scenes/Entities/respawn.tscn" id="1_issix"]
+[ext_resource type="PackedScene" path="res://Scenes/Entities/respawn.tscn" id="1_issix"]
 [ext_resource type="Texture2D" uid="uid://bygmtbpav6kwa" path="res://Assets/Background/Sky Gradient.png" id="2_jhp7o"]
 [ext_resource type="Texture2D" uid="uid://dxpq2o4c7lk3q" path="res://Assets/Background/Mountains far.png" id="3_y5dr6"]
 [ext_resource type="Texture2D" uid="uid://bhurrc5go27k7" path="res://Assets/Background/clouds.png" id="4_h6b5m"]
@@ -24,9 +24,9 @@
 [ext_resource type="PackedScene" uid="uid://d4gb2qrqauc7r" path="res://Scenes/Entities/Orb.tscn" id="20_w2vtx"]
 [ext_resource type="PackedScene" uid="uid://57s0fh2mlkkf" path="res://Scenes/Entities/shrine.tscn" id="21_g1vep"]
 [ext_resource type="Texture2D" uid="uid://drroe0q0ogkc2" path="res://Assets/Objects/Leaf particle.png" id="23_p17bv"]
-[ext_resource type="PackedScene" uid="uid://vcb3t8fqh3vx" path="res://Scenes/ui.tscn" id="24_fraup"]
-[ext_resource type="PackedScene" uid="uid://dovoduq5j6klu" path="res://Scenes/Entities/gems.tscn" id="26_rtglw"]
-[ext_resource type="PackedScene" uid="uid://xpyegpjq5xvc" path="res://Scenes/Entities/yokai_barrier.tscn" id="27_ud10t"]
+[ext_resource type="PackedScene" path="res://Scenes/ui.tscn" id="24_fraup"]
+[ext_resource type="PackedScene" path="res://Scenes/Entities/gems.tscn" id="26_rtglw"]
+[ext_resource type="PackedScene" path="res://Scenes/Entities/yokai_barrier.tscn" id="27_ud10t"]
 
 [sub_resource type="Animation" id="Animation_64vm0"]
 resource_name = "CLoud Panning"
@@ -490,7 +490,7 @@ scale = Vector2(0.409, 0.409)
 texture = ExtResource("11_d0gxa")
 
 [node name="player" parent="." instance=ExtResource("12_6xjbr")]
-position = Vector2(933, 293)
+position = Vector2(-484.513, -2185.84)
 gravity = 25
 
 [node name="Platforms" type="Node2D" parent="."]
@@ -518,7 +518,7 @@ position = Vector2(823.009, -112.832)
 position = Vector2(690.265, -564.159)
 
 [node name="floting_rock22" parent="Platforms" instance=ExtResource("13_184o8")]
-position = Vector2(1267.7, -325.221)
+position = Vector2(1196.9, -216.814)
 
 [node name="floting_rock23" parent="Platforms" instance=ExtResource("13_184o8")]
 position = Vector2(889.381, -442.478)
