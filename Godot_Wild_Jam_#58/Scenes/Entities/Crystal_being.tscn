@@ -1,0 +1,52 @@
+[gd_scene load_steps=5 format=3 uid="uid://cglmwncttrtlm"]
+
+[ext_resource type="Texture2D" uid="uid://h0fxuj8qmts1" path="res://Assets/Objects/Crystal_Being_B2.png" id="1_v3bkc"]
+
+[sub_resource type="Animation" id="Animation_slclw"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(513, 510)]
+}
+
+[sub_resource type="Animation" id="Animation_qfymr"]
+resource_name = "new_animation"
+length = 5.0
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(513, 510), Vector2(516, 296)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_dpfi6"]
+_data = {
+"RESET": SubResource("Animation_slclw"),
+"new_animation": SubResource("Animation_qfymr")
+}
+
+[node name="Node2D" type="Sprite2D"]
+position = Vector2(513, 510)
+texture = ExtResource("1_v3bkc")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "new_animation"
+speed_scale = 0.15
+libraries = {
+"": SubResource("AnimationLibrary_dpfi6")
+}

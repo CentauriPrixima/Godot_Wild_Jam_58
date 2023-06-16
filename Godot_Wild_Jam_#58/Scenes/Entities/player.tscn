@@ -1,7 +1,11 @@
-[gd_scene load_steps=14 format=3 uid="uid://buxrckkkib3nf"]
+[gd_scene load_steps=19 format=3 uid="uid://buxrckkkib3nf"]
 
 [ext_resource type="Texture2D" uid="uid://scqvd0te38od" path="res://Assets/Main_Character/Player_Concept_Idle.png" id="1_dsgcp"]
+[ext_resource type="Texture2D" uid="uid://bepec7bdksoe0" path="res://Assets/UI/Health.png" id="1_ytxh0"]
 [ext_resource type="Texture2D" uid="uid://c8ff7rvf7job6" path="res://Assets/Main_Character/Character_Test_Run.png" id="2_jhx3h"]
+[ext_resource type="AudioStream" uid="uid://cshh7yf66m1hd" path="res://Assets/SFX/Jump.mp3" id="3_6phle"]
+[ext_resource type="AudioStream" uid="uid://b6sl7fnjigju4" path="res://Assets/SFX/Cloud_FS.mp3" id="4_ycrg1"]
+[ext_resource type="Script" path="res://Scenes/Entities/Hurtbox.gd" id="5_s3mjl"]
 
 [sub_resource type="GDScript" id="GDScript_ijgpw"]
 script/source = "extends CharacterBody2D
@@ -14,13 +18,31 @@ var og_speed = speed
 @export var jump_force = 500
 var can_die = true
 var can_double_jump = false
-
-# ready func
+var jump_sound = false
+var is_dead = false
+var life = 3
+var pos1
+var pos2
+var spawn = false
 func _ready():
 	
 	$AnimatedSprite2D.play(\"idle-ish\")
 	hbox_idleish()
 
+
+func _process(delta):
+	die()
+	tori_teleport()
+	life = Global.phealth
+	if is_on_floor():
+		pos1 = position.x
+		pos2 = position.y
+		Global.lastknownx = pos1
+		Global.lastknowny = pos2
+	if Global.hurting == true:
+		position = Vector2(Global.lastknownx,Global.lastknowny)
+		Global.hurting = false
+		
 
 # physics prosses
 func _physics_process(delta):
@@ -31,43 +53,47 @@ func _physics_process(delta):
 
 # player movement func
 func player_movement(delta):
-	
-	if !is_on_floor():
-		velocity.y += gravity
-	if velocity.y > maxfallspeed:
-		velocity.y = maxfallspeed
-	if Input.is_action_just_pressed(\"up\") and is_on_floor():
-		velocity.y = -jump_force
-	elif Input.is_action_just_pressed(\"up\") and can_double_jump == true and !is_on_floor():
-		velocity.y = 0
-		velocity.y = -jump_force
-		can_double_jump = false
-	if Input.is_action_just_released(\"up\"):
-		
-		if velocity.y > 0:
-			velocity.y +100
-		else: 
+	if is_dead == false:
+		if !is_on_floor():
+			velocity.y += gravity
+		if velocity.y > maxfallspeed:
+			velocity.y = maxfallspeed
+		if Input.is_action_just_pressed(\"up\") and is_on_floor():
+			velocity.y = -jump_force
+			if jump_sound == false:
+				$Jump.play()
+				jump_sound = true
+			if is_on_floor():
+				jump_sound = false
+		elif Input.is_action_just_pressed(\"up\") and can_double_jump == true and !is_on_floor():
 			velocity.y = 0
-	
-	
-	velocity.x = Input.get_action_strength(\"right\") - Input.get_action_strength(\"left\")
-	
-	# logic
-	if velocity.x > 0:
-		$AnimatedSprite2D.flip_h = false
-		$AnimatedSprite2D.play(\"run\")
-		running_right()
-	elif velocity.x < 0:
-		$AnimatedSprite2D.flip_h = true
-		$AnimatedSprite2D.play(\"run\")
-		running_left()
-	else:
-		$AnimatedSprite2D.play(\"idle-ish\")
-		hbox_idleish()
-	
-	velocity.x *= speed * speed
-	
-	move_and_slide()
+			velocity.y = -jump_force
+			can_double_jump = false
+		if Input.is_action_just_released(\"up\"):
+			velocity.y =max(-velocity.y,0,10)
+				
+		
+		
+		velocity.x = Input.get_action_strength(\"right\") - Input.get_action_strength(\"left\")
+		
+		# logic
+		if velocity.x > 0:
+			$AnimatedSprite2D.flip_h = false
+			$AnimatedSprite2D.play(\"run\")
+			
+			running_right()
+		elif velocity.x < 0:
+			$AnimatedSprite2D.flip_h = true
+			$AnimatedSprite2D.play(\"run\")
+			
+			running_left()
+		else:
+			$AnimatedSprite2D.play(\"idle-ish\")
+			hbox_idleish()
+		
+		velocity.x *= speed * speed
+		
+		move_and_slide()
 
 # which hitboxes are being used
 func running_right():
@@ -101,8 +127,29 @@ func _on_invincable_timer_timeout():
 	can_die = true
 
 func die():
-	print(\"ofisaly died\")
+	
+	if life == 0:
+		velocity.x = 0 
+		velocity.y = 0
+		is_dead = true
+		$AnimatedSprite2D.play(\"Death\")
+	
+
+	
+func tori_teleport():
+	if Global.torigate == true:
+		$\".\".position = Vector2(Global.tori_spawnx,Global.tori_spawny)
+		Global.torigate = false
+		
+
+
+	
+	
 "
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l3vlf"]
+atlas = ExtResource("1_ytxh0")
+region = Rect2(0, 0, 128, 128)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5u4do"]
 atlas = ExtResource("1_dsgcp")
@@ -134,6 +181,14 @@ region = Rect2(500, 0, 500, 512)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_k8msp"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l3vlf")
+}],
+"loop": true,
+"name": &"Death",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_5u4do")
@@ -176,14 +231,14 @@ b = Vector2(74, -1)
 
 [node name="player" type="CharacterBody2D"]
 script = SubResource("GDScript_ijgpw")
-speed = 25
+speed = 18
 jump_force = 550
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, 4)
 scale = Vector2(0.3, 0.3)
 sprite_frames = SubResource("SpriteFrames_k8msp")
-animation = &"run"
+animation = &"Death"
 metadata/_edit_lock_ = true
 metadata/_edit_group_ = true
 
@@ -203,10 +258,30 @@ zoom = Vector2(1.81, 1.81)
 limit_left = -329
 limit_smoothed = true
 position_smoothing_enabled = true
-position_smoothing_speed = 10.0
+position_smoothing_speed = 30.0
 rotation_smoothing_enabled = true
 drag_horizontal_enabled = true
+drag_vertical_enabled = true
 
 [node name="invincable_timer" type="Timer" parent="."]
 
+[node name="Jump" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_6phle")
+volume_db = -0.904
+pitch_scale = 2.24
+
+[node name="Cloud_FS" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_ycrg1")
+volume_db = -10.853
+pitch_scale = 2.18
+
+[node name="Hurtbox" type="Area2D" parent="."]
+collision_mask = 2
+script = ExtResource("5_s3mjl")
+
+[node name="Hurt" type="CollisionShape2D" parent="Hurtbox"]
+position = Vector2(1, 3)
+shape = SubResource("CapsuleShape2D_k31qq")
+
 [connection signal="timeout" from="invincable_timer" to="." method="_on_invincable_timer_timeout"]
+[connection signal="area_entered" from="Hurtbox" to="." method="_on_hurtbox_area_entered"]

@@ -1,0 +1,25 @@
+res://Scenes/Entities/Crystal_being.tscn::0ced999e46e63b8101f192a397bdd576::1686799118::res://.godot/exported/133200997/export-0928c769b13b3e2468aaf4857a248f2f-Crystal_being.scn
+res://Scenes/Entities/moving_platform.tscn::fde0c750ba88ea55e6f3cc21fa8961f7::1686778451::res://.godot/exported/133200997/export-fa731c934cc4bb9e0744350cadc2312f-moving_platform.scn
+res://Scenes/Entities/Orb.tscn::8c296ec8f9bdab4e227812ef5365ebdf::1686904661::res://.godot/exported/133200997/export-bad9e9ab4c2e182718ea63d4c6a9c8d5-Orb.scn
+res://Scenes/Entities/Platforms.tscn::751f135a46c1835f407394ed8ba6b2c2::1686778451::res://.godot/exported/133200997/export-0f4fae573315e22b15201e7afa92bbb6-Platforms.scn
+res://Scenes/Entities/player.tscn::82e6ecbd01fca1a179bfd575ace8a2b9::1686904661::res://.godot/exported/133200997/export-451bebc45433b6ac2e7ea82126ce8736-player.scn
+res://Scenes/Entities/respawn.tscn::cacef2bae0dd41f2f7970b4a73876710::1686901404::res://.godot/exported/133200997/export-8de1c8ba903dbcb4badadcab50d260af-respawn.scn
+res://Scenes/Entities/Rocks.tscn::30082876c964dd84eebb2dd4c2cab1e1::1686799118::res://.godot/exported/133200997/export-45bd13f9fbb7fbd396c18514c5f4996c-Rocks.scn
+res://Scenes/Entities/shrine.tscn::f51c9fb4d47c14211ae6a57ccc3fd3c4::1686904661::res://.godot/exported/133200997/export-705572ce394c4395b9b55717726dab63-shrine.scn
+res://Scenes/Entities/Waterball.tscn::a669b040431781d103a0c01ab1a789a8::1686904661::res://.godot/exported/133200997/export-7670daf324b525c0727a4990061317a9-Waterball.scn
+res://Scenes/Levels/Kyveri_Level_2.tscn::be7a61dd4e49fdbcfcc7d881149230bd::1686904661::res://.godot/exported/133200997/export-06c5d4b79d7610633c8c05f3a1bca9de-Kyveri_Level_2.scn
+res://Scenes/floting_rock.tscn::c171a511f9958dc54e496b541071221b::1686904661::res://.godot/exported/133200997/export-12e1d418fbcc85952c9ea8e5df003381-floting_rock.scn
+res://Scenes/gyser.tscn::591515d65b4a7712fa01b53fc0ef2d5e::1686778451::res://.godot/exported/133200997/export-610216b0688ae0547cece29127241995-gyser.scn
+res://Scenes/Kyveri_Level_1.tscn::f8f2ba4d115e0fc16158084f2510276e::1686904661::res://.godot/exported/133200997/export-d80e0991aa2b2b713ef0260daf748b1d-Kyveri_Level_1.scn
+res://Scenes/level_1.tscn::626237d076cdf6eaee7d6a800ebbeaf4::1686901180::res://.godot/exported/133200997/export-f8c44e2fc21d0e732c0e469b4a42155d-level_1.scn
+res://Scenes/powerups.tscn::9fff5acbfe93699bf95e364c911f684e::1686778451::res://.godot/exported/133200997/export-22579752f2389532d093cb868f24885b-powerups.scn
+res://Scenes/shrine.tscn::fc7c68364207c421bedd89c3b189c097::1686778451::res://.godot/exported/133200997/export-2e59f37eb08c92e6bec5a447d4c62dce-shrine.scn
+res://Scenes/ui.tscn::a75d2a79b25c9372fa64419ea4be8be3::1686904661::res://.godot/exported/133200997/export-bc7c2c8286022576ab0a03a61017540b-ui.scn
+res://Scenes/Entities/boss Laser.tscn::2171ca75f43c90f7a5fb9f8ef460da7f::1686904662::res://.godot/exported/133200997/export-55227284da64e5eabb87b8533316a714-boss Laser.scn
+res://Scenes/Entities/gems.tscn::12c583bb6f87a31f58846e52830cefae::1686901404::res://.godot/exported/133200997/export-ee466b84bae7dc03395a4bbdc702f398-gems.scn
+res://Scenes/Entities/killbox.tscn::cc06d5dc123341c2a94b8a38f6c7da29::1686904662::res://.godot/exported/133200997/export-65bbe46bfd5720e0366e5cd947d1e979-killbox.scn
+res://Scenes/Entities/tori_spawn.tscn::4924891b0f07608c0fb6d0acf71c94e7::1686904792::res://.godot/exported/133200997/export-7e678780a9b3378933e26dd2eca5f273-tori_spawn.scn
+res://Scenes/Entities/Tori_Gate.tscn::431a8bf4c05f942fba2563848bf0d721::1686904662::res://.godot/exported/133200997/export-5713567ffb0a50a65529145331d014c7-Tori_Gate.scn
+res://Scenes/Entities/yokai_barrier.tscn::69a672cad4b9928dd98d1348dcf95323::1686901404::res://.godot/exported/133200997/export-a79fa3a427c09c6f91d062ef26c84925-yokai_barrier.scn
+res://Scenes/Levels/Kyveri_level_3.tscn::fb751a882761df78d7b4d7aca74434a0::1686904661::res://.godot/exported/133200997/export-a66738652c6dc29b6d8a1a0a776d15ed-Kyveri_level_3.scn
+res://Scenes/Levels/title_screen.tscn::7b1de69d0f4f7c58bc0a2d9e0900b58b::1686901404::res://.godot/exported/133200997/export-e51a4ba5d93882544e6160194c24895b-title_screen.scn

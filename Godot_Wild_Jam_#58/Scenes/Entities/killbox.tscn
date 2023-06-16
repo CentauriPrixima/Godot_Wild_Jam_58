@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://b278vi3ndunhj"]
+
+[ext_resource type="Script" path="res://Killbox.gd" id="1_p7v07"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6siem"]
+size = Vector2(44, 41)
+
+[node name="Killbox" type="Node2D"]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+self_modulate = Color(1, 1, 1, 0)
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Killbox" type="Area2D" parent="ColorRect"]
+script = ExtResource("1_p7v07")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ColorRect/Killbox"]
+position = Vector2(20, 20.5)
+shape = SubResource("RectangleShape2D_6siem")
+
+[connection signal="area_entered" from="ColorRect/Killbox" to="ColorRect/Killbox" method="_on_area_entered"]

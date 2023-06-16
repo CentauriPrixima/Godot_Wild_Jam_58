@@ -1,6 +1,7 @@
-[gd_scene load_steps=37 format=3 uid="uid://cbitufe7rw8b4"]
+[gd_scene load_steps=42 format=3 uid="uid://cbitufe7rw8b4"]
 
 [ext_resource type="Texture2D" uid="uid://d1wib7p0vtl2n" path="res://Assets/Background/COncept.png" id="1_4xlty"]
+[ext_resource type="PackedScene" uid="uid://cruvf6s5legry" path="res://Scenes/Entities/respawn.tscn" id="1_issix"]
 [ext_resource type="Texture2D" uid="uid://bygmtbpav6kwa" path="res://Assets/Background/Sky Gradient.png" id="2_jhp7o"]
 [ext_resource type="Texture2D" uid="uid://dxpq2o4c7lk3q" path="res://Assets/Background/Mountains far.png" id="3_y5dr6"]
 [ext_resource type="Texture2D" uid="uid://bhurrc5go27k7" path="res://Assets/Background/clouds.png" id="4_h6b5m"]
@@ -23,6 +24,9 @@
 [ext_resource type="PackedScene" uid="uid://d4gb2qrqauc7r" path="res://Scenes/Entities/Orb.tscn" id="20_w2vtx"]
 [ext_resource type="PackedScene" uid="uid://57s0fh2mlkkf" path="res://Scenes/Entities/shrine.tscn" id="21_g1vep"]
 [ext_resource type="Texture2D" uid="uid://drroe0q0ogkc2" path="res://Assets/Objects/Leaf particle.png" id="23_p17bv"]
+[ext_resource type="PackedScene" uid="uid://vcb3t8fqh3vx" path="res://Scenes/ui.tscn" id="24_fraup"]
+[ext_resource type="PackedScene" uid="uid://dovoduq5j6klu" path="res://Scenes/Entities/gems.tscn" id="26_rtglw"]
+[ext_resource type="PackedScene" uid="uid://xpyegpjq5xvc" path="res://Scenes/Entities/yokai_barrier.tscn" id="27_ud10t"]
 
 [sub_resource type="Animation" id="Animation_64vm0"]
 resource_name = "CLoud Panning"
@@ -167,6 +171,9 @@ turbulence_enabled = true
 turbulence_noise_strength = 3.64
 turbulence_noise_scale = 8.81
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0jaow"]
+size = Vector2(496.681, 5086.94)
+
 [node name="Level1" type="Node2D"]
 position = Vector2(534, -191)
 scale = Vector2(0.452, 0.452)
@@ -178,12 +185,17 @@ libraries = {
 "": SubResource("AnimationLibrary_5kiqr")
 }
 
+[node name="Respawn" parent="AnimationPlayer" instance=ExtResource("1_issix")]
+position = Vector2(701, -183)
+
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_5eko8")
 
 [node name="Shrine" parent="." instance=ExtResource("21_g1vep")]
 position = Vector2(-1289.82, -2588.5)
 scale = Vector2(1.564, 1.564)
+Exit = true
+Level = 1
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 layer = -10
@@ -334,6 +346,15 @@ scale = Vector2(0.838, 0.39)
 texture = ExtResource("14_scs0q")
 centered = false
 
+[node name="GrassPlane8" type="Sprite2D" parent="Background elements/Trees/ParallaxBackground/ParallaxLayer"]
+self_modulate = Color(0.729412, 0.541176, 0.541176, 1)
+z_index = 2
+material = SubResource("ShaderMaterial_66617")
+position = Vector2(1615, 46)
+scale = Vector2(0.838, 0.39)
+texture = ExtResource("14_scs0q")
+centered = false
+
 [node name="SakuraTree2" type="Sprite2D" parent="Background elements/Trees"]
 position = Vector2(172.566, 170.354)
 scale = Vector2(0.4, 0.4)
@@ -375,7 +396,7 @@ scale = Vector2(0.885, 0.885)
 texture = ExtResource("9_b1pim")
 
 [node name="SakuraTree8" type="Sprite2D" parent="Background elements/Trees"]
-position = Vector2(3057.52, -294.248)
+position = Vector2(3057.52, -234.514)
 scale = Vector2(1.332, 1.332)
 texture = ExtResource("9_b1pim")
 
@@ -515,7 +536,7 @@ position = Vector2(-842.921, -1132.74)
 position = Vector2(-329.646, -1044.25)
 
 [node name="floting_rock9" parent="Platforms" instance=ExtResource("13_184o8")]
-position = Vector2(-88.4956, -628.319)
+position = Vector2(-26.5487, -566.372)
 
 [node name="floting_rock10" parent="Platforms" instance=ExtResource("13_184o8")]
 position = Vector2(-331.858, -632.743)
@@ -572,7 +593,15 @@ position = Vector2(-64.1592, -1789.82)
 scale = Vector2(0.431223, 1.02819)
 
 [node name="floting_rock20" parent="Platforms" instance=ExtResource("13_184o8")]
-position = Vector2(-453.54, -2075.22)
+position = Vector2(-316.372, -1896.02)
+scale = Vector2(0.431223, 1.02819)
+
+[node name="floting_rock21" parent="Platforms" instance=ExtResource("13_184o8")]
+position = Vector2(-535.398, -2048.67)
+scale = Vector2(0.431223, 1.02819)
+
+[node name="floting_rock35" parent="Platforms" instance=ExtResource("13_184o8")]
+position = Vector2(-721.239, -2196.9)
 scale = Vector2(0.431223, 1.02819)
 
 [node name="Foreground Elements" type="Node2D" parent="."]
@@ -596,6 +625,22 @@ offset = Vector2(0, -80)
 [node name="GrassPlane7" type="Sprite2D" parent="Foreground Elements/Grass/ParallaxLayer"]
 material = SubResource("ShaderMaterial_rhley")
 position = Vector2(62, 41)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("14_scs0q")
+centered = false
+offset = Vector2(0, -80)
+
+[node name="GrassPlane12" type="Sprite2D" parent="Foreground Elements/Grass/ParallaxLayer"]
+material = SubResource("ShaderMaterial_rhley")
+position = Vector2(1483, -9)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("14_scs0q")
+centered = false
+offset = Vector2(0, -80)
+
+[node name="GrassPlane13" type="Sprite2D" parent="Foreground Elements/Grass/ParallaxLayer"]
+material = SubResource("ShaderMaterial_rhley")
+position = Vector2(1947, -14)
 scale = Vector2(0.25, 0.25)
 texture = ExtResource("14_scs0q")
 centered = false
@@ -921,7 +966,7 @@ autoplay = true
 [node name="Hazards" type="Node2D" parent="."]
 
 [node name="WaterBall" parent="Hazards" instance=ExtResource("19_rp1mf")]
-position = Vector2(342.92, -641.593)
+position = Vector2(342.92, -623.894)
 scale = Vector2(1.995, 1.995)
 
 [node name="WaterBall3" parent="Hazards" instance=ExtResource("19_rp1mf")]
@@ -1014,3 +1059,57 @@ lifetime = 8.83
 preprocess = 20.0
 speed_scale = 0.72
 randomness = 0.16
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="."]
+layer = 19
+
+[node name="UI" parent="CanvasLayer2" instance=ExtResource("24_fraup")]
+offset_left = -3.0
+offset_top = 8.0
+offset_right = -3.0
+offset_bottom = 8.0
+
+[node name="INVis walls" type="ColorRect" parent="."]
+offset_left = -2365.0
+offset_top = -3088.0
+offset_right = -1922.0
+offset_bottom = 2122.0
+color = Color(1, 1, 1, 0)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="INVis walls"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="INVis walls/StaticBody2D"]
+position = Vector2(238.341, 2533.47)
+shape = SubResource("RectangleShape2D_0jaow")
+
+[node name="INVis walls2" type="ColorRect" parent="."]
+offset_left = 3482.3
+offset_top = -3347.35
+offset_right = 3925.3
+offset_bottom = 1862.65
+color = Color(1, 1, 1, 0)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="INVis walls2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="INVis walls2/StaticBody2D"]
+position = Vector2(15.4872, 2522.12)
+shape = SubResource("RectangleShape2D_0jaow")
+
+[node name="Gems" type="Node2D" parent="."]
+
+[node name="Gems" parent="Gems" instance=ExtResource("26_rtglw")]
+position = Vector2(-1227.88, -1590.71)
+
+[node name="Gems2" parent="Gems" instance=ExtResource("26_rtglw")]
+position = Vector2(-519.911, -2289.82)
+
+[node name="Gems4" parent="Gems" instance=ExtResource("26_rtglw")]
+position = Vector2(1269.91, -2849.56)
+
+[node name="Gems3" parent="Gems" instance=ExtResource("26_rtglw")]
+position = Vector2(845.133, -878.319)
+
+[node name="Yokai Barrier" parent="." instance=ExtResource("27_ud10t")]
+position = Vector2(-2119.47, -2692.48)
+scale = Vector2(5.019, 5.019)
+Gems_Needed = 4

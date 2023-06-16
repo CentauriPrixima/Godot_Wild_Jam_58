@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://3mmwd42lih2i"]
+
+[ext_resource type="Script" path="res://Scenes/Entities/Rocks.gd" id="1_d5lyx"]
+[ext_resource type="Texture2D" uid="uid://dhl8gdpsd756p" path="res://Assets/Objects/Rock_A_B.png" id="1_xpa52"]
+
+[node name="Rock" type="Sprite2D"]
+texture = ExtResource("1_xpa52")
+script = ExtResource("1_d5lyx")
+Texture_Override = "res://Assets/Objects/Rock_A_N.png"

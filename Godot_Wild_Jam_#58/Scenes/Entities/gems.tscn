@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://dovoduq5j6klu"]
+
+[ext_resource type="Texture2D" uid="uid://b0odntfbnt64l" path="res://icon.svg" id="1_544kk"]
+[ext_resource type="Script" path="res://Gem.gd" id="2_4sy4n"]
+[ext_resource type="AudioStream" uid="uid://j2ysswtvbx3v" path="res://Assets/SFX/Item Pickup.mp3" id="3_a1rmx"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_nrny5"]
+radius = 73.0616
+
+[node name="Gems" type="Node2D"]
+
+[node name="Icon" type="Sprite2D" parent="."]
+position = Vector2(504, 383)
+texture = ExtResource("1_544kk")
+
+[node name="Area2D" type="Area2D" parent="Icon"]
+script = ExtResource("2_4sy4n")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Icon/Area2D"]
+shape = SubResource("CircleShape2D_nrny5")
+
+[node name="Pickup sfx" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_a1rmx")
+
+[node name="Delete timer" type="Timer" parent="."]
+wait_time = 0.2
+
+[connection signal="area_entered" from="Icon/Area2D" to="Icon/Area2D" method="_on_area_entered"]
+[connection signal="timeout" from="Delete timer" to="Icon/Area2D" method="_on_timer_timeout"]

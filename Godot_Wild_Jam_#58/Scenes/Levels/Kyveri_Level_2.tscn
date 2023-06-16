@@ -1,26 +1,221 @@
-[gd_scene load_steps=8 format=3 uid="uid://c1j6ue8sw6fw1"]
+[gd_scene load_steps=27 format=3 uid="uid://c1j6ue8sw6fw1"]
 
 [ext_resource type="Texture2D" uid="uid://bygmtbpav6kwa" path="res://Assets/Background/Sky Gradient.png" id="1_bcv0y"]
+[ext_resource type="Texture2D" uid="uid://bn3li154fbxce" path="res://Assets/Background/Concept 2.png" id="2_0rgmj"]
 [ext_resource type="PackedScene" uid="uid://57s0fh2mlkkf" path="res://Scenes/Entities/shrine.tscn" id="2_pgf0x"]
+[ext_resource type="Texture2D" uid="uid://boh4vxippvuin" path="res://Assets/Objects/Balll_Part/Water_Ball_Sheet1.png" id="3_hhdbu"]
+[ext_resource type="PackedScene" uid="uid://cglmwncttrtlm" path="res://Scenes/Entities/Crystal_being.tscn" id="3_r1y3b"]
 [ext_resource type="PackedScene" uid="uid://buxrckkkib3nf" path="res://Scenes/Entities/player.tscn" id="3_v58uj"]
+[ext_resource type="Texture2D" uid="uid://bhurrc5go27k7" path="res://Assets/Background/clouds.png" id="4_lb48q"]
 [ext_resource type="PackedScene" uid="uid://c7powupijqw71" path="res://Scenes/floting_rock.tscn" id="5_2fqc2"]
 [ext_resource type="PackedScene" uid="uid://d4lhfbgcleo67" path="res://Scenes/Entities/moving_platform.tscn" id="5_5vkos"]
-[ext_resource type="PackedScene" uid="uid://1lu00201hiyw" path="res://Scenes/Entities/Waterball.tscn" id="5_nqajk"]
-[ext_resource type="PackedScene" uid="uid://c4dumlyhmo74m" path="res://Scenes/Entities/Orb.tscn" id="7_m5t07"]
+[ext_resource type="PackedScene" uid="uid://b00v5v5171vx5" path="res://Scenes/Entities/Waterball.tscn" id="5_nqajk"]
+[ext_resource type="Texture2D" uid="uid://w01rgxvsoull" path="res://Assets/Objects/Rock.png" id="6_apf32"]
+[ext_resource type="Texture2D" uid="uid://c200eyuvnohhj" path="res://Assets/Objects/Grass_Plane.png" id="6_b1qjh"]
+[ext_resource type="Shader" path="res://Scenes/Kyveri_Level_1.gdshader" id="6_e38wk"]
+[ext_resource type="PackedScene" uid="uid://3mmwd42lih2i" path="res://Scenes/Entities/Rocks.tscn" id="6_kryt2"]
+[ext_resource type="PackedScene" uid="uid://d4gb2qrqauc7r" path="res://Scenes/Entities/Orb.tscn" id="7_m5t07"]
+[ext_resource type="Texture2D" uid="uid://dimys8k8x8au5" path="res://Assets/Objects/Sakura_Tree.png" id="10_e66em"]
+[ext_resource type="Texture2D" uid="uid://cnmqu8h6exx7g" path="res://Assets/Objects/Sakura_Tree_B.png" id="17_sjj1m"]
+[ext_resource type="AudioStream" uid="uid://b2mi3vtnd5oj3" path="res://Assets/SFX/Placeholder Music from SoundCloud Steve Oxen.mp3" id="18_5y0in"]
+[ext_resource type="PackedScene" uid="uid://vcb3t8fqh3vx" path="res://Scenes/ui.tscn" id="19_cvmlp"]
+[ext_resource type="PackedScene" uid="uid://dovoduq5j6klu" path="res://Scenes/Entities/gems.tscn" id="20_6gwlx"]
+[ext_resource type="PackedScene" uid="uid://xpyegpjq5xvc" path="res://Scenes/Entities/yokai_barrier.tscn" id="21_pi6rf"]
+[ext_resource type="PackedScene" uid="uid://b278vi3ndunhj" path="res://Scenes/Entities/killbox.tscn" id="22_bjynk"]
+
+[sub_resource type="Gradient" id="Gradient_41ej2"]
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_q48e6"]
+gradient = SubResource("Gradient_41ej2")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_4nw35"]
+emission_shape = 3
+emission_box_extents = Vector3(300, 150, 1)
+particle_flag_disable_z = true
+gravity = Vector3(0, -100, 0)
+angular_velocity_min = 0.2
+angular_velocity_max = 1.0
+orbit_velocity_min = 0.0
+orbit_velocity_max = 0.0
+scale_min = 0.5
+color_ramp = SubResource("GradientTexture1D_q48e6")
+turbulence_enabled = true
+turbulence_noise_strength = 3.42
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_he6ta"]
+shader = ExtResource("6_e38wk")
+shader_parameter/x_intensity = 3.0
+shader_parameter/y_intensity = 0.5
+shader_parameter/offset = 0.0
+shader_parameter/speed = 2.0
+shader_parameter/wave_frequency = 20.0
+shader_parameter/wave_length = 200.0
 
 [node name="Level2" type="Node2D"]
 scale = Vector2(0.452, 0.452)
 
-[node name="SkyGradient" type="Sprite2D" parent="."]
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = -5
+
+[node name="SkyGradient" type="Sprite2D" parent="CanvasLayer"]
 z_index = -3
-position = Vector2(1508.85, 513.274)
-scale = Vector2(3.161, 3.161)
+position = Vector2(974, -44)
+scale = Vector2(1.73818, 1.8542)
 texture = ExtResource("1_bcv0y")
 
-[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+[node name="Concept2" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(1451.33, 466.814)
+scale = Vector2(0.737524, 0.704261)
+texture = ExtResource("2_0rgmj")
+
+[node name="Background" type="ParallaxBackground" parent="."]
+layer = -1
+
+[node name="Far" type="ParallaxLayer" parent="Background"]
+position = Vector2(-722, -111)
+motion_scale = Vector2(0.1, 0.1)
+
+[node name="Rock3" parent="Background/Far" instance=ExtResource("6_kryt2")]
+self_modulate = Color(1, 1, 1, 0.360784)
+z_index = 1
+position = Vector2(965, 234)
+scale = Vector2(0.226, 0.226)
+Texture_Override = "res://Assets/Objects/Rock_B_B.png"
+
+[node name="SakuraTreeB" type="Sprite2D" parent="Background/Far"]
+self_modulate = Color(1, 1, 1, 0.52549)
+position = Vector2(1521, 61)
+scale = Vector2(0.056, 0.056)
+texture = ExtResource("17_sjj1m")
+
+[node name="Rock4" parent="Background/Far" instance=ExtResource("6_kryt2")]
+self_modulate = Color(1, 1, 1, 0.403922)
+z_index = 1
+position = Vector2(1513, 100)
+scale = Vector2(0.226, 0.226)
+Texture_Override = "res://Assets/Objects/Rock_C_B.png"
+
+[node name="Rock5" parent="Background/Far" instance=ExtResource("6_kryt2")]
+self_modulate = Color(1, 1, 1, 0.403922)
+z_index = 1
+position = Vector2(913.154, 423.672)
+rotation = 0.514019
+scale = Vector2(0.226, 0.226)
+Texture_Override = "res://Assets/Objects/Rock_B_B.png"
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="Background/Far"]
+position = Vector2(1248, 460)
+amount = 15
+process_material = SubResource("ParticleProcessMaterial_4nw35")
+texture = ExtResource("3_hhdbu")
+lifetime = 8.35
+preprocess = 5.0
+speed_scale = 0.87
+randomness = 0.01
+
+[node name="GPUParticles2D2" type="GPUParticles2D" parent="Background/Far"]
+position = Vector2(210, 208)
+amount = 15
+process_material = SubResource("ParticleProcessMaterial_4nw35")
+texture = ExtResource("3_hhdbu")
+lifetime = 8.35
+preprocess = 5.0
+speed_scale = 0.87
+randomness = 0.01
+
+[node name="GPUParticles2D3" type="GPUParticles2D" parent="Background/Far"]
+position = Vector2(675, -64)
+amount = 15
+process_material = SubResource("ParticleProcessMaterial_4nw35")
+texture = ExtResource("3_hhdbu")
+lifetime = 8.35
+preprocess = 5.0
+speed_scale = 0.87
+randomness = 0.01
+
+[node name="Rock2" parent="Background/Far" instance=ExtResource("6_kryt2")]
+z_index = 1
+position = Vector2(1266, 565)
+scale = Vector2(0.341, 0.341)
+Texture_Override = "res://Assets/Objects/Rock_B_B.png"
+
+[node name="Clouds2" type="Sprite2D" parent="Background/Far"]
+position = Vector2(1389, -502)
+scale = Vector2(0.715, 0.715)
+texture = ExtResource("4_lb48q")
+centered = false
+flip_h = true
+
+[node name="Clouds3" type="Sprite2D" parent="Background/Far"]
+position = Vector2(538, 85)
+scale = Vector2(0.201, 0.201)
+texture = ExtResource("4_lb48q")
+centered = false
+
+[node name="Clouds" type="Sprite2D" parent="Background/Far"]
+position = Vector2(-289, -198)
+texture = ExtResource("4_lb48q")
+centered = false
+
+[node name="Mid" type="ParallaxLayer" parent="Background"]
+position = Vector2(80, -376)
+motion_scale = Vector2(0.25, 0.25)
+
+[node name="Node2D" parent="Background/Mid" instance=ExtResource("3_r1y3b")]
+scale = Vector2(0.532, 0.532)
+
+[node name="Near" type="ParallaxLayer" parent="Background"]
+motion_scale = Vector2(0.8, 0.8)
+
+[node name="Rock2" type="Sprite2D" parent="Background/Near"]
+position = Vector2(1091.24, 170.968)
+rotation = -0.0331613
+scale = Vector2(0.255, 0.255)
+texture = ExtResource("6_apf32")
+
+[node name="GrassPlane" type="Sprite2D" parent="Background/Near"]
+material = SubResource("ShaderMaterial_he6ta")
+position = Vector2(1062.24, 202.968)
+rotation = -0.0331613
+scale = Vector2(0.077, 0.077)
+texture = ExtResource("6_b1qjh")
+
+[node name="Rock" parent="Background/Near/GrassPlane" instance=ExtResource("6_kryt2")]
+z_index = 1
+position = Vector2(-43.1816, 518.334)
+rotation = 0.0331613
+scale = Vector2(8, 8)
+
+[node name="SakuraTree" type="Sprite2D" parent="Background/Near"]
+position = Vector2(-95, 177.488)
+rotation = -0.0331613
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("10_e66em")
+centered = false
+flip_h = true
+
+[node name="GrassPlane2" type="Sprite2D" parent="Background/Near"]
+material = SubResource("ShaderMaterial_he6ta")
+position = Vector2(43, 411.488)
+rotation = -0.0331613
+scale = Vector2(0.106, 0.106)
+texture = ExtResource("6_b1qjh")
+
+[node name="Rock" parent="Background/Near/GrassPlane2" instance=ExtResource("6_kryt2")]
+z_index = 1
+position = Vector2(-43.1816, 518.334)
+rotation = 0.0331613
+scale = Vector2(8, 8)
 
 [node name="Shrine" parent="." instance=ExtResource("2_pgf0x")]
 position = Vector2(2230.09, 915.929)
+
+[node name="Shrine2" parent="." instance=ExtResource("2_pgf0x")]
+position = Vector2(1152.65, -1553.1)
+Exit = true
+Level = 2
 
 [node name="player" parent="." instance=ExtResource("3_v58uj")]
 position = Vector2(2315.09, 997.929)
@@ -31,8 +226,26 @@ position = Vector2(1933.63, 1269.91)
 [node name="Moving_Platform" parent="Platforms" instance=ExtResource("5_5vkos")]
 position = Vector2(-163.717, -380.531)
 
+[node name="Moving_Platform2" parent="Platforms" instance=ExtResource("5_5vkos")]
+position = Vector2(480.087, -1475.66)
+
+[node name="Moving_Platform3" parent="Platforms" instance=ExtResource("5_5vkos")]
+position = Vector2(-1176.99, -2256.64)
+
 [node name="floting_rock" parent="Platforms" instance=ExtResource("5_2fqc2")]
 position = Vector2(-283.186, -648.23)
+
+[node name="floting_rock13" parent="Platforms" instance=ExtResource("5_2fqc2")]
+position = Vector2(163.715, -2183.63)
+
+[node name="floting_rock14" parent="Platforms" instance=ExtResource("5_2fqc2")]
+position = Vector2(163.715, -2183.63)
+
+[node name="floting_rock16" parent="Platforms" instance=ExtResource("5_2fqc2")]
+position = Vector2(-721.241, -1933.63)
+
+[node name="floting_rock15" parent="Platforms" instance=ExtResource("5_2fqc2")]
+position = Vector2(-205.754, -1949.11)
 
 [node name="floting_rock2" parent="Platforms" instance=ExtResource("5_2fqc2")]
 position = Vector2(-676.991, 4.4248)
@@ -70,7 +283,6 @@ position = Vector2(-1356.19, -170.354)
 [node name="Hazards" type="Node2D" parent="."]
 
 [node name="Water Balls" type="Node2D" parent="Hazards"]
-scale = Vector2(1, 1)
 
 [node name="Waterball" parent="Hazards/Water Balls" instance=ExtResource("5_nqajk")]
 position = Vector2(1703.54, 734.513)
@@ -108,6 +320,10 @@ position = Vector2(776.549, 513.274)
 position = Vector2(1387.17, -365.044)
 scale = Vector2(1.9, 1.9)
 
+[node name="Waterball15" parent="Hazards/Water Balls" instance=ExtResource("5_nqajk")]
+position = Vector2(1694.69, -1223.45)
+scale = Vector2(1.9, 1.9)
+
 [node name="Waterball14" parent="Hazards/Water Balls" instance=ExtResource("5_nqajk")]
 position = Vector2(767.699, -219.027)
 scale = Vector2(2.976, 2.976)
@@ -116,8 +332,12 @@ scale = Vector2(2.976, 2.976)
 position = Vector2(1796.46, -493.363)
 scale = Vector2(1.9, 1.9)
 
+[node name="Waterball16" parent="Hazards/Water Balls" instance=ExtResource("5_nqajk")]
+position = Vector2(1796.46, -493.363)
+scale = Vector2(1.9, 1.9)
+
 [node name="Waterball13" parent="Hazards/Water Balls" instance=ExtResource("5_nqajk")]
-position = Vector2(2188.05, -535.398)
+position = Vector2(2207.96, -630.531)
 scale = Vector2(1.9, 1.9)
 
 [node name="Waterball6" parent="Hazards/Water Balls" instance=ExtResource("5_nqajk")]
@@ -129,6 +349,9 @@ scale = Vector2(1.705, 1.705)
 [node name="Water Spouts" parent="Hazards/Gyser" instance=ExtResource("7_m5t07")]
 position = Vector2(1103.98, 1340.71)
 
+[node name="Water Spouts8" parent="Hazards/Gyser" instance=ExtResource("7_m5t07")]
+position = Vector2(1579.65, -603.982)
+
 [node name="Water Spouts5" parent="Hazards/Gyser" instance=ExtResource("7_m5t07")]
 position = Vector2(1413.72, 207.965)
 
@@ -136,7 +359,7 @@ position = Vector2(1413.72, 207.965)
 position = Vector2(1803.1, 61.9469)
 
 [node name="Water Spouts7" parent="Hazards/Gyser" instance=ExtResource("7_m5t07")]
-position = Vector2(2221.24, -84.0708)
+position = Vector2(2201.33, -28.7611)
 
 [node name="Water Spouts2" parent="Hazards/Gyser" instance=ExtResource("7_m5t07")]
 position = Vector2(358.407, 1263.27)
@@ -148,3 +371,90 @@ rotation = 1.5825
 [node name="Water Spouts4" parent="Hazards/Gyser" instance=ExtResource("7_m5t07")]
 position = Vector2(1367.26, 469.027)
 rotation = -1.56832
+
+[node name="Foreground" type="Node2D" parent="."]
+
+[node name="Foreground" type="ParallaxBackground" parent="Foreground"]
+layer = 1
+
+[node name="Near" type="ParallaxLayer" parent="Foreground/Foreground"]
+
+[node name="mid" type="ParallaxLayer" parent="Foreground/Foreground"]
+
+[node name="Far" type="ParallaxLayer" parent="Foreground/Foreground"]
+position = Vector2(13, 55)
+scale = Vector2(1.601, 1.601)
+motion_scale = Vector2(1.75, 1.75)
+
+[node name="SakuraTree" type="Sprite2D" parent="Foreground/Foreground/Far"]
+modulate = Color(0.160784, 0.160784, 0.160784, 1)
+position = Vector2(1009.99, 13.7414)
+rotation = -0.0331613
+scale = Vector2(0.401, 0.401)
+texture = ExtResource("17_sjj1m")
+centered = false
+flip_h = true
+
+[node name="GrassPlane2" type="Sprite2D" parent="Foreground/Foreground/Far/SakuraTree"]
+visible = false
+modulate = Color(0, 0, 0, 1)
+self_modulate = Color(0, 0, 0, 1)
+material = SubResource("ShaderMaterial_he6ta")
+use_parent_material = true
+position = Vector2(520.663, 953.787)
+scale = Vector2(0.424, 0.424)
+texture = ExtResource("6_b1qjh")
+
+[node name="Rock" parent="Foreground/Foreground/Far/SakuraTree" instance=ExtResource("6_kryt2")]
+z_index = 1
+position = Vector2(502.354, 1173.56)
+rotation = 0.0331613
+scale = Vector2(3.392, 3.392)
+
+[node name="Rock2" parent="Foreground/Foreground/Far/SakuraTree" instance=ExtResource("6_kryt2")]
+z_index = 1
+position = Vector2(-2358.93, 1156.07)
+rotation = 0.0331613
+scale = Vector2(3.392, 3.392)
+Texture_Override = "res://Assets/Objects/Rock_B_B.png"
+
+[node name="PointLight2D" type="DirectionalLight2D" parent="."]
+position = Vector2(-513.274, -1772.12)
+color = Color(0.694118, 0.360784, 0.0901961, 1)
+energy = 0.59
+range_layer_min = -100
+range_layer_max = 100
+shadow_enabled = true
+shadow_color = Color(0.647059, 0, 0.639216, 0.631373)
+height = 0.11
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("18_5y0in")
+autoplay = true
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="."]
+
+[node name="UI" parent="CanvasLayer2" instance=ExtResource("19_cvmlp")]
+
+[node name="Gems" type="Node2D" parent="."]
+
+[node name="Gems" parent="Gems" instance=ExtResource("20_6gwlx")]
+position = Vector2(400.443, -108.407)
+
+[node name="Gems2" parent="Gems" instance=ExtResource("20_6gwlx")]
+position = Vector2(486.726, 809.734)
+
+[node name="Gems3" parent="Gems" instance=ExtResource("20_6gwlx")]
+position = Vector2(1250, 170.354)
+
+[node name="Gems4" parent="Gems" instance=ExtResource("20_6gwlx")]
+position = Vector2(792.035, -1216.81)
+
+[node name="Yokai Barrier" parent="." instance=ExtResource("21_pi6rf")]
+position = Vector2(736.726, -1639.38)
+scale = Vector2(2.629, 2.629)
+Gems_Needed = 4
+
+[node name="Killbox" parent="." instance=ExtResource("22_bjynk")]
+position = Vector2(435.841, 1953.54)
+scale = Vector2(1920, 1)

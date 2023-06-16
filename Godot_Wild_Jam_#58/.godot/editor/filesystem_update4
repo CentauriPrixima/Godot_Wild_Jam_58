@@ -1,12 +1,29 @@
-res://Scenes/Entities/shrine.tscn
-res://Scenes/Kyveri_Level_1.gdshader
-res://scripts/shrine.gd
 res://Scenes/level_1.tscn
+res://Scenes/Kyveri_Level_1.gdshader
 res://Scenes/Entities/player.tscn
-res://Scenes/powerups.tscn
-res://Scenes/gyser.tscn
 res://Scenes/floting_rock.tscn
 res://Scenes/Kyveri_Level_1.tscn
 res://Scenes/Entities/Orb.tscn
-res://scripts/Water_ball.gd
+res://Scenes/Entities/shrine.tscn
 res://Scenes/Entities/Waterball.tscn
+res://Scenes/Levels/Kyveri_Level_2.tscn
+res://Scenes/ui.tscn
+res://Scenes/Entities/respawn.tscn
+res://Scenes/Levels/Kyveri_level_3.tscn
+res://Scenes/Entities/boss Laser.tscn
+res://Scenes/Levels/title_screen.tscn
+res://Scenes/Levels/Button.gd
+res://Gem.gd
+res://Scenes/Entities/gems.tscn
+res://scripts/Global.gd
+res://Scenes/Restart.gd
+res://Scenes/Gem_tracker.gd
+res://scripts/shrine.gd
+res://Yokai Barrier.gd
+res://Scenes/Entities/yokai_barrier.tscn
+res://Area2D.gd
+res://Scenes/Entities/Tori_Gate.tscn
+res://Tori_Spawn.gd
+res://Scenes/Entities/tori_spawn.tscn
+res://Killbox.gd
+res://Scenes/Entities/killbox.tscn

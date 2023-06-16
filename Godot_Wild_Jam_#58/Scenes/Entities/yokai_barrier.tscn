@@ -1,0 +1,35 @@
+[gd_scene load_steps=4 format=3 uid="uid://xpyegpjq5xvc"]
+
+[ext_resource type="Script" path="res://Yokai Barrier.gd" id="1_efadf"]
+[ext_resource type="Texture2D" uid="uid://b0odntfbnt64l" path="res://icon.svg" id="2_34v87"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n5oh3"]
+size = Vector2(13, 149)
+
+[node name="Yokai Barrier" type="Node2D"]
+script = ExtResource("1_efadf")
+
+[node name="Icon" type="Sprite2D" parent="."]
+self_modulate = Color(0.109804, 0.109804, 0.109804, 1)
+position = Vector2(201, 84)
+texture = ExtResource("2_34v87")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Icon"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Icon/StaticBody2D"]
+position = Vector2(63.5, 5.5)
+shape = SubResource("RectangleShape2D_n5oh3")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Icon/StaticBody2D"]
+position = Vector2(-65, 5)
+shape = SubResource("RectangleShape2D_n5oh3")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Icon/StaticBody2D"]
+position = Vector2(-1, -63)
+rotation = 1.57971
+shape = SubResource("RectangleShape2D_n5oh3")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Icon/StaticBody2D"]
+position = Vector2(-1, 72)
+rotation = 1.57971
+shape = SubResource("RectangleShape2D_n5oh3")
