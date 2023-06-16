@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://co6c3wxpylf4n" path="res://Assets/UI/Health_bar.png" id="1_ypgeq"]
 [ext_resource type="Script" path="res://Scenes/ProgressBar.gd" id="2_i34ek"]
 [ext_resource type="Script" path="res://Scenes/Restart.gd" id="3_kqcgd"]
-[ext_resource type="Texture2D" uid="uid://dj6kvjia2dujx" path="res://Assets/Objects/Orb_Token.png" id="4_gt5qt"]
+[ext_resource type="Texture2D" uid="uid://b0odntfbnt64l" path="res://icon.svg" id="4_78h37"]
 [ext_resource type="Script" path="res://Scenes/Gem_tracker.gd" id="5_jkal8"]
 
 [sub_resource type="Theme" id="Theme_qqnon"]
@@ -41,15 +41,15 @@ script = ExtResource("3_kqcgd")
 
 [node name="Icon" type="Sprite2D" parent="."]
 position = Vector2(1270, 45)
-scale = Vector2(1.676, 1.676)
-texture = ExtResource("4_gt5qt")
+scale = Vector2(0.632812, 0.632812)
+texture = ExtResource("4_78h37")
 
 [node name="Label" type="Label" parent="Icon"]
-offset_left = 39.976
-offset_top = -39.3795
-offset_right = 157.976
-offset_bottom = 245.621
-theme_override_font_sizes/font_size = 57
+offset_left = 85.3333
+offset_top = -86.9136
+offset_right = 203.333
+offset_bottom = 198.086
+theme_override_font_sizes/font_size = 123
 text = "0"
 script = ExtResource("5_jkal8")
 

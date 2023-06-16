@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://dovoduq5j6klu"]
 
-[ext_resource type="Texture2D" uid="uid://dj6kvjia2dujx" path="res://Assets/Objects/Orb_Token.png" id="1_8esht"]
+[ext_resource type="Texture2D" uid="uid://b0odntfbnt64l" path="res://icon.svg" id="1_544kk"]
 [ext_resource type="Script" path="res://Gem.gd" id="2_4sy4n"]
 [ext_resource type="AudioStream" uid="uid://j2ysswtvbx3v" path="res://Assets/SFX/Item Pickup.mp3" id="3_a1rmx"]
 
@@ -11,14 +11,12 @@ radius = 73.0616
 
 [node name="Icon" type="Sprite2D" parent="."]
 position = Vector2(504, 383)
-scale = Vector2(0.916, 0.916)
-texture = ExtResource("1_8esht")
+texture = ExtResource("1_544kk")
 
 [node name="Area2D" type="Area2D" parent="Icon"]
 script = ExtResource("2_4sy4n")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Icon/Area2D"]
-scale = Vector2(0.385, 0.385)
 shape = SubResource("CircleShape2D_nrny5")
 
 [node name="Pickup sfx" type="AudioStreamPlayer" parent="."]

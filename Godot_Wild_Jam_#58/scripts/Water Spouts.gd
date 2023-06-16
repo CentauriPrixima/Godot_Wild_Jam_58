@@ -22,8 +22,8 @@ func _on_animation_player_animation_finished(anim_name):
 	$Timer.start()
 
 
-func _on_area_2d_area_entered(_hitbox:HurtBox) -> void:
-		if HurtBox == null:
+func _on_area_2d_area_entered(hitbox: HurtBox) -> void:
+		if hitbox == null:
 			return
 		Global.hurting = true
 		print("Death by orb", Global.phealth)

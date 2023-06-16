@@ -1,6 +1,3 @@
-Timer
-AudioStreamPlayer
-AnimationPlayer
 CollisionShape2D
 Area2D
 ColorRect
@@ -8,11 +5,14 @@ Node
 StaticBody2D
 Node2D
 Label
+Timer
+AudioStreamPlayer
 CanvasLayer
 Button
 Control
 Gbox
 EnemyBox2
+AnimationPlayer
 ParallaxBackground
 ParallaxLayer
 TextureProgressBar
