@@ -12,6 +12,7 @@ var torigate:bool
 var tori_present:bool
 var tori_spawnx:float
 var tori_spawny:float
+var Player_Respawn:bool = false
 func _ready():
 	pass
 
