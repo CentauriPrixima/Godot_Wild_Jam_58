@@ -1,12 +1,14 @@
-[gd_scene load_steps=16 format=3 uid="uid://6hodv5swi1g3"]
+[gd_scene load_steps=25 format=3 uid="uid://6hodv5swi1g3"]
 
-[ext_resource type="Texture2D" uid="uid://c7t1bcas5jxsl" path="res://Assets/Objects/Rain_Oni_b.png" id="1_n2cww"]
 [ext_resource type="Texture2D" uid="uid://punhll3yigst" path="res://Assets/Background/Boss BG.png" id="1_yvsnl"]
 [ext_resource type="PackedScene" uid="uid://57s0fh2mlkkf" path="res://Scenes/Entities/shrine.tscn" id="2_iw32x"]
-[ext_resource type="Script" path="res://Scenes/Levels/RainOni.gd" id="2_sv5wy"]
 [ext_resource type="PackedScene" uid="uid://c7powupijqw71" path="res://Scenes/floting_rock.tscn" id="3_6e1t1"]
 [ext_resource type="PackedScene" uid="uid://buxrckkkib3nf" path="res://Scenes/Entities/player.tscn" id="3_pbhwm"]
 [ext_resource type="PackedScene" uid="uid://vcb3t8fqh3vx" path="res://Scenes/ui.tscn" id="4_7fa84"]
+[ext_resource type="PackedScene" uid="uid://bm5x16cq1u8r6" path="res://Scenes/Entities/Rain_oni.tscn" id="4_138w2"]
+[ext_resource type="Texture2D" uid="uid://ddpwqlfulv0kt" path="res://Assets/Objects/Spoopy ghost.png" id="4_aejfw"]
+[ext_resource type="Script" path="res://Scenes/Levels/GPUParticles2D.gd" id="5_b7lv6"]
+[ext_resource type="Texture2D" uid="uid://bhurrc5go27k7" path="res://Assets/Background/clouds.png" id="5_mxqrr"]
 [ext_resource type="PackedScene" uid="uid://cecrqua6y3umm" path="res://Scenes/Entities/boss Laser.tscn" id="7_76yup"]
 [ext_resource type="PackedScene" uid="uid://d4gb2qrqauc7r" path="res://Scenes/Entities/Orb.tscn" id="8_fl2eo"]
 [ext_resource type="PackedScene" uid="uid://b00v5v5171vx5" path="res://Scenes/Entities/Waterball.tscn" id="9_3i33a"]
@@ -15,6 +17,44 @@
 [ext_resource type="PackedScene" uid="uid://bg4gxh5y8mjm2" path="res://Scenes/Entities/Tori_Gate.tscn" id="13_1cckg"]
 [ext_resource type="PackedScene" uid="uid://bdm4d2ofm1v1b" path="res://Scenes/Entities/tori_spawn.tscn" id="14_k01up"]
 [ext_resource type="PackedScene" uid="uid://b278vi3ndunhj" path="res://Scenes/Entities/killbox.tscn" id="15_iviab"]
+[ext_resource type="AudioStream" uid="uid://bius3gudxaeok" path="res://Assets/SFX/rain-and-thunder-nature-sounds-7803.mp3" id="16_djwfd"]
+
+[sub_resource type="Gradient" id="Gradient_um0ve"]
+colors = PackedColorArray(1, 1, 1, 0.6, 0, 0, 0, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_g3xxa"]
+gradient = SubResource("Gradient_um0ve")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_tdnvd"]
+emission_shape = 3
+emission_box_extents = Vector3(1920, 500, 1)
+particle_flag_disable_z = true
+gravity = Vector3(0, -120, 0)
+orbit_velocity_min = 0.0
+orbit_velocity_max = 0.0
+scale_min = 0.12
+scale_max = 0.12
+color_ramp = SubResource("GradientTexture1D_g3xxa")
+turbulence_enabled = true
+turbulence_noise_speed_random = 0.3
+
+[sub_resource type="Gradient" id="Gradient_stuvm"]
+colors = PackedColorArray(0.0874504, 0.436822, 0.57813, 1, 0.731888, 0.976524, 0.966545, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_ra1eo"]
+gradient = SubResource("Gradient_stuvm")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_msrwd"]
+emission_shape = 3
+emission_box_extents = Vector3(1920, 150, 1)
+particle_flag_disable_z = true
+gravity = Vector3(0, 750, 0)
+orbit_velocity_min = 0.0
+orbit_velocity_max = 0.0
+scale_min = 2.0
+scale_max = 9.0
+color = Color(0, 0.866667, 0.866667, 1)
+color_ramp = SubResource("GradientTexture1D_ra1eo")
 
 [node name="Level 3" type="Node2D"]
 position = Vector2(135, -63)
@@ -30,17 +70,89 @@ texture = ExtResource("1_yvsnl")
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
-[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+[node name="far" type="ParallaxLayer" parent="ParallaxBackground"]
+position = Vector2(550, 102)
+motion_scale = Vector2(0.1, 0.1)
+
+[node name="Node2D" type="Node2D" parent="ParallaxBackground/far"]
+modulate = Color(1, 1, 1, 0.329412)
+position = Vector2(-4.99998, -213)
+scale = Vector2(0.738, 0.738)
+
+[node name="Clouds5" type="Sprite2D" parent="ParallaxBackground/far/Node2D"]
+self_modulate = Color(1, 1, 1, 0.501961)
+position = Vector2(735, 466)
+scale = Vector2(0.858459, 0.414005)
+texture = ExtResource("5_mxqrr")
+
+[node name="Clouds6" type="Sprite2D" parent="ParallaxBackground/far/Node2D"]
+self_modulate = Color(1, 1, 1, 0.501961)
+position = Vector2(2219, 327)
+scale = Vector2(0.418459, 0.291133)
+texture = ExtResource("5_mxqrr")
+flip_h = true
+
+[node name="Mid" type="ParallaxLayer" parent="ParallaxBackground"]
 position = Vector2(135, -63)
 scale = Vector2(0.452, 0.452)
 motion_scale = Vector2(0.4, 0.4)
 
-[node name="RainOni" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
-position = Vector2(2376.11, 1004.42)
-scale = Vector2(1.644, 1.644)
-texture = ExtResource("1_n2cww")
-offset = Vector2(33.3528, -151.94)
-script = ExtResource("2_sv5wy")
+[node name="Clouds3" type="Sprite2D" parent="ParallaxBackground/Mid"]
+self_modulate = Color(1, 1, 1, 0.501961)
+position = Vector2(1327.43, 1170.35)
+scale = Vector2(1.89925, 0.915941)
+texture = ExtResource("5_mxqrr")
+
+[node name="Clouds4" type="Sprite2D" parent="ParallaxBackground/Mid"]
+self_modulate = Color(1, 1, 1, 0.501961)
+position = Vector2(4610.62, 862.832)
+scale = Vector2(0.925794, 0.6441)
+texture = ExtResource("5_mxqrr")
+flip_h = true
+
+[node name="Spirits" type="GPUParticles2D" parent="ParallaxBackground/Mid"]
+position = Vector2(2811.95, 787.611)
+scale = Vector2(1, 1)
+amount = 95
+process_material = SubResource("ParticleProcessMaterial_tdnvd")
+texture = ExtResource("4_aejfw")
+lifetime = 10.0
+preprocess = 10.0
+speed_scale = 0.5
+script = ExtResource("5_b7lv6")
+
+[node name="Spirits2" type="GPUParticles2D" parent="ParallaxBackground/Mid"]
+position = Vector2(-121.681, 780.974)
+scale = Vector2(1, 1)
+amount = 95
+process_material = SubResource("ParticleProcessMaterial_tdnvd")
+texture = ExtResource("4_aejfw")
+lifetime = 10.0
+preprocess = 10.0
+speed_scale = 0.5
+script = ExtResource("5_b7lv6")
+
+[node name="Node2D2" type="Node2D" parent="ParallaxBackground/Mid"]
+position = Vector2(2066.37, 599.557)
+
+[node name="Node2D" parent="ParallaxBackground/Mid/Node2D2" instance=ExtResource("4_138w2")]
+scale = Vector2(1.617, 1.617)
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.8, 0.8)
+
+[node name="Clouds" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer2"]
+self_modulate = Color(1, 1, 1, 0.501961)
+position = Vector2(1386, 850)
+scale = Vector2(0.858459, 0.414005)
+texture = ExtResource("5_mxqrr")
+
+[node name="Clouds2" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer2"]
+self_modulate = Color(1, 1, 1, 0.501961)
+position = Vector2(2780, 716)
+scale = Vector2(0.968, 0.368)
+texture = ExtResource("5_mxqrr")
+flip_h = true
 
 [node name="Platforms" type="Node2D" parent="."]
 position = Vector2(3614.75, 129.009)
@@ -302,6 +414,14 @@ offset_right = 14.0
 offset_bottom = 5.0
 metadata/_edit_lock_ = true
 
+[node name="GPUParticles2D" type="GPUParticles2D" parent="CanvasLayer"]
+position = Vector2(832, -4.99999)
+scale = Vector2(0.452, 0.452)
+amount = 400
+process_material = SubResource("ParticleProcessMaterial_msrwd")
+lifetime = 4.0
+preprocess = 2.0
+
 [node name="boss attack" parent="." instance=ExtResource("7_76yup")]
 position = Vector2(-44.2478, -1865.04)
 
@@ -324,36 +444,6 @@ rotation = -3.13979
 position = Vector2(1796.46, -1006.64)
 rotation = -3.13979
 Sprout_timer = 1.0
-
-[node name="Water Spouts15" parent="Traps/Orbs" instance=ExtResource("8_fl2eo")]
-position = Vector2(1619.47, -991.151)
-rotation = -3.13979
-Sprout_timer = 0.9
-
-[node name="Water Spouts16" parent="Traps/Orbs" instance=ExtResource("8_fl2eo")]
-position = Vector2(1462.39, -1004.42)
-rotation = -3.13979
-Sprout_timer = 0.8
-
-[node name="Water Spouts17" parent="Traps/Orbs" instance=ExtResource("8_fl2eo")]
-position = Vector2(1318.58, -1000)
-rotation = -3.13979
-Sprout_timer = 0.7
-
-[node name="Water Spouts18" parent="Traps/Orbs" instance=ExtResource("8_fl2eo")]
-position = Vector2(1190.27, -1002.21)
-rotation = -3.13979
-Sprout_timer = 0.6
-
-[node name="Water Spouts19" parent="Traps/Orbs" instance=ExtResource("8_fl2eo")]
-position = Vector2(1057.52, -1019.91)
-rotation = -3.13979
-Sprout_timer = 0.5
-
-[node name="Water Spouts20" parent="Traps/Orbs" instance=ExtResource("8_fl2eo")]
-position = Vector2(926.991, -1035.4)
-rotation = -3.13979
-Sprout_timer = 0.4
 
 [node name="Water Spouts21" parent="Traps/Orbs" instance=ExtResource("8_fl2eo")]
 position = Vector2(783.186, -1030.97)
@@ -503,7 +593,7 @@ position = Vector2(7128.32, 853.982)
 position = Vector2(106.195, -68.5841)
 
 [node name="Tori_Spawn" parent="." instance=ExtResource("14_k01up")]
-position = Vector2(4488.94, 1252.21)
+position = Vector2(4621.68, 1252.21)
 
 [node name="Tori Gate" parent="." instance=ExtResource("13_1cckg")]
 position = Vector2(2938.05, -780.973)
@@ -514,3 +604,62 @@ position = Vector2(4668.14, 199.115)
 [node name="Killbox" parent="." instance=ExtResource("15_iviab")]
 position = Vector2(-232.301, 3013.27)
 scale = Vector2(1920, 1)
+
+[node name="Killbox2" parent="." instance=ExtResource("15_iviab")]
+position = Vector2(-241.15, 3329.65)
+scale = Vector2(1920, 1)
+
+[node name="Killbox3" parent="." instance=ExtResource("15_iviab")]
+position = Vector2(-241.15, 3707.96)
+scale = Vector2(1920, 1)
+
+[node name="Killbox4" parent="." instance=ExtResource("15_iviab")]
+position = Vector2(-256.637, 4061.95)
+scale = Vector2(1920, 1)
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("16_djwfd")
+volume_db = -23.562
+autoplay = true
+
+[node name="ParallaxBackground2" type="ParallaxBackground" parent="."]
+layer = 50
+
+[node name="far2" type="ParallaxLayer" parent="ParallaxBackground2"]
+position = Vector2(550, 102)
+scale = Vector2(1, 1)
+motion_scale = Vector2(1.75, 1.75)
+
+[node name="Node2D" type="Node2D" parent="ParallaxBackground2/far2"]
+modulate = Color(0.254902, 0.254902, 0.254902, 0.721569)
+position = Vector2(1854, 674)
+scale = Vector2(0.738, 0.738)
+
+[node name="Clouds5" type="Sprite2D" parent="ParallaxBackground2/far2/Node2D"]
+position = Vector2(735, 466)
+scale = Vector2(0.858459, 0.414005)
+texture = ExtResource("5_mxqrr")
+
+[node name="Clouds7" type="Sprite2D" parent="ParallaxBackground2/far2/Node2D"]
+position = Vector2(3028.46, 429.539)
+scale = Vector2(0.858459, 0.414005)
+texture = ExtResource("5_mxqrr")
+flip_h = true
+
+[node name="Clouds8" type="Sprite2D" parent="ParallaxBackground2/far2/Node2D"]
+position = Vector2(-2216.8, 472.9)
+scale = Vector2(0.858459, 0.414005)
+texture = ExtResource("5_mxqrr")
+flip_h = true
+
+[node name="Clouds9" type="Sprite2D" parent="ParallaxBackground2/far2/Node2D"]
+position = Vector2(-711.382, 566.395)
+rotation = -0.355538
+scale = Vector2(0.805021, 0.516318)
+texture = ExtResource("5_mxqrr")
+
+[node name="Clouds6" type="Sprite2D" parent="ParallaxBackground2/far2/Node2D"]
+position = Vector2(2219, 327)
+scale = Vector2(0.418459, 0.291133)
+texture = ExtResource("5_mxqrr")
+flip_h = true

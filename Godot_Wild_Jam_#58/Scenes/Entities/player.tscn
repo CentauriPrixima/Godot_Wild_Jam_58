@@ -31,6 +31,7 @@ var spawn = false
 var spawntimer:bool = false
 var is_jumping:bool = false
 var grounded:bool = true
+var falling:bool = false
 func _ready():
 	
 	
@@ -49,7 +50,7 @@ func _process(delta):
 		Global.lastknownx = pos1
 		Global.lastknowny = pos2
 	if Global.hurting == true:
-		position = Vector2(Global.lastknownx,Global.lastknowny)
+		position = Vector2(Global.lastknownx,Global.lastknowny - 10)
 		hspawn.play(\"new_animation\")
 		Global.hurting = false
 		$Hurtbox/Hurt.disabled = true
@@ -67,6 +68,7 @@ func _physics_process(delta):
 		die()
 	if is_on_floor():
 		grounded = true
+		falling = false
 	else:
 		grounded = false
 		if grounded == false:
@@ -87,8 +89,9 @@ func player_movement(delta):
 				velocity.y += gravity
 			
 			if Input.is_action_just_pressed(\"up\") and is_on_floor():
-				velocity.y = - jump_force 
-				is_jumping = true
+				if grounded == true:
+					velocity.y = - jump_force 
+					is_jumping = true
 				
 					
 				if jump_sound == false:
@@ -100,9 +103,12 @@ func player_movement(delta):
 				velocity.y = 0
 				velocity.y = -jump_force
 				can_double_jump = false
-			if Input.is_action_just_released(\"up\") and not is_on_floor():
-				velocity.y =lerp(10,0,0.5)
-				is_jumping = false
+			if grounded == false:
+				if falling == false:
+					if Input.is_action_just_released(\"up\") and not is_on_floor():
+							velocity.y =lerp(10,0,0.5)
+							is_jumping = false
+							falling = true
 
 				
 		if spawntimer == true:

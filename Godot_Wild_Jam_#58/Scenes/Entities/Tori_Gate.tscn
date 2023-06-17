@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://bg4gxh5y8mjm2"]
 
-[ext_resource type="Texture2D" uid="uid://b0odntfbnt64l" path="res://icon.svg" id="1_vk3bl"]
+[ext_resource type="Texture2D" uid="uid://bopbjnt1be0ni" path="res://Assets/Objects/Tori Gate.png" id="1_pv6cy"]
 [ext_resource type="Script" path="res://Area2D.gd" id="2_02sda"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_d2web"]
@@ -9,12 +9,12 @@ size = Vector2(222, 217)
 [node name="Tori Gate" type="Node2D"]
 
 [node name="Icon" type="Sprite2D" parent="."]
-self_modulate = Color(0.509804, 0, 0.223529, 1)
 position = Vector2(117, 110)
-scale = Vector2(1.756, 1.756)
-texture = ExtResource("1_vk3bl")
+scale = Vector2(0.548, 0.548)
+texture = ExtResource("1_pv6cy")
 
 [node name="Area2D" type="Area2D" parent="Icon"]
+scale = Vector2(3.20438, 3.20438)
 script = ExtResource("2_02sda")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Icon/Area2D"]

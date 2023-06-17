@@ -443,10 +443,22 @@ position = Vector2(1250, 170.354)
 position = Vector2(792.035, -1216.81)
 
 [node name="Yokai Barrier" parent="." instance=ExtResource("21_pi6rf")]
-position = Vector2(736.726, -1639.38)
-scale = Vector2(2.629, 2.629)
+position = Vector2(869.469, -1544.25)
+scale = Vector2(1.936, 1.936)
 Gems_Needed = 4
 
 [node name="Killbox" parent="." instance=ExtResource("22_bjynk")]
 position = Vector2(435.841, 1953.54)
+scale = Vector2(1920, 1)
+
+[node name="Killbox2" parent="." instance=ExtResource("22_bjynk")]
+position = Vector2(429.204, 2092.92)
+scale = Vector2(1920, 1)
+
+[node name="Killbox3" parent="." instance=ExtResource("22_bjynk")]
+position = Vector2(422.566, 2261.06)
+scale = Vector2(1920, 1)
+
+[node name="Killbox4" parent="." instance=ExtResource("22_bjynk")]
+position = Vector2(307.522, 4738.94)
 scale = Vector2(1920, 1)

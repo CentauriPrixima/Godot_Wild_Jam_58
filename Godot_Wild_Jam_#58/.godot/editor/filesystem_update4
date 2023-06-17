@@ -14,3 +14,9 @@ res://Scenes/Entities/tori_spawn.tscn
 res://Scenes/Entities/killbox.tscn
 res://Scenes/Entities/Platforms.tscn
 res://Scenes/Entities/gems.tscn
+res://Scenes/Entities/yokai_barrier.tscn
+res://Gem.gd
+res://Scenes/Levels/GPUParticles2D.gd
+res://Scenes/Entities/Rain_oni.tscn
+res://Scenes/Entities/Audio Charge.gd
+res://ColorRect.gd

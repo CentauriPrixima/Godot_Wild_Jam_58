@@ -1092,6 +1092,6 @@ position = Vector2(1269.91, -2849.56)
 position = Vector2(845.133, -878.319)
 
 [node name="Yokai Barrier" parent="." instance=ExtResource("27_ud10t")]
-position = Vector2(-2119.47, -2692.48)
-scale = Vector2(5.019, 5.019)
+position = Vector2(-1780.97, -2608.41)
+scale = Vector2(3.261, 3.261)
 Gems_Needed = 4
