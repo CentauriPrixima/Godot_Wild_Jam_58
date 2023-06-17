@@ -1,0 +1,152 @@
+[gd_scene load_steps=5 format=3 uid="uid://dtwum6gmc3wd4"]
+
+[ext_resource type="Script" path="res://Pause menu.gd" id="1_4n5cs"]
+[ext_resource type="Texture2D" uid="uid://brr4070mya4uy" path="res://Assets/UI/Pause_Menu.png" id="2_xhpg2"]
+[ext_resource type="FontFile" uid="uid://dscockw6qgwgx" path="res://Assets/UI/JAPAB___.TTF" id="3_5fq7m"]
+[ext_resource type="PackedScene" uid="uid://h5p06mbfjrba" path="res://Scenes/Entities/Audio_Sliders.tscn" id="4_snb0u"]
+
+[node name="Pause menu" type="Control"]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_4n5cs")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 1149.0
+offset_bottom = 648.0
+color = Color(0, 0, 0, 0.180392)
+metadata/_edit_lock_ = true
+
+[node name="PauseMenu" type="Sprite2D" parent="."]
+position = Vector2(579, 306)
+scale = Vector2(0.39, 0.39)
+texture = ExtResource("2_xhpg2")
+metadata/_edit_lock_ = true
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 457.0
+offset_top = 165.0
+offset_right = 671.0
+offset_bottom = 230.0
+theme_override_colors/font_color = Color(0.996078, 0.988235, 0.996078, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0.27451, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 1465
+theme_override_constants/shadow_offset_y = 562
+theme_override_constants/outline_size = 16
+theme_override_constants/shadow_outline_size = 218
+theme_override_constants/line_spacing = 3
+theme_override_fonts/font = ExtResource("3_5fq7m")
+theme_override_font_sizes/font_size = 43
+text = "Paused"
+
+[node name="Music" type="Label" parent="."]
+layout_mode = 0
+offset_left = 526.0
+offset_top = 367.0
+offset_right = 740.0
+offset_bottom = 432.0
+theme_override_colors/font_color = Color(0.996078, 0.988235, 0.996078, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0.27451, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 1465
+theme_override_constants/shadow_offset_y = 562
+theme_override_constants/outline_size = 16
+theme_override_constants/shadow_outline_size = 218
+theme_override_constants/line_spacing = 3
+theme_override_fonts/font = ExtResource("3_5fq7m")
+theme_override_font_sizes/font_size = 13
+text = "Music"
+
+[node name="Hslider" parent="Music" instance=ExtResource("4_snb0u")]
+layout_mode = 0
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = -130.0
+offset_top = 20.0
+offset_right = 213.0
+offset_bottom = 36.0
+grow_horizontal = 1
+grow_vertical = 1
+Audio_Bus = "Music"
+
+[node name="Master" type="Label" parent="."]
+layout_mode = 0
+offset_left = 524.0
+offset_top = 327.0
+offset_right = 738.0
+offset_bottom = 392.0
+theme_override_colors/font_color = Color(0.996078, 0.988235, 0.996078, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0.27451, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 1465
+theme_override_constants/shadow_offset_y = 562
+theme_override_constants/outline_size = 16
+theme_override_constants/shadow_outline_size = 218
+theme_override_constants/line_spacing = 3
+theme_override_fonts/font = ExtResource("3_5fq7m")
+theme_override_font_sizes/font_size = 13
+text = "Master"
+
+[node name="Hslider2" parent="Master" instance=ExtResource("4_snb0u")]
+layout_mode = 0
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = -127.0
+offset_top = 12.0
+offset_right = 216.0
+offset_bottom = 28.0
+grow_horizontal = 1
+grow_vertical = 1
+
+[node name="Sound effects" type="Label" parent="."]
+layout_mode = 0
+offset_left = 492.0
+offset_top = 412.0
+offset_right = 706.0
+offset_bottom = 477.0
+theme_override_colors/font_color = Color(0.996078, 0.988235, 0.996078, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0.27451, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 1465
+theme_override_constants/shadow_offset_y = 562
+theme_override_constants/outline_size = 16
+theme_override_constants/shadow_outline_size = 218
+theme_override_constants/line_spacing = 3
+theme_override_fonts/font = ExtResource("3_5fq7m")
+theme_override_font_sizes/font_size = 13
+text = "Sound effects
+"
+
+[node name="Hslider3" parent="Sound effects" instance=ExtResource("4_snb0u")]
+layout_mode = 0
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = -94.0
+offset_top = 20.0
+offset_right = 246.0
+offset_bottom = 36.0
+grow_horizontal = 1
+grow_vertical = 1
+
+[node name="Quit" type="Button" parent="."]
+layout_mode = 0
+offset_left = 488.0
+offset_top = 246.0
+offset_right = 647.0
+offset_bottom = 283.0
+theme_override_fonts/font = ExtResource("3_5fq7m")
+theme_override_font_sizes/font_size = 20
+text = "Quit Game"
+flat = true
+
+[connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]

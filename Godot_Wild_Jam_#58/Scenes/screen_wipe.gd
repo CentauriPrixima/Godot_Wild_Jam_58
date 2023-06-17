@@ -1,4 +1,5 @@
-extends Button
+extends Node2D
+@export_enum("Wipe away", "Wipe to")var animation 
 
 
 # Called when the node enters the scene tree for the first time.
@@ -8,13 +9,10 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	pass
+	if Global.wipe == true:
+		$AnimationPlayer.play(animation)
 
 
-func _on_pressed():
-	get_tree().reload_current_scene()
-	Global.phealth = 3
-	Global.gemcount = 0
+func _on_animation_player_animation_finished(Wipe_to):
 	
-
-	
+	Global.wipe = false

@@ -1,0 +1,213 @@
+[gd_scene load_steps=9 format=3 uid="uid://do6b7eip7yn2t"]
+
+[ext_resource type="Texture2D" uid="uid://drroe0q0ogkc2" path="res://Assets/Objects/Leaf particle.png" id="1_jm50h"]
+[ext_resource type="Script" path="res://Scenes/screen_wipe.gd" id="1_w4bij"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_f1yfp"]
+emission_shape = 3
+emission_box_extents = Vector3(1200, 50, 1)
+particle_flag_disable_z = true
+gravity = Vector3(0, -120, 0)
+orbit_velocity_min = 0.0
+orbit_velocity_max = 0.0
+linear_accel_min = 60.0
+linear_accel_max = 60.0
+damping_max = 20.48
+scale_min = 0.3
+turbulence_enabled = true
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_lf8p3"]
+
+[sub_resource type="Animation" id="Animation_5kmfr"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("GPUParticles2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-23, 350)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("GPUParticles2D:emitting")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("GPUParticles2D/ColorRect:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-955, -44)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("GPUParticles2D:process_material:gravity")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, -120, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_r6i5h"]
+resource_name = "Wipe to"
+length = 2.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("GPUParticles2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 1.3, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(509, 655), Vector2(621, -50), Vector2(575, 629), Vector2(484, -915)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("GPUParticles2D:emitting")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("GPUParticles2D/ColorRect:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1, 1.3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(-955, -44), Vector2(-1061, -619), Vector2(-1046, -1305)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("GPUParticles2D:process_material:gravity")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, -120, 0), Vector3(0, 120, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_cg18c"]
+resource_name = "Wipe away"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("GPUParticles2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(509, 655), Vector2(621, -50)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("GPUParticles2D:emitting")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("GPUParticles2D/ColorRect:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-1050, -1339)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("GPUParticles2D:process_material:gravity")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 120, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_hj1xq"]
+_data = {
+"RESET": SubResource("Animation_5kmfr"),
+"Wipe away": SubResource("Animation_cg18c"),
+"Wipe to": SubResource("Animation_r6i5h")
+}
+
+[node name="Screen wipe" type="Node2D"]
+process_mode = 3
+script = ExtResource("1_w4bij")
+animation = 0
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+position = Vector2(-23, 350)
+amount = 1600
+process_material = SubResource("ParticleProcessMaterial_f1yfp")
+texture = ExtResource("1_jm50h")
+lifetime = 5.0
+preprocess = 10.0
+speed_scale = 3.21
+randomness = 0.81
+
+[node name="ColorRect" type="ColorRect" parent="GPUParticles2D"]
+show_behind_parent = true
+material = SubResource("CanvasItemMaterial_lf8p3")
+offset_left = -955.0
+offset_top = -44.0
+offset_right = 1072.0
+offset_bottom = 1289.0
+color = Color(1, 0.737255, 0.984314, 1)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "Wipe to"
+libraries = {
+"": SubResource("AnimationLibrary_hj1xq")
+}
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

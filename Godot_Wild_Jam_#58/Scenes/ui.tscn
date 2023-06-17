@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://vcb3t8fqh3vx"]
+[gd_scene load_steps=9 format=3 uid="uid://vcb3t8fqh3vx"]
 
 [ext_resource type="Texture2D" uid="uid://bqc86qcgugxcp" path="res://Assets/UI/Ui top.png" id="1_yack0"]
 [ext_resource type="Texture2D" uid="uid://co6c3wxpylf4n" path="res://Assets/UI/Health_bar.png" id="1_ypgeq"]
@@ -6,6 +6,7 @@
 [ext_resource type="Script" path="res://Scenes/Restart.gd" id="3_kqcgd"]
 [ext_resource type="Texture2D" uid="uid://dj6kvjia2dujx" path="res://Assets/Objects/Orb_Token.png" id="4_gt5qt"]
 [ext_resource type="Script" path="res://Scenes/Gem_tracker.gd" id="5_jkal8"]
+[ext_resource type="PackedScene" uid="uid://dtwum6gmc3wd4" path="res://Scenes/pause_menu.tscn" id="7_7jkyy"]
 
 [sub_resource type="Theme" id="Theme_qqnon"]
 
@@ -16,6 +17,11 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="Pause menu" parent="." instance=ExtResource("7_7jkyy")]
+visible = false
+layout_mode = 1
+scale = Vector2(1.434, 1.434)
 
 [node name="UiTop" type="Sprite2D" parent="."]
 position = Vector2(1477, 173)

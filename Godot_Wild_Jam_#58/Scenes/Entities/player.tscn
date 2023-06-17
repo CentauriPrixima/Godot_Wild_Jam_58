@@ -42,7 +42,7 @@ func _ready():
 func _process(delta):
 	die()
 	tori_teleport()
-	
+	controller_inputs()
 	life = Global.phealth
 	if is_on_floor():
 		pos1 = position.x
@@ -58,6 +58,7 @@ func _process(delta):
 		$Move.start(0.5)
 		$iframe.start(2)
 		$Hit.play()
+		Global.dead = is_dead
 	
 				
 
@@ -199,6 +200,13 @@ func _on_move_timeout():
 
 func _on_iframe_timeout():
 	$Hurtbox/Hurt.disabled = false
+	
+func controller_inputs():
+	if is_dead == true:
+		if Input.is_action_just_pressed(\"Confirm\"):
+			get_tree().reload_current_scene()
+			Global.phealth = 3
+			Global.gemcount = 0
 "
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_l3vlf"]
@@ -388,6 +396,7 @@ drag_vertical_enabled = true
 stream = ExtResource("3_6phle")
 volume_db = -0.904
 pitch_scale = 2.24
+bus = &"Sound Effects"
 
 [node name="Cloud_FS" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_ycrg1")
@@ -414,6 +423,7 @@ one_shot = true
 [node name="Hit" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("7_35yi3")
 pitch_scale = 2.1
+bus = &"Sound Effects"
 
 [node name="iframe" type="Timer" parent="."]
 wait_time = 2.0

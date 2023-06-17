@@ -112,7 +112,6 @@ flip_h = true
 
 [node name="Spirits" type="GPUParticles2D" parent="ParallaxBackground/Mid"]
 position = Vector2(2811.95, 787.611)
-scale = Vector2(1, 1)
 amount = 95
 process_material = SubResource("ParticleProcessMaterial_tdnvd")
 texture = ExtResource("4_aejfw")
@@ -123,7 +122,6 @@ script = ExtResource("5_b7lv6")
 
 [node name="Spirits2" type="GPUParticles2D" parent="ParallaxBackground/Mid"]
 position = Vector2(-121.681, 780.974)
-scale = Vector2(1, 1)
 amount = 95
 process_material = SubResource("ParticleProcessMaterial_tdnvd")
 texture = ExtResource("4_aejfw")
@@ -579,6 +577,7 @@ position = Vector2(7033.19, 761.062)
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("11_g4doq")
 autoplay = true
+bus = &"Music"
 
 [node name="Gems" parent="." instance=ExtResource("12_vlakx")]
 position = Vector2(2006.64, -1106.19)
@@ -621,13 +620,13 @@ scale = Vector2(1920, 1)
 stream = ExtResource("16_djwfd")
 volume_db = -23.562
 autoplay = true
+bus = &"Sound Effects"
 
 [node name="ParallaxBackground2" type="ParallaxBackground" parent="."]
 layer = 50
 
 [node name="far2" type="ParallaxLayer" parent="ParallaxBackground2"]
 position = Vector2(550, 102)
-scale = Vector2(1, 1)
 motion_scale = Vector2(1.75, 1.75)
 
 [node name="Node2D" type="Node2D" parent="ParallaxBackground2/far2"]
@@ -663,3 +662,13 @@ position = Vector2(2219, 327)
 scale = Vector2(0.418459, 0.291133)
 texture = ExtResource("5_mxqrr")
 flip_h = true
+
+[node name="PointLight2D2" type="DirectionalLight2D" parent="."]
+position = Vector2(-17.6991, -1504.42)
+color = Color(0.592157, 0.427451, 0.207843, 1)
+energy = 0.59
+range_layer_min = -100
+range_layer_max = 100
+shadow_enabled = true
+shadow_color = Color(0.647059, 0, 0.639216, 0.631373)
+height = 0.11

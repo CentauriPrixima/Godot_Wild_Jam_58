@@ -430,11 +430,13 @@ script = ExtResource("3_waya1")
 [node name="Audio Charge" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("7_8bod5")
 volume_db = -14.213
+bus = &"Sound Effects"
 
 [node name="Audio Blast" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("8_knb6b")
 volume_db = -9.948
 pitch_scale = 1.28
+bus = &"Sound Effects"
 
 [connection signal="area_entered" from="ColorRect/Area2D" to="ColorRect" method="_on_area_2d_area_entered"]
 [connection signal="timeout" from="Charge" to="ColorRect" method="_on_charge_timeout"]

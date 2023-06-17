@@ -1,12 +1,15 @@
-res://Scenes/Entities/player.tscn
+res://default_bus_layout.tres
 res://Scenes/Kyveri_Level_1.gdshader
+res://Pause menu.gd
+res://Scenes/pause_menu.tscn
+res://Scenes/ui.tscn
+res://Scenes/Entities/player.tscn
 res://Scenes/floting_rock.tscn
 res://Scenes/Kyveri_Level_1.tscn
 res://Scenes/Entities/Orb.tscn
 res://Scenes/Entities/shrine.tscn
 res://Scenes/Entities/Waterball.tscn
 res://Scenes/Levels/Kyveri_Level_2.tscn
-res://Scenes/ui.tscn
 res://Scenes/Levels/Kyveri_level_3.tscn
 res://Scenes/Entities/boss Laser.tscn
 res://Scenes/Entities/Tori_Gate.tscn
@@ -15,8 +18,13 @@ res://Scenes/Entities/killbox.tscn
 res://Scenes/Entities/Platforms.tscn
 res://Scenes/Entities/gems.tscn
 res://Scenes/Entities/yokai_barrier.tscn
-res://Gem.gd
-res://Scenes/Levels/GPUParticles2D.gd
 res://Scenes/Entities/Rain_oni.tscn
-res://Scenes/Entities/Audio Charge.gd
-res://ColorRect.gd
+res://Scenes/screen_wipe.tscn
+res://scripts/Global.gd
+res://Scenes/screen_wipe.gd
+res://scripts/shrine.gd
+res://Audio_Slider.gd
+res://Scenes/Entities/Audio_Sliders.tscn
+res://Scenes/Levels/title_screen.tscn
+res://Scenes/Levels/Button.gd
+res://Scenes/Restart.gd

@@ -13,6 +13,8 @@ var tori_present:bool
 var tori_spawnx:float
 var tori_spawny:float
 var Player_Respawn:bool = false
+var wipe:bool
+var dead:bool
 func _ready():
 	pass
 
