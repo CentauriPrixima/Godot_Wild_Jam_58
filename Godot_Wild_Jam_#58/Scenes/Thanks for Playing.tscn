@@ -1,0 +1,89 @@
+[gd_scene load_steps=8 format=3 uid="uid://c0vljgghi0m75"]
+
+[ext_resource type="Texture2D" uid="uid://byqxq8aggv14l" path="res://Assets/Main_Character/Gremlin.png" id="1_kgvwf"]
+[ext_resource type="FontFile" uid="uid://dscockw6qgwgx" path="res://Assets/UI/JAPAB___.TTF" id="2_4yagy"]
+[ext_resource type="Script" path="res://Scenes/Title.gd" id="2_lx6pe"]
+[ext_resource type="Script" path="res://Scenes/Quit.gd" id="3_0twqe"]
+
+[sub_resource type="Animation" id="Animation_lrtoy"]
+resource_name = "Gremlin dance"
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect/Gremlin:flip_h")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+
+[sub_resource type="Animation" id="Animation_5a6g3"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect/Gremlin:flip_h")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_43c05"]
+_data = {
+"Gremlin dance": SubResource("Animation_lrtoy"),
+"RESET": SubResource("Animation_5a6g3")
+}
+
+[node name="Node2D" type="Node2D"]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 1159.0
+offset_bottom = 650.0
+scale = Vector2(1.467, 1.467)
+color = Color(0, 0, 0, 1)
+
+[node name="Gremlin" type="Sprite2D" parent="ColorRect"]
+position = Vector2(558, 318)
+texture = ExtResource("1_kgvwf")
+
+[node name="Title" type="Button" parent="ColorRect"]
+offset_left = 306.0
+offset_top = 473.0
+offset_right = 430.0
+offset_bottom = 504.0
+text = "Return to Title "
+script = ExtResource("2_lx6pe")
+
+[node name="Quit" type="Button" parent="ColorRect"]
+offset_left = 686.0
+offset_top = 473.0
+offset_right = 778.0
+offset_bottom = 504.0
+text = "Quit Game"
+script = ExtResource("3_0twqe")
+
+[node name="Label" type="Label" parent="ColorRect"]
+offset_left = 170.0
+offset_top = 99.0
+offset_right = 1033.0
+offset_bottom = 189.0
+theme_override_fonts/font = ExtResource("2_4yagy")
+theme_override_font_sizes/font_size = 61
+text = "Thanks for Playing!"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "Gremlin dance"
+libraries = {
+"": SubResource("AnimationLibrary_43c05")
+}
+
+[connection signal="pressed" from="ColorRect/Title" to="ColorRect/Title" method="_on_pressed"]
+[connection signal="pressed" from="ColorRect/Quit" to="ColorRect/Quit" method="_on_pressed"]

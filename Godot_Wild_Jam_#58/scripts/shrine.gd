@@ -22,7 +22,11 @@ func _on_area_2d_body_entered(body)-> void:
 		Global.win()
 		
 		if Level == 1:
-			get_tree().change_scene_to_file("res://Scenes/Levels/Kyveri_Level_2.tscn")
+			get_tree().paused
+			get_tree().create_timer(1).timeout
+			Global.wipe = true
+			if Global.wipe == true:
+				get_tree().change_scene_to_file("res://Scenes/Levels/Kyveri_Level_2.tscn")
 		elif Level == 0:
 			get_tree().change_scene_to_file("res://Scenes/Kyveri_Level_1.tscn")
 		elif Level == 2:

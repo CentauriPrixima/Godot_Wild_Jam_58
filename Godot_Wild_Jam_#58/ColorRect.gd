@@ -20,6 +20,8 @@ func _process(delta):
 			aiming = true
 		if aiming == true:
 			position = Vector2(aimedx,aimedy)
+		if Global.gemcount == 4:
+			$"..".queue_free()
 			
 			
 		

@@ -8,8 +8,9 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	pass
+	if Input.is_action_just_pressed("Confirm"):
+		_on_pressed()
 
 
 func _on_pressed():
-	get_tree().change_scene_to_file("res://Scenes/Kyveri_Level_1.tscn")
+	get_tree().change_scene_to_file("res://Scenes/Levels/Intro_Story.tscn")

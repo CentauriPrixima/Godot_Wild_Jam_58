@@ -1,10 +1,18 @@
-[gd_scene load_steps=7 format=3 uid="uid://vcb3t8fqh3vx"]
+[gd_scene load_steps=11 format=3 uid="uid://vcb3t8fqh3vx"]
 
+[ext_resource type="Texture2D" uid="uid://bqc86qcgugxcp" path="res://Assets/UI/Ui top.png" id="1_yack0"]
 [ext_resource type="Texture2D" uid="uid://co6c3wxpylf4n" path="res://Assets/UI/Health_bar.png" id="1_ypgeq"]
 [ext_resource type="Script" path="res://Scenes/ProgressBar.gd" id="2_i34ek"]
 [ext_resource type="Script" path="res://Scenes/Restart.gd" id="3_kqcgd"]
+<<<<<<< HEAD
 [ext_resource type="Texture2D" uid="uid://b0odntfbnt64l" path="res://icon.svg" id="4_78h37"]
+=======
+[ext_resource type="Texture2D" uid="uid://dj6kvjia2dujx" path="res://Assets/Objects/Orb_Token.png" id="4_gt5qt"]
+[ext_resource type="FontFile" uid="uid://dscockw6qgwgx" path="res://Assets/UI/JAPAB___.TTF" id="5_ena65"]
+>>>>>>> Kyveri-Art
 [ext_resource type="Script" path="res://Scenes/Gem_tracker.gd" id="5_jkal8"]
+[ext_resource type="PackedScene" uid="uid://dtwum6gmc3wd4" path="res://Scenes/pause_menu.tscn" id="7_7jkyy"]
+[ext_resource type="Script" path="res://Scenes/Control.gd" id="7_vcgk1"]
 
 [sub_resource type="Theme" id="Theme_qqnon"]
 
@@ -15,6 +23,16 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="Pause menu" parent="." instance=ExtResource("7_7jkyy")]
+visible = false
+layout_mode = 1
+scale = Vector2(1.434, 1.434)
+
+[node name="UiTop" type="Sprite2D" parent="."]
+position = Vector2(1477, 173)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("1_yack0")
 
 [node name="ProgressBar" type="TextureProgressBar" parent="."]
 layout_mode = 0
@@ -30,19 +48,16 @@ texture_progress = ExtResource("1_ypgeq")
 texture_progress_offset = Vector2(7.74, 0)
 script = ExtResource("2_i34ek")
 
-[node name="Restart" type="Button" parent="."]
-layout_mode = 0
-offset_left = 268.0
-offset_top = 19.0
-offset_right = 484.0
-offset_bottom = 72.0
-text = "Restart"
-script = ExtResource("3_kqcgd")
-
 [node name="Icon" type="Sprite2D" parent="."]
+<<<<<<< HEAD
 position = Vector2(1270, 45)
 scale = Vector2(0.632812, 0.632812)
 texture = ExtResource("4_78h37")
+=======
+position = Vector2(1492, 41)
+scale = Vector2(1.284, 1.284)
+texture = ExtResource("4_gt5qt")
+>>>>>>> Kyveri-Art
 
 [node name="Label" type="Label" parent="Icon"]
 offset_left = 85.3333
@@ -53,4 +68,24 @@ theme_override_font_sizes/font_size = 123
 text = "0"
 script = ExtResource("5_jkal8")
 
-[connection signal="pressed" from="Restart" to="Restart" method="_on_pressed"]
+[node name="Control" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("7_vcgk1")
+
+[node name="Restart" type="Button" parent="Control"]
+layout_mode = 0
+offset_left = 7.0
+offset_top = 91.0
+offset_right = 273.0
+offset_bottom = 165.0
+theme_override_colors/font_outline_color = Color(0.52549, 0, 0, 1)
+theme_override_constants/outline_size = 26
+theme_override_fonts/font = ExtResource("5_ena65")
+theme_override_font_sizes/font_size = 46
+text = "Restart"
+flat = true
+script = ExtResource("3_kqcgd")
+
+[connection signal="pressed" from="Control/Restart" to="Control/Restart" method="_on_pressed"]

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://b3fiocd53fgqx"
+path="res://.godot/imported/Water Blast.mp3-ad0a0f4ba4f2d41b673ff1e2c8b48253.mp3str"
+
+[deps]
+
+source_file="res://Assets/SFX/Water Blast.mp3"
+dest_files=["res://.godot/imported/Water Blast.mp3-ad0a0f4ba4f2d41b673ff1e2c8b48253.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

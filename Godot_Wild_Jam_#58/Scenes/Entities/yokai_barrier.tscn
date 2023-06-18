@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://xpyegpjq5xvc"]
 
 [ext_resource type="Script" path="res://Yokai Barrier.gd" id="1_efadf"]
-[ext_resource type="Texture2D" uid="uid://b0odntfbnt64l" path="res://icon.svg" id="2_34v87"]
+[ext_resource type="Texture2D" uid="uid://dnnxen0ifakuk" path="res://Assets/Objects/Seal.png" id="2_ceqrf"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n5oh3"]
 size = Vector2(13, 149)
@@ -10,11 +10,12 @@ size = Vector2(13, 149)
 script = ExtResource("1_efadf")
 
 [node name="Icon" type="Sprite2D" parent="."]
-self_modulate = Color(0.109804, 0.109804, 0.109804, 1)
 position = Vector2(201, 84)
-texture = ExtResource("2_34v87")
+scale = Vector2(0.354, 0.354)
+texture = ExtResource("2_ceqrf")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Icon"]
+scale = Vector2(3.596, 3.596)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Icon/StaticBody2D"]
 position = Vector2(63.5, 5.5)

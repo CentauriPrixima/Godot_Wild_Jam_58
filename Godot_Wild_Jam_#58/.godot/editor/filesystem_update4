@@ -1,7 +1,13 @@
+<<<<<<< HEAD
 res://Scenes/level_1.tscn
 res://Scenes/Kyveri_Level_1.gdshader
 res://Scenes/Entities/player.tscn
 res://Scenes/floting_rock.tscn
+=======
+res://Scenes/Levels/Intro_Story.tscn
+res://Scenes/Kyveri_Level_1.gdshader
+res://Scenes/Entities/player.tscn
+>>>>>>> Kyveri-Art
 res://Scenes/Kyveri_Level_1.tscn
 res://Scenes/Entities/Orb.tscn
 res://Scenes/Entities/shrine.tscn
@@ -11,6 +17,7 @@ res://Scenes/ui.tscn
 res://Scenes/Entities/respawn.tscn
 res://Scenes/Levels/Kyveri_level_3.tscn
 res://Scenes/Entities/boss Laser.tscn
+<<<<<<< HEAD
 res://Scenes/Levels/title_screen.tscn
 res://Scenes/Levels/Button.gd
 res://Gem.gd
@@ -27,3 +34,31 @@ res://Tori_Spawn.gd
 res://Scenes/Entities/tori_spawn.tscn
 res://Killbox.gd
 res://Scenes/Entities/killbox.tscn
+=======
+res://Scenes/Entities/Tori_Gate.tscn
+res://Scenes/screen_wipe.tscn
+res://Scenes/pause_menu.tscn
+res://Scenes/Entities/Audio_Sliders.tscn
+res://Scenes/Levels/title_screen.tscn
+res://Scenes/floting_rock.tscn
+res://Scenes/Entities/Platforms.tscn
+res://Scenes/Levels/Node.gd
+res://Scenes/Levels/Button.gd
+res://Assets/UI/Starting information.tscn
+res://Assets/UI/Starting information.gd
+res://Assets/UI/Controller.tscn
+res://Assets/UI/Controller.gd
+res://addons/dialogic/Editor/Events/styles/InputFieldsStyle.tres
+res://Scenes/final_scene.tscn
+res://Scenes/final_scene.gd
+res://Scenes/Thanks for Playing.tscn
+res://Scenes/Quit.gd
+res://Scenes/Title.gd
+res://Scenes/Levels/OrbToken.gd
+res://Scenes/Restart.gd
+res://Pause menu.gd
+res://Scenes/Button.gd
+res://Scenes/Control.gd
+res://Scenes/Levels/Credits.gd
+res://Scenes/Levels/Return.gd
+>>>>>>> Kyveri-Art

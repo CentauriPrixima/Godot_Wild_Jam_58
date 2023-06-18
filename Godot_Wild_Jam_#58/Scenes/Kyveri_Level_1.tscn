@@ -25,6 +25,7 @@
 [ext_resource type="PackedScene" uid="uid://57s0fh2mlkkf" path="res://Scenes/Entities/shrine.tscn" id="21_g1vep"]
 [ext_resource type="Texture2D" uid="uid://drroe0q0ogkc2" path="res://Assets/Objects/Leaf particle.png" id="23_p17bv"]
 [ext_resource type="PackedScene" uid="uid://vcb3t8fqh3vx" path="res://Scenes/ui.tscn" id="24_fraup"]
+[ext_resource type="PackedScene" uid="uid://do6b7eip7yn2t" path="res://Scenes/screen_wipe.tscn" id="25_eog2b"]
 [ext_resource type="PackedScene" uid="uid://dovoduq5j6klu" path="res://Scenes/Entities/gems.tscn" id="26_rtglw"]
 [ext_resource type="PackedScene" uid="uid://xpyegpjq5xvc" path="res://Scenes/Entities/yokai_barrier.tscn" id="27_ud10t"]
 
@@ -962,6 +963,7 @@ height = 0.11
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("17_psyi3")
 autoplay = true
+bus = &"Music"
 
 [node name="Hazards" type="Node2D" parent="."]
 
@@ -1069,6 +1071,10 @@ offset_top = 8.0
 offset_right = -3.0
 offset_bottom = 8.0
 
+[node name="Screen wipe" parent="CanvasLayer2" instance=ExtResource("25_eog2b")]
+visible = false
+position = Vector2(611, 449)
+
 [node name="INVis walls" type="ColorRect" parent="."]
 offset_left = -2365.0
 offset_top = -3088.0
@@ -1110,6 +1116,6 @@ position = Vector2(1269.91, -2849.56)
 position = Vector2(845.133, -878.319)
 
 [node name="Yokai Barrier" parent="." instance=ExtResource("27_ud10t")]
-position = Vector2(-2119.47, -2692.48)
-scale = Vector2(5.019, 5.019)
+position = Vector2(-1780.97, -2608.41)
+scale = Vector2(3.261, 3.261)
 Gems_Needed = 4

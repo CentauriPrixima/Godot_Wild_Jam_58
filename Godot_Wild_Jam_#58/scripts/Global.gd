@@ -12,6 +12,12 @@ var torigate:bool
 var tori_present:bool
 var tori_spawnx:float
 var tori_spawny:float
+<<<<<<< HEAD
+=======
+var Player_Respawn:bool = false
+var wipe:bool
+var dead:bool
+>>>>>>> Kyveri-Art
 func _ready():
 	pass
 

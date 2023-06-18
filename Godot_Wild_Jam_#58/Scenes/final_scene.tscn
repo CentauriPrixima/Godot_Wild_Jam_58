@@ -1,0 +1,414 @@
+[gd_scene load_steps=15 format=3 uid="uid://be3cmanwatgke"]
+
+[ext_resource type="Texture2D" uid="uid://dactr51ackbgk" path="res://Assets/Background/Boss_scene.png" id="1_dyvhs"]
+[ext_resource type="Script" path="res://Scenes/final_scene.gd" id="1_gsmc8"]
+[ext_resource type="Texture2D" uid="uid://punhll3yigst" path="res://Assets/Background/Boss BG.png" id="2_dap0o"]
+[ext_resource type="Texture2D" uid="uid://darmqmppgx0w1" path="res://Assets/Background/Main_Final.png" id="3_n5xep"]
+[ext_resource type="Texture2D" uid="uid://bhurrc5go27k7" path="res://Assets/Background/clouds.png" id="4_46882"]
+[ext_resource type="Texture2D" uid="uid://c7pktr2b45wbd" path="res://Assets/Background/Big_ass_head.png" id="4_qy8yi"]
+[ext_resource type="Texture2D" uid="uid://b55uqsem5i8p6" path="res://Assets/Background/eye_lids.png" id="5_1e1f0"]
+[ext_resource type="AudioStream" uid="uid://cghgn2rts7f82" path="res://Assets/SFX/koto-traditional-japanese-music_01-141355.mp3" id="8_o3hyd"]
+
+[sub_resource type="Animation" id="Animation_kt5lw"]
+resource_name = "Boss_fade"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("BossScene:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_dvot2"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("BossScene:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Fade Out:self_modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_fy65e"]
+resource_name = "Boss_fade_out"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("BossScene:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.9),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_d0kfb"]
+resource_name = "White Fade"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Fade Out:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_w6t4i"]
+resource_name = "White Fade_0ut"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Fade Out:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.9),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_eqome"]
+_data = {
+"Boss_fade": SubResource("Animation_kt5lw"),
+"Boss_fade_out": SubResource("Animation_fy65e"),
+"RESET": SubResource("Animation_dvot2"),
+"White Fade": SubResource("Animation_d0kfb"),
+"White Fade_0ut": SubResource("Animation_w6t4i")
+}
+
+[node name="Final Scene" type="Node2D"]
+script = ExtResource("1_gsmc8")
+
+[node name="ColorRect3" type="ColorRect" parent="."]
+offset_left = -16.0
+offset_top = -80.0
+offset_right = 1883.0
+offset_bottom = 949.0
+color = Color(0, 0, 0, 1)
+
+[node name="BossScene" type="Sprite2D" parent="."]
+position = Vector2(910, 522)
+scale = Vector2(0.544, 0.544)
+texture = ExtResource("1_dyvhs")
+
+[node name="BossBg" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(1056, 751)
+texture = ExtResource("2_dap0o")
+
+[node name="MainFinal" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(898, 527)
+scale = Vector2(0.544, 0.544)
+texture = ExtResource("3_n5xep")
+
+[node name="Clouds" type="Sprite2D" parent="MainFinal"]
+visible = false
+show_behind_parent = true
+position = Vector2(-1257.35, 393.382)
+texture = ExtResource("4_46882")
+
+[node name="Clouds2" type="Sprite2D" parent="MainFinal"]
+visible = false
+show_behind_parent = true
+position = Vector2(1165.44, 148.897)
+texture = ExtResource("4_46882")
+flip_h = true
+
+[node name="BigAssHead" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(861.924, 467.942)
+scale = Vector2(0.501, 0.501)
+texture = ExtResource("4_qy8yi")
+
+[node name="EyeLids" type="Sprite2D" parent="BigAssHead"]
+visible = false
+position = Vector2(17.9641, 7.98401)
+scale = Vector2(1, 1)
+texture = ExtResource("5_1e1f0")
+
+[node name="Fade Out" type="ColorRect" parent="."]
+visible = false
+offset_left = -16.0
+offset_top = -80.0
+offset_right = 1883.0
+offset_bottom = 949.0
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -16.0
+offset_top = -80.0
+offset_right = 1845.0
+offset_bottom = 88.0
+color = Color(0, 0, 0, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+offset_left = -5.0
+offset_top = 833.0
+offset_right = 1856.0
+offset_bottom = 1001.0
+color = Color(0, 0, 0, 1)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+bus = &"Music"
+
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="Label" type="Label" parent="Node2D"]
+visible = false
+anchors_preset = -1
+anchor_right = 0.85
+anchor_bottom = 0.195
+offset_left = 514.0
+offset_top = 849.0
+offset_right = 1888.0
+offset_bottom = 903.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_outline_size = 10
+theme_override_font_sizes/font_size = 37
+text = "You were a fool to come and  face me maiden  "
+
+[node name="Label2" type="Label" parent="Node2D"]
+visible = false
+anchors_preset = -1
+anchor_right = 0.85
+anchor_bottom = 0.195
+offset_left = 327.0
+offset_top = 849.0
+offset_right = 1701.0
+offset_bottom = 903.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_outline_size = 10
+theme_override_font_sizes/font_size = 37
+text = "I shall flood your planet and get rid of all the insects infesting it"
+
+[node name="Label3" type="Label" parent="Node2D"]
+visible = false
+anchors_preset = -1
+anchor_right = 0.85
+anchor_bottom = 0.195
+offset_left = 262.0
+offset_top = 852.0
+offset_right = 1636.0
+offset_bottom = 906.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_outline_size = 10
+theme_override_font_sizes/font_size = 37
+text = "The gods may of helped you last time but nothing can stop me now"
+
+[node name="Label4" type="Label" parent="Node2D"]
+visible = false
+anchors_preset = -1
+anchor_right = 0.85
+anchor_bottom = 0.195
+offset_left = 505.0
+offset_top = 855.0
+offset_right = 1879.0
+offset_bottom = 909.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_outline_size = 10
+theme_override_font_sizes/font_size = 37
+text = "AHAHAHAHAHAHAHAHAHAHAHAHAHAHAHA"
+
+[node name="Label5" type="Label" parent="Node2D"]
+visible = false
+anchors_preset = -1
+anchor_right = 0.85
+anchor_bottom = 0.195
+offset_left = 150.0
+offset_top = 862.0
+offset_right = 1569.0
+offset_bottom = 916.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_outline_size = 10
+theme_override_font_sizes/font_size = 37
+text = "You know, for someone who got their ass whopped last time you sure talk a lot "
+
+[node name="Label6" type="Label" parent="Node2D"]
+visible = false
+anchors_preset = -1
+anchor_right = 0.85
+anchor_bottom = 0.195
+offset_left = 579.0
+offset_top = 858.0
+offset_right = 1998.0
+offset_bottom = 912.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_outline_size = 10
+theme_override_font_sizes/font_size = 37
+text = "HOW DARE YOU SPEAK TO ME....."
+
+[node name="Label7" type="Label" parent="Node2D"]
+visible = false
+anchors_preset = -1
+anchor_right = 0.85
+anchor_bottom = 0.195
+offset_left = 205.0
+offset_top = 858.0
+offset_right = 1624.0
+offset_bottom = 912.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_outline_size = 10
+theme_override_font_sizes/font_size = 37
+text = "Yeah yeah big strong boy got beat by a girl go cry to someone who cares"
+
+[node name="Label8" type="Label" parent="Node2D"]
+visible = false
+anchors_preset = -1
+anchor_right = 0.85
+anchor_bottom = 0.195
+offset_left = 463.0
+offset_top = 861.0
+offset_right = 1882.0
+offset_bottom = 915.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_outline_size = 10
+theme_override_font_sizes/font_size = 37
+text = "I SHALL CRUSH YOU WHERE YOU STAND AHHHH...."
+
+[node name="Label9" type="Label" parent="Node2D"]
+visible = false
+anchors_preset = -1
+anchor_right = 0.85
+anchor_bottom = 0.195
+offset_left = 305.0
+offset_top = 853.0
+offset_right = 1724.0
+offset_bottom = 907.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_outline_size = 10
+theme_override_font_sizes/font_size = 37
+text = "You know I had to climb all the way up here just for you big blue "
+
+[node name="Label10" type="Label" parent="Node2D"]
+visible = false
+anchors_preset = -1
+anchor_right = 0.85
+anchor_bottom = 0.195
+offset_left = 196.0
+offset_top = 858.0
+offset_right = 1615.0
+offset_bottom = 912.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_outline_size = 10
+theme_override_font_sizes/font_size = 37
+text = "I'm hungry and tired and I want to go home. And my name is not maiden it's....."
+
+[node name="Label11" type="Label" parent="Node2D"]
+visible = false
+anchors_preset = -1
+anchor_right = 0.85
+anchor_bottom = 0.195
+offset_left = 850.0
+offset_top = 845.0
+offset_right = 2269.0
+offset_bottom = 899.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_outline_size = 10
+theme_override_font_sizes/font_size = 37
+text = "Sakura"
+
+[node name="Label12" type="Label" parent="Node2D"]
+visible = false
+anchors_preset = -1
+anchor_right = 0.85
+anchor_bottom = 0.195
+offset_left = 599.0
+offset_top = 845.0
+offset_right = 2018.0
+offset_bottom = 899.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_outline_size = 10
+theme_override_font_sizes/font_size = 37
+text = "HAVE A TASTE OF THIS BIG BLUE "
+
+[node name="Label13" type="Label" parent="Node2D"]
+visible = false
+anchors_preset = -1
+anchor_right = 0.85
+anchor_bottom = 0.195
+offset_left = 599.0
+offset_top = 845.0
+offset_right = 2018.0
+offset_bottom = 899.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_outline_size = 10
+theme_override_font_sizes/font_size = 37
+text = "Such...Devastation AHHH!!!"
+
+[node name="Label14" type="Label" parent="Node2D"]
+visible = false
+anchors_preset = -1
+anchor_right = 0.85
+anchor_bottom = 0.195
+offset_left = 599.0
+offset_top = 845.0
+offset_right = 2018.0
+offset_bottom = 899.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_outline_size = 10
+theme_override_font_sizes/font_size = 37
+text = "Shit...Now I have to climb donwn don't I ..."
+
+[node name="Fades" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_eqome")
+}
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_o3hyd")
+autoplay = true
+bus = &"Music"
+
+[node name="Button" type="Button" parent="."]
+offset_left = 1732.0
+offset_top = 767.0
+offset_right = 1774.0
+offset_bottom = 798.0
+text = "SKip"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

@@ -12,7 +12,11 @@ func _process(delta):
 
 
 func _on_area_entered(hitbox:HurtBox)-> void:
+<<<<<<< HEAD
 	if hitbox == null:
+=======
+	if HurtBox == null:
+>>>>>>> Kyveri-Art
 		return
 	SFX.play()
 	if pickedup == false:
