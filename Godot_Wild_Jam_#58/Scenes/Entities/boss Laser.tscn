@@ -1,9 +1,12 @@
-[gd_scene load_steps=15 format=3 uid="uid://cecrqua6y3umm"]
+[gd_scene load_steps=18 format=3 uid="uid://cecrqua6y3umm"]
 
 [ext_resource type="Script" path="res://ColorRect.gd" id="1_i4b2p"]
 [ext_resource type="Script" path="res://AnimationPlayer.gd" id="2_iy5yn"]
+[ext_resource type="Texture2D" uid="uid://ctp541mvfwvm3" path="res://Assets/Objects/Fountain_B_1.png" id="2_wobi5"]
+[ext_resource type="Texture2D" uid="uid://b8ivjkjj08lxq" path="res://Assets/Objects/FountainB_2.png" id="3_v03hg"]
 [ext_resource type="Script" path="res://Scenes/Entities/Charge.gd" id="3_waya1"]
 [ext_resource type="Texture2D" uid="uid://ce6wepym2vrpm" path="res://Assets/Objects/Fountain1.png" id="4_kyxml"]
+[ext_resource type="Texture2D" uid="uid://sgfi2g2fxkeh" path="res://Assets/Objects/FountainB_3.png" id="4_qlpkc"]
 [ext_resource type="Texture2D" uid="uid://bnwn42citepiy" path="res://Assets/Objects/Fountain3.png" id="5_7ycel"]
 [ext_resource type="Texture2D" uid="uid://c7h4pbraxhh0x" path="res://Assets/Objects/Fountain2.png" id="6_4mwqf"]
 [ext_resource type="AudioStream" uid="uid://cuejt2pije3bd" path="res://Assets/SFX/Water_Charge.mp3" id="7_8bod5"]
@@ -11,6 +14,20 @@
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_peju4"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_wobi5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_v03hg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_qlpkc")
+}],
+"loop": true,
+"name": &"Blast",
+"speed": 10.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("4_kyxml")
@@ -142,10 +159,10 @@ tracks/0/path = NodePath("ColorRect:self_modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 1.9),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Color(1, 1, 1, 0)]
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -236,10 +253,10 @@ tracks/8/path = NodePath("ColorRect/AnimatedSprite2D:self_modulate")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/keys = {
-"times": PackedFloat32Array(0, 0.8, 1, 1.9),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
+"times": PackedFloat32Array(0, 1.9),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 0)]
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 1)]
 }
 tracks/9/type = "value"
 tracks/9/imported = false
@@ -264,6 +281,18 @@ tracks/10/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
 "values": [false, false, true, true]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("ColorRect/AnimatedSprite2D:animation")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0, 0.9, 1, 1.9),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [&"default", &"default", &"Blast", &"Blast"]
 }
 
 [sub_resource type="Animation" id="Animation_n7ck2"]
@@ -399,8 +428,8 @@ script = ExtResource("1_i4b2p")
 position = Vector2(141, 1243)
 scale = Vector2(2.678, 2.678)
 sprite_frames = SubResource("SpriteFrames_peju4")
+animation = &"Blast"
 autoplay = "default"
-frame_progress = 0.672465
 
 [node name="Area2D" type="Area2D" parent="ColorRect"]
 position = Vector2(-8, 1552)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://6hodv5swi1g3"]
+[gd_scene load_steps=28 format=3 uid="uid://6hodv5swi1g3"]
 
 [ext_resource type="Texture2D" uid="uid://punhll3yigst" path="res://Assets/Background/Boss BG.png" id="1_yvsnl"]
 [ext_resource type="PackedScene" uid="uid://57s0fh2mlkkf" path="res://Scenes/Entities/shrine.tscn" id="2_iw32x"]
@@ -18,6 +18,8 @@
 [ext_resource type="PackedScene" uid="uid://bdm4d2ofm1v1b" path="res://Scenes/Entities/tori_spawn.tscn" id="14_k01up"]
 [ext_resource type="PackedScene" uid="uid://b278vi3ndunhj" path="res://Scenes/Entities/killbox.tscn" id="15_iviab"]
 [ext_resource type="AudioStream" uid="uid://bius3gudxaeok" path="res://Assets/SFX/rain-and-thunder-nature-sounds-7803.mp3" id="16_djwfd"]
+[ext_resource type="Texture2D" uid="uid://dj6kvjia2dujx" path="res://Assets/Objects/Orb_Token.png" id="19_dnjle"]
+[ext_resource type="Script" path="res://Scenes/Levels/OrbToken.gd" id="20_h4xve"]
 
 [sub_resource type="Gradient" id="Gradient_um0ve"]
 colors = PackedColorArray(1, 1, 1, 0.6, 0, 0, 0, 0)
@@ -55,6 +57,9 @@ scale_min = 2.0
 scale_max = 9.0
 color = Color(0, 0.866667, 0.866667, 1)
 color_ramp = SubResource("GradientTexture1D_ra1eo")
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_vf2v8"]
+radius = 27.6553
 
 [node name="Level 3" type="Node2D"]
 position = Vector2(135, -63)
@@ -477,7 +482,7 @@ Sprout_timer = 0.1
 position = Vector2(77.4336, 789.823)
 
 [node name="Water Spouts11" parent="Traps/Orbs" instance=ExtResource("8_fl2eo")]
-position = Vector2(207.965, -303.097)
+position = Vector2(205.752, -356.195)
 rotation = -3.13418
 
 [node name="Water Spouts5" parent="Traps/Orbs" instance=ExtResource("8_fl2eo")]
@@ -529,11 +534,11 @@ position = Vector2(5192.48, 1486.73)
 scale = Vector2(1.748, 1.748)
 
 [node name="Waterball6" parent="Traps/Waterballs" instance=ExtResource("9_3i33a")]
-position = Vector2(5845.13, 1214.6)
+position = Vector2(5836.28, 1150.44)
 scale = Vector2(2.29, 2.29)
 
 [node name="Waterball12" parent="Traps/Waterballs" instance=ExtResource("9_3i33a")]
-position = Vector2(5477.88, 980.089)
+position = Vector2(5480.09, 940.265)
 scale = Vector2(2.29, 2.29)
 
 [node name="Waterball13" parent="Traps/Waterballs" instance=ExtResource("9_3i33a")]
@@ -672,3 +677,17 @@ range_layer_max = 100
 shadow_enabled = true
 shadow_color = Color(0.647059, 0, 0.639216, 0.631373)
 height = 0.11
+
+[node name="OrbToken" type="Sprite2D" parent="."]
+position = Vector2(4566.37, 1303.1)
+scale = Vector2(1.36, 1.36)
+texture = ExtResource("19_dnjle")
+script = ExtResource("20_h4xve")
+
+[node name="Area2D" type="Area2D" parent="OrbToken"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="OrbToken/Area2D"]
+visible = false
+shape = SubResource("CircleShape2D_vf2v8")
+
+[connection signal="area_entered" from="OrbToken/Area2D" to="OrbToken" method="_on_area_2d_area_entered"]

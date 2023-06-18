@@ -1,30 +1,37 @@
-res://default_bus_layout.tres
+res://Scenes/Levels/Intro_Story.tscn
 res://Scenes/Kyveri_Level_1.gdshader
-res://Pause menu.gd
-res://Scenes/pause_menu.tscn
-res://Scenes/ui.tscn
 res://Scenes/Entities/player.tscn
-res://Scenes/floting_rock.tscn
 res://Scenes/Kyveri_Level_1.tscn
 res://Scenes/Entities/Orb.tscn
 res://Scenes/Entities/shrine.tscn
 res://Scenes/Entities/Waterball.tscn
 res://Scenes/Levels/Kyveri_Level_2.tscn
+res://Scenes/ui.tscn
 res://Scenes/Levels/Kyveri_level_3.tscn
 res://Scenes/Entities/boss Laser.tscn
 res://Scenes/Entities/Tori_Gate.tscn
-res://Scenes/Entities/tori_spawn.tscn
-res://Scenes/Entities/killbox.tscn
-res://Scenes/Entities/Platforms.tscn
-res://Scenes/Entities/gems.tscn
-res://Scenes/Entities/yokai_barrier.tscn
-res://Scenes/Entities/Rain_oni.tscn
 res://Scenes/screen_wipe.tscn
-res://scripts/Global.gd
-res://Scenes/screen_wipe.gd
-res://scripts/shrine.gd
-res://Audio_Slider.gd
+res://Scenes/pause_menu.tscn
 res://Scenes/Entities/Audio_Sliders.tscn
 res://Scenes/Levels/title_screen.tscn
+res://Scenes/floting_rock.tscn
+res://Scenes/Entities/Platforms.tscn
+res://Scenes/Levels/Node.gd
 res://Scenes/Levels/Button.gd
+res://Assets/UI/Starting information.tscn
+res://Assets/UI/Starting information.gd
+res://Assets/UI/Controller.tscn
+res://Assets/UI/Controller.gd
+res://addons/dialogic/Editor/Events/styles/InputFieldsStyle.tres
+res://Scenes/final_scene.tscn
+res://Scenes/final_scene.gd
+res://Scenes/Thanks for Playing.tscn
+res://Scenes/Quit.gd
+res://Scenes/Title.gd
+res://Scenes/Levels/OrbToken.gd
 res://Scenes/Restart.gd
+res://Pause menu.gd
+res://Scenes/Button.gd
+res://Scenes/Control.gd
+res://Scenes/Levels/Credits.gd
+res://Scenes/Levels/Return.gd

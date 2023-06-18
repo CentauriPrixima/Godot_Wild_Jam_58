@@ -333,7 +333,7 @@ position = Vector2(2181.42, -758.849)
 scale = Vector2(1.9, 1.9)
 
 [node name="Waterball6" parent="Hazards/Water Balls" instance=ExtResource("5_nqajk")]
-position = Vector2(1856.19, 285.398)
+position = Vector2(1818.58, 188.053)
 scale = Vector2(1.705, 1.705)
 
 [node name="Gyser" type="Node2D" parent="Hazards"]
@@ -428,6 +428,7 @@ bus = &"Music"
 [node name="CanvasLayer2" type="CanvasLayer" parent="."]
 
 [node name="UI" parent="CanvasLayer2" instance=ExtResource("19_cvmlp")]
+metadata/_edit_lock_ = true
 
 [node name="Gems" type="Node2D" parent="."]
 

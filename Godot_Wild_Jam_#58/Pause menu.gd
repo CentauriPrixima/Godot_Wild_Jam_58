@@ -13,8 +13,5 @@ func _unhandled_input(event):
 	if event.is_action_pressed("Pause"):
 		self.is_paused =!is_paused
 	
-
-
-func _on_quit_pressed():
+func _on_quit_2_pressed():
 	get_tree().quit()
-

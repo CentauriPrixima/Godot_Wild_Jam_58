@@ -1,9 +1,43 @@
-[gd_scene load_steps=7 format=3 uid="uid://ciajt57d741o0"]
+[gd_scene load_steps=17 format=3 uid="uid://ciajt57d741o0"]
 
-[ext_resource type="Texture2D" uid="uid://dhw32cf415iwx" path="res://Assets/UI/Title.png" id="1_qmx1l"]
+[ext_resource type="Texture2D" uid="uid://posh1j8wg0ec" path="res://Assets/UI/Background.png" id="1_serm1"]
 [ext_resource type="AudioStream" uid="uid://dx2sdv818llbl" path="res://Assets/SFX/japanese-garden-139092.mp3" id="2_7llok"]
 [ext_resource type="FontFile" uid="uid://dscockw6qgwgx" path="res://Assets/UI/JAPAB___.TTF" id="2_arolv"]
+[ext_resource type="Texture2D" uid="uid://drroe0q0ogkc2" path="res://Assets/Objects/Leaf particle.png" id="4_e1oft"]
 [ext_resource type="Script" path="res://Scenes/Levels/Button.gd" id="4_pyuvx"]
+[ext_resource type="Texture2D" uid="uid://nmvhn7e2vots" path="res://Assets/UI/Main_Cut.png" id="5_svyfo"]
+[ext_resource type="Texture2D" uid="uid://brae0dn63hoa8" path="res://Assets/UI/Main_Water.png" id="6_clvis"]
+[ext_resource type="Texture2D" uid="uid://3xrqfi845i36" path="res://Assets/UI/Main_TEXt.png" id="7_yuqrd"]
+[ext_resource type="Script" path="res://Scenes/Levels/Credits.gd" id="9_baueu"]
+[ext_resource type="Script" path="res://Scenes/Levels/Return.gd" id="10_iawnv"]
+
+[sub_resource type="Environment" id="Environment_amlua"]
+background_mode = 3
+
+[sub_resource type="Gradient" id="Gradient_kqevb"]
+colors = PackedColorArray(0, 0, 0, 0.580392, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_qafl8"]
+gradient = SubResource("Gradient_kqevb")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_tryly"]
+emission_shape = 3
+emission_box_extents = Vector3(900, 10, 1)
+particle_flag_disable_z = true
+gravity = Vector3(0, 400, 0)
+initial_velocity_max = 505.05
+angular_velocity_min = -720.0
+orbit_velocity_min = -2.0
+orbit_velocity_max = 0.0
+damping_max = 60.61
+scale_min = 0.3
+scale_max = 2.0
+color_ramp = SubResource("GradientTexture1D_qafl8")
+turbulence_enabled = true
+turbulence_noise_strength = 9.89
+turbulence_noise_speed_random = 6.67
+turbulence_influence_max = 1.0
+turbulence_initial_displacement_max = 34.3
 
 [sub_resource type="FontVariation" id="FontVariation_m2uew"]
 base_font = ExtResource("2_arolv")
@@ -12,34 +46,119 @@ base_font = ExtResource("2_arolv")
 default_font = SubResource("FontVariation_m2uew")
 
 [node name="Title Screen" type="Node2D"]
+metadata/_edit_vertical_guides_ = [2.0]
+metadata/_edit_horizontal_guides_ = [0.0]
 
-[node name="Title" type="Sprite2D" parent="."]
-position = Vector2(775, 555)
-scale = Vector2(0.733, 0.733)
-texture = ExtResource("1_qmx1l")
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_amlua")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_7llok")
 autoplay = true
 
-[node name="Control" type="Control" parent="."]
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.25, 0.25)
+
+[node name="Background" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2(867, 483)
+scale = Vector2(0.521, 0.521)
+texture = ExtResource("1_serm1")
+
+[node name="MainWater" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer/Background"]
+position = Vector2(-17, 15)
+texture = ExtResource("6_clvis")
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2(974, 557)
+amount = 120
+process_material = SubResource("ParticleProcessMaterial_tryly")
+texture = ExtResource("4_e1oft")
+lifetime = 4.0
+preprocess = 2.0
+speed_scale = 0.2
+randomness = 1.0
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
+
+[node name="MainCut" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer2"]
+position = Vector2(830.009, 491.857)
+scale = Vector2(0.521, 0.521)
+texture = ExtResource("5_svyfo")
+
+[node name="ParallaxLayer3" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(1.25, 1.25)
+
+[node name="Control" type="Control" parent="ParallaxBackground/ParallaxLayer3"]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="Button" type="Button" parent="Control"]
+[node name="Button" type="Button" parent="ParallaxBackground/ParallaxLayer3/Control"]
 layout_mode = 0
-offset_left = 971.0
-offset_top = 704.0
-offset_right = 1460.0
-offset_bottom = 794.0
+offset_left = 619.0
+offset_top = 780.0
+offset_right = 1108.0
+offset_bottom = 870.0
 theme = SubResource("Theme_pwxje")
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_hover_color = Color(0.792157, 0.14902, 0.501961, 1)
-theme_override_font_sizes/font_size = 57
+theme_override_font_sizes/font_size = 34
 text = "Start Game"
 flat = true
 script = ExtResource("4_pyuvx")
 
-[connection signal="pressed" from="Control/Button" to="Control/Button" method="_on_pressed"]
+[node name="MainTeXt" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer3"]
+position = Vector2(858, 486)
+scale = Vector2(0.521, 0.521)
+texture = ExtResource("7_yuqrd")
+
+[node name="Credits" type="Button" parent="."]
+offset_left = 796.0
+offset_top = 846.0
+offset_right = 930.0
+offset_bottom = 893.0
+theme_override_fonts/font = ExtResource("2_arolv")
+theme_override_font_sizes/font_size = 27
+text = "credits"
+flat = true
+script = ExtResource("9_baueu")
+
+[node name="Credits2" type="ColorRect" parent="."]
+visible = false
+offset_right = 1744.0
+offset_bottom = 988.0
+color = Color(0, 0, 0, 0.709804)
+
+[node name="Label" type="Label" parent="Credits2"]
+offset_left = 300.0
+offset_top = 44.0
+offset_right = 1446.0
+offset_bottom = 410.0
+theme_override_font_sizes/font_size = 42
+text = "A game made in 8 days for Godot WIld Jam by:
+                     
+Kyveri
+https://www.artstation.com/kyveri
+ 
+        Centauri_Proxima"
+horizontal_alignment = 1
+
+[node name="Return" type="Button" parent="Credits2/Label"]
+layout_mode = 0
+offset_left = 476.0
+offset_top = 444.0
+offset_right = 718.0
+offset_bottom = 521.0
+theme_override_fonts/font = ExtResource("2_arolv")
+theme_override_font_sizes/font_size = 48
+text = "Return
+"
+flat = true
+script = ExtResource("10_iawnv")
+
+[connection signal="pressed" from="ParallaxBackground/ParallaxLayer3/Control/Button" to="ParallaxBackground/ParallaxLayer3/Control/Button" method="_on_pressed"]
+[connection signal="pressed" from="Credits" to="Credits" method="_on_pressed"]
+[connection signal="pressed" from="Credits2/Label/Return" to="Credits2/Label/Return" method="_on_pressed"]
